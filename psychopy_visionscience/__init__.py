@@ -11,6 +11,8 @@ scientists.
 
 __version__ = '0.0.1'
 
+# NOTE: Be sure to register entry points in the `pyproject.toml` file.
+
 # ------------------------------------------------------------------------------
 # Library Classes
 #

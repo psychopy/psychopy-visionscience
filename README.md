@@ -6,8 +6,8 @@ Plugin package for PsychoPy which adds stimuli useful for vision science.
 
 Installing this package alongside PsychoPy will add the following visual stimuli:
 
-* Noise patch (`psychopy.visual.NoiseStim`)
-* Second-order gratings with envelope (`psychopy.visual.EnvelopeGrating`)
+* Noise patch (`psychopy.visual.NoiseStim` and Builder component)
+* Second-order gratings with envelope (`psychopy.visual.EnvelopeGrating` and Builder component)
     
 ## Installing
 
