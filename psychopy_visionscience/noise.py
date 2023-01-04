@@ -36,7 +36,7 @@ from psychopy.visual import shaders as _shaders
 
 
 class NoiseStim(GratingStim):
-    """A stimulus with 2 textures: a radom noise sample and a mask
+    """A stimulus with 2 textures: a random noise sample and a mask
 
     **Example**::
 
