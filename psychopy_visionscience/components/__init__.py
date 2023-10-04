@@ -11,3 +11,4 @@ in the main package.
 
 from .noise import NoiseStimComponent
 from .envelopegrating import EnvGratingComponent
+from .radial import RadialStimComponent

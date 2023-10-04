@@ -41,3 +41,4 @@ where = ["", "psychopy_visionscience",]
 [project.entry-points."psychopy.experiment.components"]
 NoiseStimComponent = "psychopy_visionscience:NoiseStimComponent"
 EnvGratingComponent = "psychopy_visionscience:EnvGratingComponent"
+RadialStimComponent = "psychopy_visionscience:RadialStimComponent"
