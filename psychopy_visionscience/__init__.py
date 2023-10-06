@@ -22,4 +22,4 @@ from .secondorder import EnvelopeGrating
 # ------------------------------------------------------------------------------
 # Components
 #
-from .components import NoiseStimComponent, EnvGratingComponent
+from .components import NoiseStimComponent, EnvGratingComponent, RadialStimComponent

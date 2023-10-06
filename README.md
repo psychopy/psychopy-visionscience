@@ -8,6 +8,7 @@ Installing this package alongside PsychoPy will add the following visual stimuli
 
 * Noise patch (`psychopy.visual.NoiseStim` and Builder component)
 * Second-order gratings with envelope (`psychopy.visual.EnvelopeGrating` and Builder component)
+* Radial stimulus (`psychopy.visual.RadialStim` and Builder component)
     
 ## Installing
 
