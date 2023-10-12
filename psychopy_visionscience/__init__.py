@@ -9,7 +9,7 @@
 scientists.
 """
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 # NOTE: Be sure to register entry points in the `pyproject.toml` file.
 
@@ -18,6 +18,7 @@ __version__ = '0.0.1'
 #
 from .noise import NoiseStim
 from .secondorder import EnvelopeGrating
+from .radial import RadialStim
 
 # ------------------------------------------------------------------------------
 # Components
