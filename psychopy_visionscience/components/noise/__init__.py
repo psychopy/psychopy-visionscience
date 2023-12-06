@@ -8,33 +8,6 @@
 
 from pathlib import Path
 from psychopy.experiment.components import BaseVisualComponent, Param, getInitVals, _translate
-from psychopy.localization import _localized as __localized
-_localized = __localized.copy()
-
-# only use _localized values for label values, nothing functional:
-_localized.update({'noiseImage': _translate('Image from which to derive noise spectrum'),
-                   'mask': _translate('Mask'),
-                   'sf': _translate('Final spatial frequency'),
-                   'phase': _translate('Phase (in cycles)'),
-                   'contrast': _translate('Contrast'),
-                   'texture resolution': _translate('Texture resolution'),
-                   'interpolate': _translate('Interpolate'),
-                   'noiseType': _translate('Type of noise'),
-                   'noiseElementSize': _translate('Noise element size'),
-                   'noiseFractalPower': _translate("Skew in frequency spectrum"),
-                   'noiseBaseSf': _translate('Base spatial frequency'),
-                   'noiseBW': _translate('Spatial frequency bandwidth'),
-                   'noiseBWO': _translate('Orientation bandwidth for Gabor noise'),
-                   'noiseOri': _translate('Orientation for Gabor filter'),
-                   'noiseFilterOrder': _translate('Order of filter'),
-                   'noiseFilterUpper': _translate('Upper cut off frequency'),
-                   'noiseFilterLower': _translate('Lower cut off frequency'),
-                   'noiseClip': _translate('Number of standard deviations at which to clip noise'),
-                   'filter': _translate('Apply filter to noise sample'),
-                   'imageComponent': _translate('Radomize image component'),
-                   'noiseNewSample': _translate('How to update noise sample'),
-                   'noiseNewSampleWhen': _translate('When to update noise sample'),
-                   'blendmode': _translate('OpenGL blend mode')})
 
 
 class NoiseStimComponent(BaseVisualComponent):
@@ -87,7 +60,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseImage'])
+            label=_translate('Image from which to derive noise spectrum'))
 
         msg = _translate("An image to define the alpha mask (ie shape)- "
                          "gauss, circle... or a filename (including path)")
@@ -96,7 +69,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['mask'])
+            label=_translate('Mask'))
 
         msg = _translate("Michaelson contrast of the image")
         self.params['contrast'] = Param(
@@ -104,7 +77,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['contrast'])
+            label=_translate('Contrast'))
 
         msg = _translate("Final spatial frequency of image in 1 or 2 dimensions, e.g. 4 or [2,3]. "
                          "Use None to set to 1 copy of noise per unit length of image "
@@ -117,7 +90,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['sf'])
+            label=_translate('Final spatial frequency'))
 
         msg = _translate("Spatial positioning of the noise within the stimulus "
                          "(wraps in range 0-1.0)")
@@ -126,7 +99,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['phase'])
+            label=_translate('Phase (in cycles)'))
 
         msg = _translate(
             "Resolution of the texture for standard ones such as sin, sqr "
@@ -136,7 +109,7 @@ class NoiseStimComponent(BaseVisualComponent):
             valType='int', inputType="single", allowedVals=['32', '64', '128', '256', '512','1024'],
             updates='constant', allowedUpdates=[],
             hint=msg,
-            label=_localized['texture resolution'])
+            label=_translate('Texture resolution'))
 
         msg = _translate("How should the image be interpolated if/when "
                          "rescaled")
@@ -144,7 +117,7 @@ class NoiseStimComponent(BaseVisualComponent):
             interpolate, valType='str', inputType="choice", allowedVals=['linear', 'nearest'], categ='Texture',
             updates='constant', allowedUpdates=[], direct=False,
             hint=msg,
-            label=_localized['interpolate'])
+            label=_translate('Interpolate'))
 
         msg = _translate("Type of noise (Binary, Normal, Gabor, Isotropic, White, Coloured, Filtered, Image)")
         self.params['noiseType'] = Param(
@@ -153,7 +126,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=[],
             hint=msg,
-            label=_localized['noiseType'])
+            label=_translate('Type of noise'))
 
         msg = _translate("Apply filter to noise sample? "
                          "[Butterworth, Gabor, Isoptopic]. A filter with parameters taken from "
@@ -166,7 +139,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=[],
             hint=msg,
-            label=_localized['filter'])
+            label=_translate('Apply filter to noise sample'))
             
         msg = _translate("Which image component should be randomised? "
                          "[Amplitude,Phase]. Randomizing amplitude will keep the phase spectrum of "
@@ -179,7 +152,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=[],
             hint=msg,
-            label=_localized['imageComponent'])
+            label=_translate('Radomize image component'))
 
         msg = _translate("(Binary, Normal and Uniform only) Size of noise elements in the stimulus units, for pixelated noise.")
         self.params['noiseElementSize'] = Param(
@@ -187,7 +160,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseElementSize'])
+            label=_translate('Noise element size'))
 
         msg = _translate("Base spatial frequency in cycles per unit length "
                          "If units = pix this value should be < 0.5.")
@@ -196,7 +169,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseBaseSf'])
+            label=_translate('Base spatial frequency'))
 
         msg = _translate("Spatial frequency bandwidth in octaves - Full width half height")
         self.params['noiseBW'] = Param(
@@ -204,7 +177,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseBW'])
+            label=_translate('Spatial frequency bandwidth'))
 
         msg = _translate("Orientation bandwidth in degrees (Gabor only) - Full width half height")
         self.params['noiseBWO'] = Param(
@@ -212,7 +185,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseBWO'])
+            label=_translate('Orientation bandwidth for Gabor noise'))
             
         msg = _translate("Orientation of Gabor filter in degrees. Used to set the orientation "
                            "of a Gabor filter to be applied to another noise sample with a "
@@ -227,7 +200,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseOri'])
+            label=_translate('Orientation for Gabor filter'))
 
         msg = _translate("Exponent for the slope of the filter's amplitude spectrum (A=f^Exponent). 0 = flat, "
                          "-1 = slope of 1/f. When used on its own the 'filtered' noise type applies the filter to "
@@ -240,7 +213,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseFractalPower'])
+            label=_translate("Skew in frequency spectrum"))
 
         msg = _translate("Order of filter - higher = steeper fall off, zero = no filter")
         self.params['noiseFilterOrder'] = Param(
@@ -248,7 +221,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseFilterOrder'])
+            label=_translate('Order of filter'))
 
         msg = _translate("Upper cutoff frequency in cycles per unit length. "
                          "Set very high to avoid an upper cutoff and make a high pass filter.")
@@ -257,7 +230,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseFilterUpper'])
+            label=_translate('Upper cut off frequency'))
 
         msg = _translate("Lower cutoff frequency in cycles per unit length. "
                          "Set to zero to avoid a lower cuttoff and make a low pass filter.")
@@ -266,7 +239,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseFilterLower'])
+            label=_translate('Lower cut off frequency'))
 
         msg = _translate("Truncate high and low values beyond stated standard deviations from mean and rescale greyscale range. "
                          "This is not used at all for 'binary' or 'uniform' noise and scales rather than clips 'normal' noise). "
@@ -277,7 +250,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['noiseClip'])
+            label=_translate('Number of standard deviations at which to clip noise'))
 
         msg = _translate("How to update noise if not otherwise required by other changes (none, repeat, N-frames, Seconds)")
         self.params['noiseNewSample'] = Param(
@@ -285,7 +258,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=[],
             hint=msg,
-            label=_localized['noiseNewSample'])
+            label=_translate('How to update noise sample'))
 
         msg = _translate("How often to update noise (in frames or seconds) - can be a variable, ignored if any noise characteristic is updating on every frame")
         self.params['noiseNewSampleWhen'] = Param(
@@ -293,7 +266,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=[],
             hint=msg,
-            label=_localized['noiseNewSampleWhen'])
+            label=_translate('When to update noise sample'))
 
         msg = _translate("OpenGL Blendmode [avg, add (avg is most common mode in PsychoPy, add is used if you want to generate the sum of two components)]")
         self.params['blendmode'] = Param(
@@ -301,7 +274,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_localized['blendmode'])
+            label=_translate('OpenGL blend mode')}))
 
         del self.params['fillColor']
         del self.params['borderColor']
