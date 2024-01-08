@@ -274,7 +274,7 @@ class NoiseStimComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_translate('OpenGL blend mode')}))
+            label=_translate('OpenGL blend mode'))
 
         del self.params['fillColor']
         del self.params['borderColor']

@@ -189,7 +189,7 @@ class EnvGratingComponent(BaseVisualComponent):
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
-            label=_translate('OpenGL blend mode')}), categ="Appearance")
+            label=_translate('OpenGL blend mode'), categ="Appearance")
 
         self.params['anchor'] = Param(
             anchor, valType='str', inputType="choice", categ='Layout',
