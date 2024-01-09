@@ -18,6 +18,7 @@ __version__ = '0.0.2'
 #
 from .noise import NoiseStim
 from .secondorder import EnvelopeGrating
+from .radial import RadialStim
 
 # ------------------------------------------------------------------------------
 # Components
