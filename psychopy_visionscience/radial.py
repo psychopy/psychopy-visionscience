@@ -14,7 +14,7 @@
 # Shaders will work but require OpenGL2.0 drivers AND PyOpenGL3.0+
 import pyglet
 
-from ..colors import Color
+from psychopy.colors import Color
 
 pyglet.options['debug_gl'] = False
 import ctypes
