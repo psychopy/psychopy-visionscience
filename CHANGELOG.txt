@@ -1,0 +1,14 @@
+0.0.4
+=====
+
+First version using automated build/publish pipeline
+
+0.0.3
+=====
+
+Fixed import error
+
+0.0.2
+=====
+
+Added RadialStim
