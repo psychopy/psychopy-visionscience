@@ -9,7 +9,7 @@
 scientists.
 """
 
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 # NOTE: Be sure to register entry points in the `pyproject.toml` file.
 
