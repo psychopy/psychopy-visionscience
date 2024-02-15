@@ -230,7 +230,7 @@ class RadialStim(GratingStim):
                         res, 0, GL.GL_ALPHA, GL.GL_UNSIGNED_BYTE, mask)
         # makes the texture map wrap (this is actually default anyway)
         GL.glTexParameteri(GL.GL_TEXTURE_1D, GL.GL_TEXTURE_WRAP_S,
-                           GL.GL_REPEAT)
+                           GL.GL_CLAMP_TO_EDGE)
         # linear smoothing if texture is stretched
         GL.glTexParameteri(GL.GL_TEXTURE_1D, GL.GL_TEXTURE_MAG_FILTER,
                            smoothing)
