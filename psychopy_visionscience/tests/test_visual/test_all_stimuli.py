@@ -213,6 +213,37 @@ class TestPluginVisualStim(_baseVisualTest):
             win.flip()
             "{}".format(image)
 
+    @requires_plugin("psychopy-visionscience")
+    def test_radial(self):
+        win = self.win
+        #using init
+        wedge = visual.RadialStim(win, tex='sqrXsqr', color=1, size=2* self.scaleFactor,
+            visibleWedge=[0, 45], radialCycles=2, angularCycles=2, interpolate=False)
+        wedge.draw()
+        thresh = 15  # there are often a slight interpolation differences
+        if win.winType != 'pygame':  # pygame definitely gets radialstim wrong!
+            utils.compareScreenshot('wedge1_%s.png' %(self.contextName),
+                                    win, crit=thresh)
+        win.flip()#AFTER compare screenshot
+
+        #using .set()
+        wedge.mask = 'gauss'
+        wedge.size = 3 * self.scaleFactor
+        wedge.angularCycles = 3
+        wedge.radialCycles = 3
+        wedge.ori = 180
+        wedge.contrast = 0.8
+        wedge.opacity = 0.8
+        wedge.radialPhase += 0.1
+        wedge.angularPhase = 0.1
+        wedge.draw()
+        "{}".format(wedge) #check that str(xxx) is working
+        if win.winType != 'pygame': # pygame gets this wrong:
+            utils.compareScreenshot('wedge2_%s.png' %(self.contextName),
+                                    win, crit=thresh)
+        else:
+            pytest.skip("Pygame fails to render RadialStim properly :-/")
+
 # variants of the base tests with different backends (copied from psychopy)
 
 class TestPygletNorm(TestPluginVisualStim):
