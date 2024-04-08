@@ -144,6 +144,8 @@ code {
     padding: 0rem calc((100vw - 61rem) / 2) 0 calc((100vw - 61rem) / 2);
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--offwhite);
+    background-color: var(--white);
+    color: var(--offblack);
 }
 .md-tabs {
     display: flex;
@@ -156,10 +158,8 @@ code {
     }
 }
 
-
 .md-header--shadow {
     box-shadow: none;
-    
 }
 
 .md-header__button.md-logo img, 
@@ -169,7 +169,6 @@ code {
     margin-bottom: -2rem;
 }
 
-.md-header,
 .md-tabs,
 .md-nav__title {
     background-color: transparent;
@@ -208,4 +207,10 @@ code {
 }
 .md-copyright {
     text-align: right;
+}
+
+.md-typeset blockquote,
+[dir=ltr] .md-typeset blockquote {
+    border-left: none;
+    color: var(--offblack);
 }
