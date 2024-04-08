@@ -11,8 +11,8 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
-  logo: _style/logo@2x.png
-  favicon: _style/favicon.png
+  logo: style/logo@2x.png
+  favicon: style/favicon.png
   palette:
     scheme: psychopy
   repo_url: https://github.com/TEParsons/psychopy-example-plugin
