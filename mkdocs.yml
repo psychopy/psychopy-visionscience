@@ -1,6 +1,13 @@
 site_name: PsychoPy Vision Science
 docs_dir: docs_mkdocs
 site_dir: docs
+copyright: |
+  © 2002-2018 Jonathan Peirce</br>
+  © 2019 Open Science Tools Ltd.</br>
+  Supported by the University of Nottingham.</br>
+  PsychoPy® and Pavlovia® are registered trademarks of Open Science Tools Ltd.
+repo_url: https://github.com/TEParsons/psychopy-visionscience
+repo_name: psychopy-visionscience
 
 theme:
   name: material 
@@ -11,12 +18,14 @@ theme:
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.footer
   logo: style/logo@2x.png
   favicon: style/favicon.png
   palette:
     scheme: psychopy
-  repo_url: https://github.com/TEParsons/psychopy-example-plugin
-  repo_icon: fontawesome/brands/github
+
+extra:
+  generator: false
 
 extra_css:
   - style/psychopy.css
@@ -34,7 +43,7 @@ plugins:
           paths: [.]
           options:
             docstring_style: numpy
-            show_root_heading: true
+            show_root_heading: false
             show_submodules: true
             inherited_members: true
             group_by_category: true
