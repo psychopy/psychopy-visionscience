@@ -19,7 +19,7 @@ theme:
   repo_icon: fontawesome/brands/github
 
 extra_css:
-  - _style/psychopy.css
+  - style/psychopy.css
 
 markdown_extensions:
   - nl2br
