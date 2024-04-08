@@ -28,7 +28,17 @@ urls.homepage = "https://github.com/mdcutone/psychopy-visionscience"
 urls.changelog = "https://github.com/mdcutone/psychopy-visionscience/blob/main/CHANGELOG.txt"
 urls.documentation = "https://pages.github.com/psychopy/psychopy-visionscience"
 urls.repository = "https://github.com/psychopy/psychopy-visionscience"
-dependencies = [
+
+[project.optional-dependencies]
+# dependencies for building the docs
+docs-mkdocs = [
+  "mkdocs",
+  "mkdocstrings",
+  "mkdocstrings-python",
+  "mkdocs-literate-nav",
+  "mkdocs-section-index ",
+  "mkdocs-material",
+  "mkdocs-material-extensions",
 ]
 
 [tool.setuptools.packages.find]
@@ -41,3 +51,8 @@ where = ["", "psychopy_visionscience",]
 NoiseStimComponent = "psychopy_visionscience:NoiseStimComponent"
 EnvGratingComponent = "psychopy_visionscience:EnvGratingComponent"
 RadialStimComponent = "psychopy_visionscience:RadialStimComponent"
+
+[project.entry-points."psychopy.visual"]
+NoiseStim = "psychopy_visionscience.noise:NoiseStim"
+RadialStim = "psychopy_visionscience.radial:RadialStim"
+EnvelopeGrating = "psychopy_visionscience.secondorder:EnvelopeGrating"

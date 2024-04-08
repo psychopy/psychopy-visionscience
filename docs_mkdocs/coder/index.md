@@ -1,0 +1,1 @@
+Use the sidebar to navigate through the code elements added to the PsychoPy library by this plugin.

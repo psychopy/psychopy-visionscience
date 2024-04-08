@@ -1,0 +1,52 @@
+site_name: PsychoPy Vision Science
+docs_dir: docs_mkdocs
+site_dir: docs
+
+theme:
+  name: material 
+  features:
+    - content.tooltips 
+    - navigation.expand 
+    - navigation.indexes 
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+  logo: _style/logo@2x.png
+  favicon: _style/favicon.png
+  palette:
+    scheme: psychopy
+  repo_url: https://github.com/TEParsons/psychopy-example-plugin
+  repo_icon: fontawesome/brands/github
+
+extra_css:
+  - _style/psychopy.css
+
+markdown_extensions:
+  - nl2br
+
+plugins:
+  # this extension handles turning Python code into nicely formatted markdown docs
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          load_external_modules: true
+          paths: [.]
+          options:
+            docstring_style: numpy
+            show_root_heading: true
+            show_submodules: true
+            inherited_members: true
+            group_by_category: true
+            show_if_no_docstring: true
+            show_symbol_type_heading: true
+            show_labels: false
+            merge_init_into_class: true
+            show_root_toc_entry: false
+            
+  # this extension lets generatePages add items to the nav bar by writing to a file
+  - literate-nav:
+      nav_file: SUMMARY.md
+  # this extension recognises `index.md` files and knows to use the folder name instead of "Index" for the page title
+  - section-index
+      
