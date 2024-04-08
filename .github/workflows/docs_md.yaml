@@ -1,0 +1,48 @@
+name: Publish docs
+
+on: push
+
+jobs:
+  build:
+    name: Build docs
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+    
+    - name: Install psychopy
+      run: |
+        pip install --upgrade pip
+        pip install wheel six attrdict3
+        pip install psychopy
+    
+    - name: Install package and dependencies
+      run: |
+        python3 -m pip install -e .[docs-mkdocs]
+    
+    - name: Rebuild API and soft build pages
+      run: |
+        python3 "docs_mkdocs/generateAPI.py"
+        python3 "docs_mkdocs/generatePages.py"
+    
+    - name: Build docs
+      run: |
+        mkdocs build
+
+    - name: Commit
+      run: |
+        git add --all
+        git commit --all -m "sys: Build documentation"
+    
+    - name: Push
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        force: true
