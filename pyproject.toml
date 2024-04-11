@@ -40,6 +40,10 @@ docs-mkdocs = [
   "mkdocs-material",
   "mkdocs-material-extensions",
 ]
+docs-sphinx = [
+  "sphinx",
+  "furo",
+]
 
 [tool.setuptools.packages.find]
 where = ["", "psychopy_visionscience",]
