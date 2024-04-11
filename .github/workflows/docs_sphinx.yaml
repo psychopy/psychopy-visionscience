@@ -22,7 +22,7 @@ jobs:
     
     - name: Build docs
       run: |
-        sphinx-build docs_sphinx/source docs
+        sphinx-build docs_sphinx docs
     
     - name: Bypass Jekyll
       run: |
