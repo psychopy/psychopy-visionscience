@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to psychopy-template's documentation!
+Welcome to psychopy-visionscience's documentation!
 =============================================
 
-The `psychopy-template` plugin is designed to show you how to make a plugin.
+The `psychopy-visionscience` plugin adds stimuli useful for vision scientists.
 
 .. toctree::
    :maxdepth: 1
