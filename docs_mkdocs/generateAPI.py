@@ -22,9 +22,6 @@ for file in modFolder.glob("**/*.py"):
     docsFile = apiFolder / file.relative_to(modFolder)
     # change extension to markdown
     docsFile = docsFile.parent / (docsFile.stem + ".md")
-    # replace __init__ with index
-    if docsFile.stem == "__init__":
-        docsFile = docsFile.parent / ("index.md")
     # make sure folder exists
     docsFile.parent.mkdir(parents=True, exist_ok=True)
     # get parents for import
@@ -37,7 +34,23 @@ for file in modFolder.glob("**/*.py"):
     importString = ".".join(parents)
     # construct content
     content = (
-        "::: " + importString
+        "::: " + importString + "\n"
     )
+    # handle root folders...
+    if docsFile.stem == "__init__":
+        # replace __init__ (Python) with index (HTML)
+        docsFile = docsFile.parent / ("index.md")
+        # prepend with root.html template spec
+        content = (
+            "---\n"
+            "template: root.html\n"
+            "---\n"
+        ) + content
+        # don't render submodules
+        content += (
+            "    options:\n"
+            "        show_submodules: false\n"
+            "        show_root_heading: false\n"
+        )
     # write content
     docsFile.write_text(content, encoding="utf-8")
