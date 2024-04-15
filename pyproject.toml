@@ -24,9 +24,9 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
-urls.homepage = "https://github.com/mdcutone/psychopy-visionscience"
-urls.changelog = "https://github.com/mdcutone/psychopy-visionscience/blob/main/CHANGELOG.txt"
-urls.documentation = "https://pages.github.com/psychopy/psychopy-visionscience"
+urls.homepage = "https://psychopy.github.io/psychopy-visionscience"
+urls.changelog = "https://github.com/psychopy/psychopy-visionscience/blob/main/CHANGELOG.txt"
+urls.documentation = "https://psychopy.github.io/psychopy-visionscience"
 urls.repository = "https://github.com/psychopy/psychopy-visionscience"
 
 [project.optional-dependencies]
