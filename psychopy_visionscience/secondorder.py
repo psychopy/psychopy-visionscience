@@ -71,9 +71,9 @@ carrierEnvelopeMaskFragPow = '''
 class EnvelopeGrating(GratingStim):
     """Second-order envelope stimuli with 3 textures; a carrier, an envelope and a mask
 
-    **Examples**::
+    **Examples**
 
-    ```python
+    
     env1 = EnvelopeGrating(win,ori=0, carrier='sin', envelope='sin',
             mask = 'gauss', sf=24, envsf=4, size=1, contrast=0.5,
             moddepth=1.0, envori=0, pos=[-.5,.5],interpolate=0)
@@ -91,7 +91,7 @@ class EnvelopeGrating(GratingStim):
             # critically contains no net energy at the carrier frequency
             # even though it appears to be present. In this case carrier
             # and envelope are at 90 degree to each other
-    ```
+    
 
     With an EnvelopeStim the carrier and envelope can have different spatial
     frequencies, phases and orientations. Its position can be shifted as a whole.
