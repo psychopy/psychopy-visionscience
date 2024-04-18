@@ -46,6 +46,10 @@ docs-sphinx = [
   "sphinx",
   "furo",
 ]
+tests = [
+  "psychopy @ git+https://github.com/psychopy/psychopy@release",
+  "pytest",
+]
 
 [tool.setuptools.packages.find]
 where = ["", "psychopy_visionscience",]
