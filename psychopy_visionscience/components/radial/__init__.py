@@ -79,7 +79,7 @@ class RadialStimComponent(BaseVisualComponent):
 
         msg = _translate("Number of texture cycles from centre to periphery, i.e. it controls the number of ‘rings’.")
         self.params['radialCycles'] = Param(
-            radialCycles, valType='num', inputType="single", allowedTypes=[], categ='Texture',
+            radialCycles, valType="code", inputType="single", allowedTypes=[], categ='Texture',
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
@@ -87,7 +87,7 @@ class RadialStimComponent(BaseVisualComponent):
 
         msg = _translate("Number of cycles going around the stimulus. i.e. it controls the number of ‘spokes’.")
         self.params['angularCycles'] = Param(
-            angularCycles, valType='num', inputType="single", allowedTypes=[], categ='Texture',
+            angularCycles, valType="code", inputType="single", allowedTypes=[], categ='Texture',
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
@@ -96,7 +96,7 @@ class RadialStimComponent(BaseVisualComponent):
         msg = _translate("This is the phase of the texture from the centre to the perimeter of the stimulus"
                          " (in radians). Can be used to drift concentric rings out/inwards.")
         self.params['radialPhase'] = Param(
-            radialPhase, valType='num', inputType="single", allowedTypes=[], categ='Texture',
+            radialPhase, valType="code", inputType="single", allowedTypes=[], categ='Texture',
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
@@ -105,7 +105,7 @@ class RadialStimComponent(BaseVisualComponent):
         msg = _translate("This is akin to setting the orientation of the texture around the stimulus in radians."
                          " If possible, it is more efficient to rotate the stimulus using its ori setting instead.")
         self.params['angularPhase'] = Param(
-            angularPhase, valType='num', inputType="single", allowedTypes=[], categ='Texture',
+            angularPhase, valType="code", inputType="single", allowedTypes=[], categ='Texture',
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
@@ -113,7 +113,7 @@ class RadialStimComponent(BaseVisualComponent):
 
         msg = _translate("Determines visible range.")
         self.params['visibleWedge'] = Param(
-            visibleWedge, valType='num', inputType="single", allowedTypes=[], categ='Texture',
+            visibleWedge, valType="code", inputType="single", allowedTypes=[], categ='Texture',
             updates='constant',
             allowedUpdates=['constant', 'set every repeat', 'set every frame'],
             hint=msg,
@@ -132,7 +132,7 @@ class RadialStimComponent(BaseVisualComponent):
             "etc. For most cases a value of 256 pixels will suffice")
         self.params['texture resolution'] = Param(
             texRes,
-            valType='num', inputType="choice", allowedVals=['32', '64', '128', '256', '512'], categ='Texture',
+            valType="code", inputType="choice", allowedVals=['32', '64', '128', '256', '512'], categ='Texture',
             updates='constant', allowedUpdates=[],
             hint=msg,
             label=_translate("Texture resolution"))

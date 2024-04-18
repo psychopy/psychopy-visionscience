@@ -403,6 +403,9 @@ class NoiseStim(GratingStim):
         self.__dict__['noiseClip'] = value
         self._needUpdate = True
         self._needBuild = True
+    
+    def setNoiseOri(self, value):
+        self.noiseOri = value
 
     @attributeSetter
     def filter(self, value):

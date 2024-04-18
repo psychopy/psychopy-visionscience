@@ -7,6 +7,7 @@ from psychopy.tools.coordinatetools import pol2cart
 from psychopy.tests import utils
 from psychopy.tests import skip_under_vm, requires_plugin
 from psychopy.tools import systemtools
+from psychopy_visionscience import secondorder, noise, radial
 import numpy
 import pytest
 import shutil
@@ -19,12 +20,22 @@ To add a new stimulus test use _base so that it gets tested in all contexts
 
 """
 
-from psychopy.tests.test_visual.test_all_stimuli import _baseVisualTest
 
+class _TestPluginVisualStim:
+    @classmethod
+    def setup_class(self):#run once for each test class (window)
+        self.win=None
+        self.contextName
+        raise NotImplementedError
 
-class TestPluginVisualStim(_baseVisualTest):
+    @classmethod
+    def teardown_class(self):#run once for each test class (window)
+        self.win.close()#shutil.rmtree(self.temp_dir)
 
-    @requires_plugin("psychopy-visionscience")
+    def setup_method(self):#this is run for each test individually
+        #make sure we start with a clean window
+        self.win.flip()
+
     def test_envelopeGratingAndRaisedCos(self):
         win = self.win
         size = numpy.array([2.0, 2.0]) * self.scaleFactor
@@ -33,7 +44,7 @@ class TestPluginVisualStim(_baseVisualTest):
         else:
             sf = 5.0 / size  # this will do the flipping and get exactly one cycle
         if win._haveShaders == True:  # can't draw envelope gratings without shaders so skip this test
-            image = visual.EnvelopeGrating(win, carrier='sin', envelope='sin',
+            image = secondorder.EnvelopeGrating(win, carrier='sin', envelope='sin',
                                            size=size, sf=sf, mask='raisedCos',
                                            ori=-45, envsf=sf / 2, envori=45,
                                            envphase=90, moddepth=0.5,
@@ -43,7 +54,6 @@ class TestPluginVisualStim(_baseVisualTest):
             win.flip()
             "{}".format(image)
 
-    @requires_plugin("psychopy-visionscience")
     def test_envelopeGratingPowerAndRaisedCos(self):
         win = self.win
         size = numpy.array([2.0, 2.0]) * self.scaleFactor
@@ -52,7 +62,7 @@ class TestPluginVisualStim(_baseVisualTest):
         else:
             sf = 5.0 / size  # this will do the flipping and get exactly one cycle
         if win._haveShaders == True:  # can't draw envelope gratings without shaders so skip this test
-            image = visual.EnvelopeGrating(win, carrier='sin', envelope='sin',
+            image = secondorder.EnvelopeGrating(win, carrier='sin', envelope='sin',
                                            size=size, sf=sf, mask='raisedCos',
                                            ori=-45, envsf=sf / 2, envori=45,
                                            envphase=90, moddepth=0.5, power=0.5,
@@ -62,30 +72,29 @@ class TestPluginVisualStim(_baseVisualTest):
             win.flip()
             "{}".format(image)
 
-    @requires_plugin("psychopy-visionscience")
     def test_NoiseStim_defaults(self):
         noiseTypes = ['binary', 'uniform', 'normal', 'white', 'filtered']
 
         for noiseType in noiseTypes:
-            stim = visual.NoiseStim(win=self.win,
-                                    noiseType=noiseType,
-                                    size=(32, 32),
-                                    units='pix')
+            stim = noise.NoiseStim(
+                win=self.win,
+                noiseType=noiseType,
+                size=(32, 32),
+                units='pix'
+            )
             stim.updateNoise()
             stim.draw()
 
-    @requires_plugin("psychopy-visionscience")
     def test_NoiseStim_defaults_image(self):
         noiseType = 'image'
 
         # noiseImage kwarg missing.
         with pytest.raises(ValueError):
-            visual.NoiseStim(win=self.win,
+            noise.NoiseStim(win=self.win,
                              noiseType=noiseType,
                              size=(32, 32),
                              units='pix')
 
-    @requires_plugin("psychopy-visionscience")
     def test_noiseAndRaisedCos(self):
         numpy.random.seed(1)
         win = self.win
@@ -117,7 +126,7 @@ class TestPluginVisualStim(_baseVisualTest):
             else:
                 ntype = 'Normal'
             elementsize = 1.0 / 8.0
-        image = visual.NoiseStim(win=win, name='noise', units=win.units,
+        image = noise.NoiseStim(win=win, name='noise', units=win.units,
                                  noiseImage=fileName, mask='raisedCos',
                                  ori=0, pos=(0, 0), size=size, sf=sf, phase=0,
                                  color=[1, 1, 1], colorSpace='rgb', opacity=1, blendmode='avg',
@@ -133,7 +142,6 @@ class TestPluginVisualStim(_baseVisualTest):
         win.flip()
         str(image)
 
-    @requires_plugin("psychopy-visionscience")
     def test_noiseFiltersAndRaisedCos(self):
         numpy.random.seed(1)
         win = self.win
@@ -175,7 +183,7 @@ class TestPluginVisualStim(_baseVisualTest):
                 ntype = 'Normal'
                 ftype = 'Butterworth'
             elementsize = 1.0 / 8.0
-        image = visual.NoiseStim(win=win, name='noise', units=win.units,
+        image = noise.NoiseStim(win=win, name='noise', units=win.units,
                                  noiseImage=fileName, mask='raisedCos',
                                  ori=0, pos=(0, 0), size=size, sf=sf, phase=0,
                                  color=[1, 1, 1], colorSpace='rgb', opacity=1, blendmode='avg',
@@ -194,7 +202,6 @@ class TestPluginVisualStim(_baseVisualTest):
         win.flip()
         str(image)
 
-    @requires_plugin("psychopy-visionscience")
     def test_envelopeBeatAndRaisedCos(self):
         win = self.win
         size = numpy.array([2.0, 2.0]) * self.scaleFactor
@@ -203,7 +210,7 @@ class TestPluginVisualStim(_baseVisualTest):
         else:
             sf = 5.0 / size  # this will do the flipping and get exactly one cycle
         if win._haveShaders == True:  # can't draw envelope gratings without shaders so skip this test
-            image = visual.EnvelopeGrating(win, carrier='sin', envelope='sin',
+            image = secondorder.EnvelopeGrating(win, carrier='sin', envelope='sin',
                                            size=size, sf=sf, mask='raisedCos',
                                            ori=-45, envsf=sf / 2, envori=45,
                                            envphase=90, beat=True, moddepth=0.5,
@@ -213,11 +220,10 @@ class TestPluginVisualStim(_baseVisualTest):
             win.flip()
             "{}".format(image)
 
-    @requires_plugin("psychopy-visionscience")
     def test_radial(self):
         win = self.win
         #using init
-        wedge = visual.RadialStim(win, tex='sqrXsqr', color=1, size=2* self.scaleFactor,
+        wedge = radial.RadialStim(win, tex='sqrXsqr', color=1, size=2* self.scaleFactor,
             visibleWedge=[0, 45], radialCycles=2, angularCycles=2, interpolate=False)
         wedge.draw()
         thresh = 15  # there are often a slight interpolation differences
@@ -246,7 +252,7 @@ class TestPluginVisualStim(_baseVisualTest):
 
 # variants of the base tests with different backends (copied from psychopy)
 
-class TestPygletNorm(TestPluginVisualStim):
+class TestPygletNorm(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         self.win = visual.Window([128, 128], winType='pyglet', pos=[50, 50],
@@ -255,7 +261,7 @@ class TestPygletNorm(TestPluginVisualStim):
         self.scaleFactor = 1  # applied to size/pos values
 
 
-class TestPygletHexColor(TestPluginVisualStim):
+class TestPygletHexColor(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         self.win = visual.Window([128, 128], winType='pyglet', pos=[50, 50],
@@ -266,7 +272,7 @@ class TestPygletHexColor(TestPluginVisualStim):
 
 
 if not systemtools.isVM_CI():
-    class TestPygletBlendAdd(TestPluginVisualStim):
+    class TestPygletBlendAdd(_TestPluginVisualStim):
         @classmethod
         def setup_class(self):
             self.win = visual.Window([128, 128], winType='pyglet', pos=[50, 50],
@@ -275,7 +281,7 @@ if not systemtools.isVM_CI():
             self.scaleFactor = 1  # applied to size/pos values
 
 
-class TestPygletNormFBO(TestPluginVisualStim):
+class TestPygletNormFBO(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         self.win = visual.Window([128, 128], units="norm", winType='pyglet', pos=[50, 50],
@@ -284,7 +290,7 @@ class TestPygletNormFBO(TestPluginVisualStim):
         self.scaleFactor = 1  # applied to size/pos values
 
 
-class TestPygletHeight(TestPluginVisualStim):
+class TestPygletHeight(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         self.win = visual.Window([128, 64], units="height", winType='pyglet', pos=[50, 50],
@@ -293,7 +299,7 @@ class TestPygletHeight(TestPluginVisualStim):
         self.scaleFactor = 1  # applied to size/pos values
 
 
-class TestPygletNormStencil(TestPluginVisualStim):
+class TestPygletNormStencil(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         self.win = visual.Window([128, 128], units="norm", monitor='testMonitor',
@@ -303,7 +309,7 @@ class TestPygletNormStencil(TestPluginVisualStim):
         self.scaleFactor = 1  # applied to size/pos values
 
 
-class TestPygletPix(TestPluginVisualStim):
+class TestPygletPix(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         mon = monitors.Monitor('testMonitor')
@@ -317,7 +323,7 @@ class TestPygletPix(TestPluginVisualStim):
         self.scaleFactor = 60  # applied to size/pos values
 
 
-class TestPygletCm(TestPluginVisualStim):
+class TestPygletCm(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         mon = monitors.Monitor('testMonitor')
@@ -331,7 +337,7 @@ class TestPygletCm(TestPluginVisualStim):
         self.scaleFactor = 2  # applied to size/pos values
 
 
-class TestPygletDeg(TestPluginVisualStim):
+class TestPygletDeg(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         mon = monitors.Monitor('testMonitor')
@@ -345,7 +351,7 @@ class TestPygletDeg(TestPluginVisualStim):
         self.scaleFactor = 2  # applied to size/pos values
 
 
-class TestPygletDegFlat(TestPluginVisualStim):
+class TestPygletDegFlat(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         mon = monitors.Monitor('testMonitor')
@@ -359,7 +365,7 @@ class TestPygletDegFlat(TestPluginVisualStim):
         self.scaleFactor = 4  # applied to size/pos values
 
 
-class TestPygletDegFlatPos(TestPluginVisualStim):
+class TestPygletDegFlatPos(_TestPluginVisualStim):
     @classmethod
     def setup_class(self):
         mon = monitors.Monitor('testMonitor')
