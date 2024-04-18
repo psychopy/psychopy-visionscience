@@ -31,17 +31,7 @@ urls.repository = "https://github.com/psychopy/psychopy-visionscience"
 
 [project.optional-dependencies]
 # dependencies for building the docs
-docs-mkdocs = [
-  "psychopy",
-  "mkdocs",
-  "mkdocstrings",
-  "mkdocstrings-python",
-  "mkdocs-literate-nav",
-  "mkdocs-section-index ",
-  "mkdocs-material",
-  "mkdocs-material-extensions",
-]
-docs-sphinx = [
+docs = [
   "psychopy",
   "sphinx",
   "furo",

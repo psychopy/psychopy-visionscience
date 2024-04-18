@@ -1,1 +1,0 @@
-Use the sidebar to navigate through the Builder elements added to the PsychoPy app by this plugin.

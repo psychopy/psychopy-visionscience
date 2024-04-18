@@ -1,1 +1,0 @@
-::: psychopy_visionscience.tests.test_visual.test_all_stimuli

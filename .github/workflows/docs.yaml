@@ -18,15 +18,15 @@ jobs:
     
     - name: Install package and dependencies
       run: |
-        python3 -m pip install -e .[docs-mkdocs]
-    
-    - name: Rebuild API and soft build pages
-      run: |
-        python3 "docs_mkdocs/generateAPI.py"
+        python3 -m pip install -e .[docs]
     
     - name: Build docs
       run: |
-        mkdocs build
+        sphinx-build docs_src docs -b dirhtml
+    
+    - name: Bypass Jekyll
+      run: |
+        echo "" > docs/.nojekyll
 
     - name: Commit
       run: |

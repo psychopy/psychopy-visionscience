@@ -1,7 +1,0 @@
-- Builder
-    - builder/*
-- Coder
-    - coder/*
-- Full API
-    - api/*
-- [psychopy.org](https://psychopy.org/)

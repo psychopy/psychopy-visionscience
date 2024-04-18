@@ -1,1 +1,0 @@
-::: psychopy_visionscience.tests.test_experiment.test_params
