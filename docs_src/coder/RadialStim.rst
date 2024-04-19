@@ -13,3 +13,5 @@ from psychopy.visual import RadialStim
 
 .. autoclass:: psychopy_visionscience.radial.RadialStim
     :members:
+    :undoc-members:
+    :inherited-members:

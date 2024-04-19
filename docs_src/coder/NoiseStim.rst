@@ -13,3 +13,5 @@ from psychopy.visual import NoiseStim
 
 .. autoclass:: psychopy_visionscience.noise.NoiseStim
     :members:
+    :undoc-members:
+    :inherited-members:

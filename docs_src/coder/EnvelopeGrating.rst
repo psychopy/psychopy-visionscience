@@ -13,3 +13,5 @@ from psychopy.visual import EnvelopeGrating
 
 .. autoclass:: psychopy_visionscience.secondorder.EnvelopeGrating
     :members:
+    :undoc-members:
+    :inherited-members:
