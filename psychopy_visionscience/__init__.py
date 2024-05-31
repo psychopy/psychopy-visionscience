@@ -9,7 +9,12 @@
 scientists.
 """
 
-__version__ = '0.0.5'
+import importlib.metadata
+
+try:
+    __version__ = importlib.metadata.version("psychopy-visionscience")
+except importlib.metadata.PackageNotFoundError:
+    __version__ = "0.dev"
 
 # NOTE: Be sure to register entry points in the `pyproject.toml` file.
 
