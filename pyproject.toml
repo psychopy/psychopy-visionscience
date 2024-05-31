@@ -37,7 +37,7 @@ docs = [
   "furo",
 ]
 tests = [
-  "psychopy @ git+https://github.com/psychopy/psychopy@release",
+  "psychopy",
   "pytest",
 ]
 
