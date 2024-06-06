@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>psychopy_visionscience.radial &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/EnvGratingComponent/">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/EnvelopeGrating/">Envelope Grating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/NoiseStim/">Noise Stim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/RadialStim/">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <h1>Source code for psychopy_visionscience.radial</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;Stimulus class for drawing radial stimuli.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Part of the PsychoPy library</span>
+<span class="c1"># Copyright (C) 2002-2018 Jonathan Peirce (C) 2019-2022 Open Science Tools Ltd.</span>
+<span class="c1"># Distributed under the terms of the GNU General Public License (GPL).</span>
+
+<span class="c1"># Ensure setting pyglet.options[&#39;debug_gl&#39;] to False is done prior to any</span>
+<span class="c1"># other calls to pyglet or pyglet submodules, otherwise it may not get picked</span>
+<span class="c1"># up by the pyglet GL engine and have no effect.</span>
+<span class="c1"># Shaders will work but require OpenGL2.0 drivers AND PyOpenGL3.0+</span>
+<span class="kn">import</span> <span class="nn">pyglet</span>
+
+<span class="kn">from</span> <span class="nn">psychopy.colors</span> <span class="kn">import</span> <span class="n">Color</span>
+
+<span class="n">pyglet</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;debug_gl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="n">GL</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span>
+
+<span class="kn">import</span> <span class="nn">psychopy</span>  <span class="c1"># so we can get the __path__</span>
+<span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">logging</span>
+
+<span class="c1"># tools must only be imported *after* event or MovieStim breaks on win32</span>
+<span class="c1"># (JWP has no idea why!)</span>
+<span class="kn">from</span> <span class="nn">psychopy.tools.arraytools</span> <span class="kn">import</span> <span class="n">val2array</span>
+<span class="kn">from</span> <span class="nn">psychopy.tools.attributetools</span> <span class="kn">import</span> <span class="n">attributeSetter</span><span class="p">,</span> <span class="n">setAttribute</span>
+<span class="kn">from</span> <span class="nn">psychopy.visual.grating</span> <span class="kn">import</span> <span class="n">GratingStim</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">pi</span>
+
+
+<div class="viewcode-block" id="RadialStim">
+<a class="viewcode-back" href="../../../coder/RadialStim/#psychopy_visionscience.radial.RadialStim">[docs]</a>
+<span class="k">class</span> <span class="nc">RadialStim</span><span class="p">(</span><span class="n">GratingStim</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Stimulus object for drawing radial stimuli. This is</span>
+<span class="sd">    a lazy-imported class, therefore import using full path </span>
+<span class="sd">    `from psychopy.visual.radial import RadialStim` when</span>
+<span class="sd">    inheriting from it.</span>
+
+<span class="sd">    Examples: annulus, rotating wedge, checkerboard.</span>
+
+<span class="sd">    Ideal for fMRI retinotopy stimuli!</span>
+
+<span class="sd">    Many of the capabilities are built on top of the GratingStim.</span>
+
+<span class="sd">    This stimulus is still relatively new and I&#39;m finding occasional glitches.</span>
+<span class="sd">    It also takes longer to draw than a typical GratingStim, so not</span>
+<span class="sd">    recommended for tasks where high frame rates are needed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">win</span><span class="p">,</span>
+                 <span class="n">tex</span><span class="o">=</span><span class="s2">&quot;sqrXsqr&quot;</span><span class="p">,</span>
+                 <span class="n">mask</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+                 <span class="n">units</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                 <span class="n">radialCycles</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                 <span class="n">angularCycles</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                 <span class="n">radialPhase</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">angularPhase</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">ori</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">texRes</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+                 <span class="n">angularRes</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                 <span class="n">visibleWedge</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">),</span>
+                 <span class="n">rgb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                 <span class="n">colorSpace</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span>
+                 <span class="n">dkl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">lms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">contrast</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                 <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                 <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">rgbPedestal</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">interpolate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">autoLog</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">maskParams</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>  <span class="c1"># Empty docstring on __init__</span>
+        <span class="c1"># what local vars are defined (these are the init params) for use by</span>
+        <span class="c1"># __repr__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initParams</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initParams</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">RadialStim</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span>
+                                         <span class="n">autoLog</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># start off false</span>
+
+        <span class="c1"># UGLY HACK again. (See same section in GratingStim for ideas)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;contrast&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;sf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;tex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tex</span>
+
+        <span class="c1"># initialise textures for stimulus</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_texID</span> <span class="o">=</span> <span class="n">GL</span><span class="o">.</span><span class="n">GLuint</span><span class="p">()</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_texID</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_maskID</span> <span class="o">=</span> <span class="n">GL</span><span class="o">.</span><span class="n">GLuint</span><span class="p">()</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_maskID</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;maskParams&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maskParams</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maskRadialPhase</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texRes</span> <span class="o">=</span> <span class="n">texRes</span>  <span class="c1"># must be power of 2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interpolate</span> <span class="o">=</span> <span class="n">interpolate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rgbPedestal</span> <span class="o">=</span> <span class="n">val2array</span><span class="p">(</span><span class="n">rgbPedestal</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="c1"># these are defined for GratingStim but can only cause confusion here</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setSF</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setPhase</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">colorSpace</span> <span class="o">=</span> <span class="n">colorSpace</span>
+        <span class="k">if</span> <span class="n">rgb</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Use of rgb arguments to stimuli are deprecated.&quot;</span>
+                            <span class="s2">&quot; Please use color and colorSpace args instead.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">rgb</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">dkl</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Use of dkl arguments to stimuli are deprecated.&quot;</span>
+                            <span class="s2">&quot; Please use color and colorSpace args instead.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">dkl</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;dkl&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">lms</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Use of lms arguments to stimuli are deprecated.&quot;</span>
+                            <span class="s2">&quot; Please use color and colorSpace args instead.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="n">lms</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;lms&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ori</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">ori</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;angularRes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">angularRes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;radialPhase&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">radialPhase</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;radialCycles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">radialCycles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;visibleWedge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">visibleWedge</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;angularCycles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">angularCycles</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;angularPhase&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">angularPhase</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">depth</span> <span class="o">=</span> <span class="n">depth</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;sf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;`GratingStim` requires `size != None`.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+        <span class="c1"># self.tex = tex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">contrast</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">opacity</span><span class="p">)</span>
+
+        <span class="c1">#</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateEverything</span><span class="p">()</span>
+
+        <span class="c1"># set autoLog now that params have been initialised</span>
+        <span class="n">wantLog</span> <span class="o">=</span> <span class="n">autoLog</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">autoLog</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;autoLog&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">autoLog</span> <span class="ow">or</span> <span class="n">wantLog</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">autoLog</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="s2">&quot;Created </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">)))</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The alpha mask that forms the shape of the resulting image.</span>
+
+<span class="sd">        Value should be one of:</span>
+
+<span class="sd">            + &#39;circle&#39;, &#39;gauss&#39;, &#39;raisedCos&#39;, **None** (resets to default)</span>
+<span class="sd">            + or the name of an image file (most formats supported)</span>
+<span class="sd">            + or a numpy array (1xN) ranging -1:1</span>
+
+<span class="sd">        Note that the mask for `RadialStim` is somewhat different to the</span>
+<span class="sd">        mask for :class:`ImageStim`. For `RadialStim` it is a 1D array</span>
+<span class="sd">        specifying the luminance profile extending outwards from the</span>
+<span class="sd">        center of the stimulus, rather than a 2D array</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># todo: fromFile is not used</span>
+        <span class="n">fromFile</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texRes</span>  <span class="c1"># resolution of texture - 128 is bearable</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="n">res</span>
+        <span class="n">rad</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">step</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="c1"># handle a numpy array</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">intensity</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="c1"># handle a numpy array</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="mi">255</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">intensity</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">==</span> <span class="s2">&quot;circle&quot;</span><span class="p">:</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="mf">255.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">rad</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">==</span> <span class="s2">&quot;gauss&quot;</span><span class="p">:</span>
+            <span class="c1"># Set SD if specified</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">maskParams</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">sigma</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">3</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sigma</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">maskParams</span><span class="p">[</span><span class="s1">&#39;sd&#39;</span><span class="p">]</span>
+            <span class="c1"># 3sd.s by the edge of the stimulus</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="mf">255.0</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">rad</span><span class="o">**</span><span class="mf">2.0</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">sigma</span><span class="o">**</span><span class="mf">2.0</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">==</span> <span class="s2">&quot;radRamp&quot;</span><span class="p">:</span>  <span class="c1"># a radial ramp</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="mf">255.0</span> <span class="o">-</span> <span class="mf">255.0</span> <span class="o">*</span> <span class="n">rad</span>
+            <span class="c1"># half wave rectify:</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rad</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">intensity</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="s2">&quot;None&quot;</span><span class="p">]:</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="mi">4</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="mf">255.0</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># might be a filename of a tiff</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">)</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">FLIP_TOP_BOTTOM</span><span class="p">)</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">resize</span><span class="p">([</span><span class="nb">max</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">)],</span>
+                               <span class="n">Image</span><span class="o">.</span><span class="n">BILINEAR</span><span class="p">)</span>  <span class="c1"># make it square</span>
+            <span class="k">except</span> <span class="ne">IOError</span> <span class="k">as</span> <span class="n">details</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;couldn&#39;t load mask...</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">&quot;</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">msg</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">details</span><span class="p">))</span>
+                <span class="k">return</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>  <span class="c1"># force to intensity (in case it was rgb)</span>
+            <span class="n">intensity</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">intensity</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>  <span class="c1"># serialise</span>
+
+        <span class="c1"># do the openGL binding</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">interpolate</span><span class="p">:</span>
+            <span class="n">smoothing</span> <span class="o">=</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_LINEAR</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">smoothing</span> <span class="o">=</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_NEAREST</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maskID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexImage1D</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_ALPHA</span><span class="p">,</span>
+                        <span class="n">res</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_ALPHA</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_UNSIGNED_BYTE</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>
+        <span class="c1"># makes the texture map wrap (this is actually default anyway)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_WRAP_S</span><span class="p">,</span>
+                           <span class="n">GL</span><span class="o">.</span><span class="n">GL_CLAMP_TO_EDGE</span><span class="p">)</span>
+        <span class="c1"># linear smoothing if texture is stretched</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_MAG_FILTER</span><span class="p">,</span>
+                           <span class="n">smoothing</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexParameteri</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_MIN_FILTER</span><span class="p">,</span>
+                           <span class="n">smoothing</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexEnvi</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_ENV</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_ENV_MODE</span><span class="p">,</span>
+                     <span class="n">GL</span><span class="o">.</span><span class="n">GL_MODULATE</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="RadialStim.setMask">
+<a class="viewcode-back" href="../../../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setMask">[docs]</a>
+    <span class="k">def</span> <span class="nf">setMask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Usually you can use &#39;stim.attribute = value&#39; syntax instead,</span>
+<span class="sd">        but use this method if you need to suppress the log message</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">setAttribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;mask&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_setRadialAtribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal helper function to reduce redundancy</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>  <span class="c1"># avoid recursing the attributeSetter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateTextureCoords</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">angularCycles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Float (but Int is prettiest). Set the number of cycles going</span>
+<span class="sd">        around the stimulus. i.e. it controls the number of &#39;spokes&#39;.</span>
+
+<span class="sd">        :ref:`Operations &lt;attrib-operations&gt;` supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setRadialAtribute</span><span class="p">(</span><span class="s1">&#39;angularCycles&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RadialStim.setAngularCycles">
+<a class="viewcode-back" href="../../../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAngularCycles">[docs]</a>
+    <span class="k">def</span> <span class="nf">setAngularCycles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Usually you can use &#39;stim.attribute = value&#39; syntax instead,</span>
+<span class="sd">        but use this method if you need to suppress the log message</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">setAttribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;angularCycles&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span>
+                     <span class="n">operation</span><span class="p">)</span>  <span class="c1"># calls the attributeSetter</span></div>
+
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">radialCycles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Float (but Int is prettiest). Set the number of texture cycles</span>
+<span class="sd">        from centre to periphery, i.e. it controls the number of &#39;rings&#39;.</span>
+
+<span class="sd">        :ref:`Operations &lt;attrib-operations&gt;` supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setRadialAtribute</span><span class="p">(</span><span class="s1">&#39;radialCycles&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RadialStim.setRadialCycles">
+<a class="viewcode-back" href="../../../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setRadialCycles">[docs]</a>
+    <span class="k">def</span> <span class="nf">setRadialCycles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Usually you can use &#39;stim.attribute = value&#39; syntax instead,</span>
+<span class="sd">        but use this method if you need to suppress the log message</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">setAttribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;radialCycles&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span>
+                     <span class="n">operation</span><span class="p">)</span>  <span class="c1"># calls the attributeSetter</span></div>
+
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">angularPhase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Float. Set the angular phase (like orientation) of the texture</span>
+<span class="sd">        (wraps 0-1).</span>
+
+<span class="sd">        This is akin to setting the orientation of the texture around the</span>
+<span class="sd">        stimulus in radians. If possible, it is more efficient to rotate the</span>
+<span class="sd">        stimulus using its `ori` setting instead.</span>
+
+<span class="sd">        :ref:`Operations &lt;attrib-operations&gt;` supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setRadialAtribute</span><span class="p">(</span><span class="s1">&#39;angularPhase&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RadialStim.setAngularPhase">
+<a class="viewcode-back" href="../../../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAngularPhase">[docs]</a>
+    <span class="k">def</span> <span class="nf">setAngularPhase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Usually you can use &#39;stim.attribute = value&#39; syntax instead,</span>
+<span class="sd">        but use this method if you need to suppress the log message</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">setAttribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;angularPhase&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span>
+                     <span class="n">operation</span><span class="p">)</span>  <span class="c1"># calls the attributeSetter</span></div>
+
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">radialPhase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Float. Set the radial phase of the texture (wraps 0-1). This is the</span>
+<span class="sd">        phase of the texture from the centre to the perimeter of the stimulus</span>
+<span class="sd">        (in radians). Can be used to drift concentric rings out/inwards.</span>
+
+<span class="sd">        :ref:`Operations &lt;attrib-operations&gt;` supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setRadialAtribute</span><span class="p">(</span><span class="s1">&#39;radialPhase&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RadialStim.setRadialPhase">
+<a class="viewcode-back" href="../../../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setRadialPhase">[docs]</a>
+    <span class="k">def</span> <span class="nf">setRadialPhase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Usually you can use &#39;stim.attribute = value&#39; syntax instead,</span>
+<span class="sd">        but use this method if you need to suppress the log message</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">setAttribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;radialPhase&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span>
+                     <span class="n">operation</span><span class="p">)</span>  <span class="c1"># calls the attributeSetter</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_updateEverything</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Internal helper function for angularRes and visibleWedge (and init)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_triangleWidth</span> <span class="o">=</span> <span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">angularRes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pi</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_triangleWidth</span><span class="p">,</span>
+                                    <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+        <span class="c1"># which vertices are visible?</span>
+        <span class="c1"># first edge of wedge:</span>
+        <span class="n">visW</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">visibleWedge</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_visible</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">&gt;=</span> <span class="n">visW</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">)</span>
+        <span class="c1"># second edge of wedge:</span>
+        <span class="n">edge2</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_triangleWidth</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">visW</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_visible</span><span class="p">[</span><span class="n">edge2</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nVisible</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_visible</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateTextureCoords</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateMaskCoords</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateVerticesBase</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateVertices</span><span class="p">()</span>  <span class="c1"># is this necessary? Works fine without...</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">angularRes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The number of triangles used to make the sti.</span>
+
+<span class="sd">         :ref:`Operations &lt;attrib-operations&gt;` supported.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;angularRes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateEverything</span><span class="p">()</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">visibleWedge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;tuple (start, end) in degrees. Determines visible range.</span>
+
+<span class="sd">        (0, 360) is full visibility.</span>
+
+<span class="sd">        :ref:`Operations &lt;attrib-operations&gt;` supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;visibleWedge&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_updateEverything</span><span class="p">()</span>
+
+<div class="viewcode-block" id="RadialStim.draw">
+<a class="viewcode-back" href="../../../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.draw">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Draw the stimulus in its relevant window. You must call</span>
+<span class="sd">        this method after every `win.flip()` if you want the</span>
+<span class="sd">        stimulus to appear on that frame and then update the screen</span>
+<span class="sd">        again.</span>
+
+<span class="sd">        If `win` is specified then override the normal window of this</span>
+<span class="sd">        stimulus.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">win</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">win</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selectWindow</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+
+        <span class="c1"># do scaling</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glPushMatrix</span><span class="p">()</span>  <span class="c1"># push before the list, pop after</span>
+        <span class="c1"># scale the viewport to the appropriate size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">setScale</span><span class="p">(</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+        <span class="c1"># setup color</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glColor4f</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_foreColor</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;rgba1&#39;</span><span class="p">))</span>
+
+        <span class="c1"># assign vertex array</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glVertexPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_DOUBLE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verticesPix</span><span class="o">.</span><span class="n">ctypes</span><span class="p">)</span>
+
+        <span class="c1"># then bind main texture</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="c1"># and mask</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maskID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">)</span>
+
+        <span class="c1"># setup the shaderprogram</span>
+        <span class="n">prog</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">_progSignedTexMask1D</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="n">prog</span><span class="p">)</span>
+        <span class="c1"># set the texture to be texture unit 0</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;texture&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># mask is texture unit 1</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span><span class="n">prog</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;mask&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># set pointers to visible textures</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glClientActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexCoordPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_DOUBLE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">_visibleTexture</span><span class="o">.</span><span class="n">ctypes</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_COORD_ARRAY</span><span class="p">)</span>
+
+        <span class="c1"># mask</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glClientActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexCoordPointer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_DOUBLE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">_visibleMask</span><span class="o">.</span><span class="n">ctypes</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_COORD_ARRAY</span><span class="p">)</span>
+
+        <span class="c1"># do the drawing</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_VERTEX_ARRAY</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nVisible</span><span class="p">)</span>
+
+        <span class="c1"># unbind the textures</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glClientActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># main texture</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glClientActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="c1"># disable set states</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_VERTEX_ARRAY</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_COORD_ARRAY</span><span class="p">)</span>
+
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># return the view to previous state</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glPopMatrix</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_updateVerticesBase</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the base vertices if angular resolution changes.</span>
+
+<span class="sd">        These will be multiplied by the size and rotation matrix before</span>
+<span class="sd">        rendering.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># triangles = [trisX100, verticesX3, xyX2]</span>
+        <span class="n">vertsBase</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">angularRes</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="c1"># x position of 1st outer vertex</span>
+        <span class="n">vertsBase</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span><span class="p">)</span>
+        <span class="c1"># y position of 1st outer vertex</span>
+        <span class="n">vertsBase</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span><span class="p">)</span>
+        <span class="c1"># x position of 2nd outer vertex</span>
+        <span class="n">vertsBase</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_triangleWidth</span><span class="p">)</span>
+        <span class="c1"># y position of 2nd outer vertex</span>
+        <span class="n">vertsBase</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_triangleWidth</span><span class="p">)</span>
+        <span class="n">vertsBase</span> <span class="o">/=</span> <span class="mf">2.0</span>  <span class="c1"># size should be 1.0, so radius should be 0.5</span>
+        <span class="n">vertsBase</span> <span class="o">=</span> <span class="n">vertsBase</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_visible</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_verticesBase</span> <span class="o">=</span> <span class="n">vertsBase</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nVisible</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_verticesBase</span>
+
+    <span class="k">def</span> <span class="nf">_updateTextureCoords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;calculate texture coordinates if angularCycles or Phase change</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pi2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">angularRes</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="c1"># x position of inner vertex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_triangleWidth</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">angularCycles</span> <span class="o">/</span> <span class="n">pi2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">angularPhase</span><span class="p">)</span>
+        <span class="c1"># y position of inner vertex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.25</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radialPhase</span>
+
+        <span class="c1"># x position of 1st outer vertex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">angularCycles</span> <span class="o">/</span> <span class="n">pi2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">angularPhase</span><span class="p">)</span>
+        <span class="c1"># y position of 1st outer vertex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">0.25</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radialCycles</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radialPhase</span><span class="p">)</span>
+
+        <span class="c1"># x position of 2nd outer vertex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_angles</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_triangleWidth</span><span class="p">)</span> <span class="o">*</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">angularCycles</span> <span class="o">/</span> <span class="n">pi2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">angularPhase</span><span class="p">)</span>
+        <span class="c1"># y position of 2nd outer vertex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">0.25</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radialCycles</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radialPhase</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_visibleTexture</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_textureCoords</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_visible</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_nVisible</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_updateMaskCoords</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;calculate mask coords</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_maskCoords</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">angularRes</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">maskRadialPhase</span>
+        <span class="c1"># all outer points have mask value of 1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_maskCoords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">maskRadialPhase</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_visibleMask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maskCoords</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_visible</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="k">def</span> <span class="nf">_updateListShaders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The user shouldn&#39;t need this method since it gets called</span>
+<span class="sd">        after every call to .set() Basically it updates the OpenGL</span>
+<span class="sd">        representation of your stimulus if some parameter of the</span>
+<span class="sd">        stimulus changes. Call it if you change a property manually</span>
+<span class="sd">        rather than using the .set() command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glNewList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_listID</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_COMPILE</span><span class="p">)</span>
+
+        <span class="c1"># assign vertex array</span>
+        <span class="n">arrPointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">verticesPix</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data_as</span><span class="p">(</span>
+            <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_float</span><span class="p">))</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glVertexPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arrPointer</span><span class="p">)</span>
+
+        <span class="c1"># setup the shaderprogram</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">_progSignedTexMask1D</span><span class="p">)</span>
+        <span class="c1"># set the texture to be texture unit 0</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">_progSignedTexMask1D</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;texture&quot;</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">win</span><span class="o">.</span><span class="n">_progSignedTexMask1D</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;mask&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># mask is texture unit 1</span>
+
+        <span class="c1"># set pointers to visible textures</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glClientActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+        <span class="n">arrPointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_visibleTexture</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data_as</span><span class="p">(</span>
+            <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_float</span><span class="p">))</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexCoordPointer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arrPointer</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_COORD_ARRAY</span><span class="p">)</span>
+        <span class="c1"># then bind main texture</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+
+        <span class="c1"># mask</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glClientActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">)</span>
+        <span class="n">arrPointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_visibleMask</span><span class="o">.</span><span class="n">ctypes</span><span class="o">.</span><span class="n">data_as</span><span class="p">(</span>
+            <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_float</span><span class="p">))</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glTexCoordPointer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_FLOAT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arrPointer</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_COORD_ARRAY</span><span class="p">)</span>
+        <span class="c1"># and mask</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maskID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_1D</span><span class="p">)</span>
+
+        <span class="c1"># do the drawing</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_VERTEX_ARRAY</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDrawArrays</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TRIANGLES</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nVisible</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="c1"># disable set states</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_VERTEX_ARRAY</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisableClientState</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_COORD_ARRAY</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># setup the shaderprogram</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEndList</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove textures from graphics card to prevent crash</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clearTextures</span><span class="p">()</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">ModuleNotFoundError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+            <span class="k">pass</span>  <span class="c1"># has probably been garbage-collected already</span></div>
+
+</pre></div>
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Noise Stim &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Radial Stim" href="../RadialStim/" />
+    <link rel="prev" title="Envelope Grating" href="../EnvelopeGrating/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../../">
+        <img src="../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../../">
+        <img src="../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/EnvGratingComponent/">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../EnvelopeGrating/">Envelope Grating</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Noise Stim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RadialStim/">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <section id="noise-stim">
+<h1>Noise Stim<a class="headerlink" href="#noise-stim" title="Link to this heading">¶</a></h1>
+<p>To import NoiseStim, you can either use:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">psychopy_visionscience.noise</span> <span class="pre">import</span> <span class="pre">NoiseStim</span>
+<span class="pre">`</span></code>
+or, any time after <cite>psychopy.plugins.activatePlugins</cite> has been called:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">psychopy.visual</span> <span class="pre">import</span> <span class="pre">NoiseStim</span>
+<span class="pre">`</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psychopy_visionscience.noise.</span></span><span class="sig-name descname"><span class="pre">NoiseStim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseElementSize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseBaseSf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseBW</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseBWO</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseOri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseFractalPower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseFilterUpper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseFilterLower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseFilterOrder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseClip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noiseImage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imageComponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texRes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dkl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,</span> <span class="pre">1.0,</span> <span class="pre">1.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgbPedestal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blendmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'avg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autoLog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autoDraw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maskParams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim" title="Link to this definition">¶</a></dt>
+<dd><p>A stimulus with 2 textures: a random noise sample and a mask</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">noise1</span> <span class="o">=</span> <span class="n">noise</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">NoiseStim</span><span class="p">(</span>
+                <span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;noise&#39;</span><span class="p">,</span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">,</span>
+                <span class="n">noiseImage</span><span class="o">=</span><span class="s1">&#39;testImg.jpg&#39;</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="s1">&#39;circle&#39;</span><span class="p">,</span>
+                <span class="n">ori</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">),</span> <span class="n">sf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">colorSpace</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">blendmode</span><span class="o">=</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="n">contrast</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                <span class="n">texRes</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="n">imageComponent</span><span class="o">=</span><span class="s1">&#39;Phase&#39;</span>
+                <span class="n">noiseType</span><span class="o">=</span><span class="s1">&#39;Gabor&#39;</span><span class="p">,</span> <span class="n">noiseElementSize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">noiseBaseSf</span><span class="o">=</span><span class="mf">32.0</span><span class="o">/</span><span class="mi">512</span><span class="p">,</span>
+                <span class="n">noiseBW</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">noiseBWO</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">noiseFractalPower</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">noiseFilterLower</span><span class="o">=</span><span class="mi">3</span><span class="o">/</span><span class="mi">512</span><span class="p">,</span> <span class="n">noiseFilterUpper</span><span class="o">=</span><span class="mf">8.0</span><span class="o">/</span><span class="mf">512.0</span><span class="p">,</span>
+                <span class="n">noiseFilterOrder</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">noiseClip</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">depth</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="c1"># gives a circular patch of noise made up of scattered Gabor elements with peak frequency = 32.0/512 cycles per pixel,</span>
+<span class="c1"># orientation = 0 , frequency bandwidth = 1 octave and orientation bandwidth 30 degrees</span>
+</pre></div>
+</div>
+<p><strong>Types of noise available</strong></p>
+<ul>
+<li><p>Binary, Normal, Uniform - pixel based noise samples drawn from a binary (blank and white), normal or uniform distribution respectively. Binary noise is always exactly zero mean, Normal and Uniform are approximately so.
+Parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>noiseElementSize - (can be a tuple) defines the size of the noise elements in the components units.</p></li>
+<li><p>noiseClip the values in normally distributed noise are divided by noiseClip to limit excessively high or low values.
+However, values can still go out of range -1 to 1 whih will throw a soft error message high values of noiseClip are recommended if using ‘Normal’</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Gabor</strong>, <strong>Isotropic</strong>: Effectively a dense scattering of Gabor elements with random amplitude and fixed orientation
+for Gabor or random orientation for Isotropic noise. In practice the desired amplitude spectrum for the noise is
+built in Fourier space with a random phase spectrum. DC term is set to zero - ie zero mean.
+Parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>noiseBaseSf - centre spatial frequency in the component units.</p></li>
+<li><p>noiseBW - spatial frequency bandwidth full width half height in octaves.</p></li>
+<li><p>ori - center orientation for Gabor noise (works as for gratingStim so twists the final image at render time).</p></li>
+<li><p>noiseBWO - orientation bandwidth for Gabor noise full width half height in degrees.</p></li>
+<li><p>noiseOri - alternative center orientation for Gabor which sets the orientation during the image build rather
+than at render time. Useful for setting the orientation of a filter to be applied to some other noise type
+with a different base orientation.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Filtered</strong> - A white noise sample that has been filtered with a low, high or bandpass Butterworth filter. The
+initial sample can have its spectrum skewed towards low or high frequencies. The contrast of the noise falls
+by half its maximum (3dB) at the cutoff frequencies.
+Parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>noiseFilterUpper - upper cutoff frequency - if greater than texRes/2 cycles per image low pass filter used.</p></li>
+<li><p>noiseFilterLower - Lower cutoff frequency - if zero low pass filter used.</p></li>
+<li><p>noiseFilterOrder - The order of the filter controls the steepness of the falloff outside the passband is
+zero no filter is applied.</p></li>
+<li><p>noiseFractalPower - spectrum = f^noiseFractalPower  - determines the spatial frequency bias of the initial
+noise sample. 0 = flat spectrum, negative = low frequency bias, positive = high frequency bias, -1 = fractal
+or brownian noise.</p></li>
+<li><p>noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that
+requested by contrast parameter while keeping pixel values in range -1, 1.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>White</strong> - A short cut to obtain noise with a flat, unfiltered spectrum. In practice the desired amplitude spectrum
+is built in the Fourier Domain with a random phase spectrum. DC term is set to zero - ie zero mean
+Note despite name the noise contains all grey levels.
+Parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that
+requested by contrast parameter while keeping pixel values in range -1, 1.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Image</strong>: A noise sample whose spatial frequency spectrum is taken from the supplied image. In practice the
+desired amplitude spectrum is taken from the image and paired with a random phase spectrum. DC term is set to
+zero - ie zero mean.
+Parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>noiseImage name of ndarray or image file from which to take spectrum - should be same size as largest side
+requested for component if units is pix or texRes x texRes otherwise</p></li>
+<li><p>imageComponent: ‘Phase’ randomizes the phase spectrum leaving the amplitude spectrum untouched. ‘Amplitude’
+randomizes the amplitude spectrum leaving the phase spectrum untouched - retains spatial structure of image.
+‘Neither’ keeps the image as is - but you can now apply a spatial filter to the image.</p></li>
+<li><p>noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that
+requested by contrast parameter while keeping pixel values in range -1, 1.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Filter parameter</strong></p>
+<ul class="simple">
+<li><p>Butterworth: a spectral filter defined by the filtered noise parameters will be applied to the other noise types.</p></li>
+<li><p>Gabor: a spectral filter defined by the Gabor noise parameters will be applied to the other noise types.</p></li>
+<li><p>Isotropic: then a spectral filter defined by the Isotropic noise parameters will be applied to the other noise
+types.</p></li>
+</ul>
+<p><strong>Updating noise samples and timing</strong></p>
+<p>The noise is rebuilt at next call of the draw function whenever a parameter starting ‘noise’ is notionally changed
+even if the value does not actually change every time. eg. setting a parameter to update every frame will cause a
+new noise sample on every frame but see below.
+A rebuild can also be forced at any time using the buildNoise() function.
+The updateNoise() function can be used at any time to produce a new random saple of noise without doing a full
+build. ie it is quicker than a full build.
+Both buildNoise and updateNoise can be slow for large samples.
+Samples of Binary, Normal or Uniform noise can usually be made at frame rate using noiseUpdate.
+Updating or building other noise types at frame rate may result in dropped frames.
+An alternative is to build a large sample of noise at the start of the routien and place it off the screen then
+cut a samples out of this at random locations and feed that as a numpy array into the texture of a visible
+gratingStim.</p>
+<p><strong>Notes on size</strong>
+If units = pix and noiseType = Binary, Normal or Uniform will make noise sample of requested size.
+If units = pix and noiseType is Gabor, Isotropic, Filtered, White, Coloured or Image will make square noise sample with side length equal that of the largest dimetions requested.
+if units is not pix will make square noise sample with side length equal to texRes then rescale to present.</p>
+<p><strong>Notes on interpolation</strong>
+For pixel based noise interpolation = nearest is usually best.
+For other noise types linear is better if the size of the noise sample does not match the final size of the image well.</p>
+<p><strong>Notes on frequency</strong>
+Frequencies for cutoffs etc are converted between units for you but can be counter intuitive. 1/size is always 1 cycle per image.
+For the sf (final spatial frequency) parameter itself 1/size (or None for units pix) will faithfully represent the image without further scaling.</p>
+<p>Filter cuttoff and Gabor/Isotropic base frequencies should not be too high you should aim to keep them below 0.5 c/pixel on the screen.
+The function will produce an error when it can’t draw the stimulus in the buffer but it may still be wrong when displayed.</p>
+<p><strong>Notes on orientation and phase</strong>
+The ori parameter twists the final image so the samples in noiseType Binary, Normal or Uniform will no longer be aligned to the sides of the monitor if ori is not a multiple of 90.
+Most other noise types look broadly the same for all values of ori but the specific sample shown can be made to rotate by changing ori.
+The dominant orientation for Gabor noise is determined by ori at render time, not before.</p>
+<p>The phase parameter similarly shifts the sample around within the display window at render time and will not choose new random phases for the noise sample.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.RGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RGB</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.RGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the foreground color of a stimulus in RGB, instead use <cite>obj._foreColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.anchor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anchor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.anchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.autoDraw">
+<span class="sig-name descname"><span class="pre">autoDraw</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.autoDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Determines whether the stimulus should be automatically drawn
+on every frame flip.</p>
+<p>Value should be: <cite>True</cite> or <cite>False</cite>. You do NOT need to set this
+on every frame flip!</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.autoLog">
+<span class="sig-name descname"><span class="pre">autoLog</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.autoLog" title="Link to this definition">¶</a></dt>
+<dd><p>Whether every change in this stimulus should be auto logged.</p>
+<p>Value should be: <cite>True</cite> or <cite>False</cite>. Set to <cite>False</cite> if your stimulus is
+updating frequently (e.g. updating its position every frame) and you
+want to avoid swamping the log file with messages that aren’t likely to
+be useful.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.backColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backColor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.backColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting fillColor</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.backColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.backColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.backRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backRGB</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.backRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the fill color of a stimulus in RGB, instead use <cite>obj._fillColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.backgroundColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backgroundColor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.backgroundColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting fillColor</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.blendmode">
+<span class="sig-name descname"><span class="pre">blendmode</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.blendmode" title="Link to this definition">¶</a></dt>
+<dd><p>The OpenGL mode in which the stimulus is draw</p>
+<p>Can the ‘avg’ or ‘add’. Average (avg) places the new stimulus over the
+old one with a transparency given by its opacity. Opaque stimuli will
+hide other stimuli transparent stimuli won’t. Add performs the
+arithmetic sum of the new stimulus and the ones already present.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.borderColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderColor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.borderColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.borderColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.borderColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.borderRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderRGB</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.borderRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the border color of a stimulus in RGB, instead use <cite>obj._borderColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.borderWidth">
+<span class="sig-name descname"><span class="pre">borderWidth</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.borderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.buildNoise">
+<span class="sig-name descname"><span class="pre">buildNoise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.buildNoise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.buildNoise" title="Link to this definition">¶</a></dt>
+<dd><p>build a new noise sample. Required to act on changes to any noise parameters or texRes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.clearTextures">
+<span class="sig-name descname"><span class="pre">clearTextures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.clearTextures" title="Link to this definition">¶</a></dt>
+<dd><p>Clear all textures associated with the stimulus.</p>
+<p>As of v1.61.00 this is called automatically during garbage collection
+of your stimulus, so doesn’t need calling explicitly by the user.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.color">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.color" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>foreColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.colorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">colorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.colorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the color space currently being used</p>
+<p>Value should be: a string or None</p>
+<p>For strings and hex values this is not needed.
+If None the default colorSpace for the stimulus is
+used (defined during initialisation).</p>
+<p>Please note that changing colorSpace does not change stimulus
+parameters. Thus you usually want to specify colorSpace before
+setting the color. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A light green text</span>
+<span class="n">stim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="s1">&#39;Color me!&#39;</span><span class="p">,</span>
+                       <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colorSpace</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">)</span>
+
+<span class="c1"># An almost-black text</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">colorSpace</span> <span class="o">=</span> <span class="s1">&#39;rgb255&#39;</span>
+
+<span class="c1"># Make it light green again</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.contains" title="Link to this definition">¶</a></dt>
+<dd><p>Returns True if a point x,y is inside the stimulus’ border.</p>
+<dl class="simple">
+<dt>Can accept variety of input options:</dt><dd><ul class="simple">
+<li><p>two separate args, x and y</p></li>
+<li><p>one arg (list, tuple or array) containing two vals (x,y)</p></li>
+<li><dl class="simple">
+<dt>an object with a getPos() method that returns x,y, such</dt><dd><p>as a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mouse</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Returns <cite>True</cite> if the point is within the area defined either by its
+<cite>border</cite> attribute (if one defined), or its <cite>vertices</cite> attribute if
+there is no .border. This method handles
+complex shapes, including concavities and self-crossings.</p>
+<p>Note that, if your stimulus uses a mask (such as a Gaussian) then
+this is not accounted for by the <cite>contains</cite> method; the extent of the
+stimulus is determined purely by the size, position (pos), and
+orientation (ori) settings (and by the vertices for shape stimuli).</p>
+<p>See Coder demos: shapeContains.py
+See Coder demos: shapeContains.py</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.contrast">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">contrast</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.contrast" title="Link to this definition">¶</a></dt>
+<dd><p>A value that is simply multiplied by the color.</p>
+<dl class="simple">
+<dt>Value should be: a float between -1 (negative) and 1 (unchanged).</dt><dd><p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd>
+</dl>
+<p>Set the contrast of the stimulus, i.e. scales how far the stimulus
+deviates from the middle grey. You can also use the stimulus
+<cite>opacity</cite> to control contrast, but that cannot be negative.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">1.0</span>  <span class="c1"># unchanged contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">0.5</span>  <span class="c1"># decrease contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">0.0</span>  <span class="c1"># uniform, no contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>  <span class="c1"># slightly inverted</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>  <span class="c1"># totally inverted</span>
+</pre></div>
+</div>
+<p>Setting contrast outside range -1 to 1 is permitted, but may
+produce strange results if color values exceeds the monitor limits.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">1.2</span>  <span class="c1"># increases contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.2</span>  <span class="c1"># inverts with increased contrast</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.depth">
+<span class="sig-name descname"><span class="pre">depth</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.depth" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED, depth is now controlled simply by drawing order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.doDragging">
+<span class="sig-name descname"><span class="pre">doDragging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.doDragging" title="Link to this definition">¶</a></dt>
+<dd><p>If this stimulus is draggable, do the necessary actions on a frame
+flip to drag it.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.draggable">
+<span class="sig-name descname"><span class="pre">draggable</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.draggable" title="Link to this definition">¶</a></dt>
+<dd><p>Can this stimulus be dragged by a mouse click?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.draw" title="Link to this definition">¶</a></dt>
+<dd><p>Draw the stimulus in its relevant window. You must call
+this method after every MyWin.flip() if you want the
+stimulus to appear on that frame and then update the screen
+again.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.fillColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillColor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.fillColor" title="Link to this definition">¶</a></dt>
+<dd><p>Set the fill color for the shape.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.fillColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.fillColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.fillRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillRGB</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.fillRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the fill color of a stimulus in RGB, instead use <cite>obj._fillColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.filter">
+<span class="sig-name descname"><span class="pre">filter</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.filter" title="Link to this definition">¶</a></dt>
+<dd><p>If True apply spatial frequency filter to noise.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.flip">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flip</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.flip" title="Link to this definition">¶</a></dt>
+<dd><p>1x2 array for flipping vertices along each axis; set as True to flip or False to not flip. If set as a single value, will duplicate across both axes. Accessing the protected attribute (<cite>._flip</cite>) will give an array of 1s and -1s with which to multiply vertices.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.flipHoriz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flipHoriz</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.flipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.flipVert">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flipVert</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.flipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.fontColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fontColor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.fontColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>foreColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.foreColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreColor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.foreColor" title="Link to this definition">¶</a></dt>
+<dd><p>Foreground color of the stimulus</p>
+<dl class="simple">
+<dt>Value should be one of:</dt><dd><ul class="simple">
+<li><p>string: to specify a <span class="xref std std-ref">colorNames</span>. Any of the standard
+html/X11 <cite>color names
+&lt;http://www.w3schools.com/html/html_colornames.asp&gt;</cite>
+can be used.</p></li>
+<li><p><span class="xref std std-ref">hexColors</span></p></li>
+<li><dl class="simple">
+<dt>numerically: (scalar or triplet) for DKL, RGB or</dt><dd><p>other <span class="xref std std-ref">colorspaces</span>. For
+these, <span class="xref std std-ref">operations</span> are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>When color is specified using numbers, it is interpreted with
+respect to the stimulus’ current colorSpace. If color is given as a
+single value (scalar) then this will be applied to all 3 channels.</p>
+<p class="rubric">Examples</p>
+<p>For whatever stim you have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;RoyalBlue&#39;</span>  <span class="c1"># (the case is actually ignored)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#DDA0DD&#39;</span>  <span class="c1"># DDA0DD is hexadecimal for plum</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;rgb&#39;:</span>
+                <span class="c1"># a red color in rgb space</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;dkl&#39;:</span>
+                <span class="c1"># DKL space with elev=0, azimuth=45</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;rgb255&#39;:</span>
+                <span class="c1"># a blue stimulus using rgb255 space</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="mi">255</span>  <span class="c1"># interpreted as (255, 255, 255)</span>
+                  <span class="c1"># which is white in rgb255.</span>
+</pre></div>
+</div>
+<p><span class="xref std std-ref">Operations</span> work as normal for all numeric
+colorSpaces (e.g. ‘rgb’, ‘hsv’ and ‘rgb255’) but not for strings, like
+named and hex. For example, assuming that colorSpace=’rgb’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># increment all guns by 1 value</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># multiply the color by -1 (which in this</span>
+                    <span class="c1"># space inverts the contrast)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">*=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># decrease red, remove green, keep blue</span>
+</pre></div>
+</div>
+<p>You can use <cite>setColor</cite> if you want to set color and colorSpace in one
+line. These two are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">setColor</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;rgb255&#39;</span><span class="p">)</span>
+<span class="c1"># ... is equivalent to</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">colorSpace</span> <span class="o">=</span> <span class="s1">&#39;rgb255&#39;</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.foreColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.foreColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.foreRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreRGB</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.foreRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the foreground color of a stimulus in RGB, instead use <cite>obj._foreColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getAnchor">
+<span class="sig-name descname"><span class="pre">getAnchor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getAnchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getAutoDraw">
+<span class="sig-name descname"><span class="pre">getAutoDraw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getAutoDraw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getAutoLog">
+<span class="sig-name descname"><span class="pre">getAutoLog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getAutoLog" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBackColor">
+<span class="sig-name descname"><span class="pre">getBackColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBackColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBackColorSpace">
+<span class="sig-name descname"><span class="pre">getBackColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBackColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBackRGB">
+<span class="sig-name descname"><span class="pre">getBackRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBackRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBackgroundColor">
+<span class="sig-name descname"><span class="pre">getBackgroundColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBackgroundColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBlendmode">
+<span class="sig-name descname"><span class="pre">getBlendmode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBlendmode" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBorderColor">
+<span class="sig-name descname"><span class="pre">getBorderColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBorderColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBorderColorSpace">
+<span class="sig-name descname"><span class="pre">getBorderColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBorderColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBorderRGB">
+<span class="sig-name descname"><span class="pre">getBorderRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBorderRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getBorderWidth">
+<span class="sig-name descname"><span class="pre">getBorderWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getBorderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getColor">
+<span class="sig-name descname"><span class="pre">getColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getColorSpace">
+<span class="sig-name descname"><span class="pre">getColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getContrast">
+<span class="sig-name descname"><span class="pre">getContrast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getContrast" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getDepth">
+<span class="sig-name descname"><span class="pre">getDepth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getDepth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getDraggable">
+<span class="sig-name descname"><span class="pre">getDraggable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getDraggable" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFillColor">
+<span class="sig-name descname"><span class="pre">getFillColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFillColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFillColorSpace">
+<span class="sig-name descname"><span class="pre">getFillColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFillColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFillRGB">
+<span class="sig-name descname"><span class="pre">getFillRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFillRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFilter">
+<span class="sig-name descname"><span class="pre">getFilter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFilter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFlip">
+<span class="sig-name descname"><span class="pre">getFlip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFlip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFlipHoriz">
+<span class="sig-name descname"><span class="pre">getFlipHoriz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFlipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFlipVert">
+<span class="sig-name descname"><span class="pre">getFlipVert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFlipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getFontColor">
+<span class="sig-name descname"><span class="pre">getFontColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getFontColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getForeColor">
+<span class="sig-name descname"><span class="pre">getForeColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getForeColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getForeColorSpace">
+<span class="sig-name descname"><span class="pre">getForeColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getForeColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getForeRGB">
+<span class="sig-name descname"><span class="pre">getForeRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getForeRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getHeight">
+<span class="sig-name descname"><span class="pre">getHeight</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getHeight" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getImageCompoment">
+<span class="sig-name descname"><span class="pre">getImageCompoment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getImageCompoment" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getInterpolate">
+<span class="sig-name descname"><span class="pre">getInterpolate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getInterpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getLineColor">
+<span class="sig-name descname"><span class="pre">getLineColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getLineColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getLineColorSpace">
+<span class="sig-name descname"><span class="pre">getLineColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getLineColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getLineRGB">
+<span class="sig-name descname"><span class="pre">getLineRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getLineRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getLineWidth">
+<span class="sig-name descname"><span class="pre">getLineWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getLineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getMask">
+<span class="sig-name descname"><span class="pre">getMask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getMask" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getMaskParams">
+<span class="sig-name descname"><span class="pre">getMaskParams</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getMaskParams" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseBW">
+<span class="sig-name descname"><span class="pre">getNoiseBW</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseBW" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseBWO">
+<span class="sig-name descname"><span class="pre">getNoiseBWO</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseBWO" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseBaseSf">
+<span class="sig-name descname"><span class="pre">getNoiseBaseSf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseBaseSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseClip">
+<span class="sig-name descname"><span class="pre">getNoiseClip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseClip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseElementSize">
+<span class="sig-name descname"><span class="pre">getNoiseElementSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseElementSize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseFilterLower">
+<span class="sig-name descname"><span class="pre">getNoiseFilterLower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseFilterLower" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseFilterOrder">
+<span class="sig-name descname"><span class="pre">getNoiseFilterOrder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseFilterOrder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseFilterUpper">
+<span class="sig-name descname"><span class="pre">getNoiseFilterUpper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseFilterUpper" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseFractalPower">
+<span class="sig-name descname"><span class="pre">getNoiseFractalPower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseFractalPower" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseImage">
+<span class="sig-name descname"><span class="pre">getNoiseImage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseImage" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getNoiseType">
+<span class="sig-name descname"><span class="pre">getNoiseType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getNoiseType" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getOpacity">
+<span class="sig-name descname"><span class="pre">getOpacity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getOpacity" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getOri">
+<span class="sig-name descname"><span class="pre">getOri</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getOri" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getPhase">
+<span class="sig-name descname"><span class="pre">getPhase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getPhase" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getPos">
+<span class="sig-name descname"><span class="pre">getPos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getPos" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getRGB">
+<span class="sig-name descname"><span class="pre">getRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getSf">
+<span class="sig-name descname"><span class="pre">getSf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getSize">
+<span class="sig-name descname"><span class="pre">getSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getSize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getTex">
+<span class="sig-name descname"><span class="pre">getTex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getTex" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getTexRes">
+<span class="sig-name descname"><span class="pre">getTexRes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getTexRes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getUnits">
+<span class="sig-name descname"><span class="pre">getUnits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getUnits" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getVertices">
+<span class="sig-name descname"><span class="pre">getVertices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getVertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getVerticesPix">
+<span class="sig-name descname"><span class="pre">getVerticesPix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getVerticesPix" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getWidth">
+<span class="sig-name descname"><span class="pre">getWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.getWin">
+<span class="sig-name descname"><span class="pre">getWin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.getWin" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.get_borderPix">
+<span class="sig-name descname"><span class="pre">get_borderPix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.get_borderPix" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.height">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.height" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.imageCompoment">
+<span class="sig-name descname"><span class="pre">imageCompoment</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.imageCompoment" title="Link to this definition">¶</a></dt>
+<dd><p>Which component of an image to randomise, amplitude or phase.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.interpolate" title="Link to this definition">¶</a></dt>
+<dd><p>Whether to interpolate (linearly) the texture in the stimulus.</p>
+<p>If set to False then nearest neighbour will be used when needed,
+otherwise some form of interpolation will be used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.isDragging">
+<span class="sig-name descname"><span class="pre">isDragging</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.isDragging" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.lineColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineColor</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.lineColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>borderColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.lineColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.lineColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.lineRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineRGB</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.lineRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the border color of a stimulus in RGB, instead use <cite>obj._borderColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.lineWidth">
+<span class="sig-name descname"><span class="pre">lineWidth</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.lineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.mask">
+<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.mask" title="Link to this definition">¶</a></dt>
+<dd><p>The alpha mask (forming the shape of the image).</p>
+<dl class="simple">
+<dt>This can be one of various options:</dt><dd><ul class="simple">
+<li><p>‘circle’, ‘gauss’, ‘raisedCos’, ‘cross’</p></li>
+<li><p><strong>None</strong> (resets to default)</p></li>
+<li><p>the name of an image file (most formats supported)</p></li>
+<li><p>a numpy array (1xN or NxN) ranging -1:1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.maskParams">
+<span class="sig-name descname"><span class="pre">maskParams</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.maskParams" title="Link to this definition">¶</a></dt>
+<dd><p>Various types of input. Default to <cite>None</cite>.</p>
+<p>This is used to pass additional parameters to the mask if those are
+needed.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For ‘gauss’ mask, pass dict {‘sd’: 5} to control</dt><dd><p>standard deviation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For the ‘raisedCos’ mask, pass a dict: {‘fringeWidth’:0.2},</dt><dd><p>where ‘fringeWidth’ is a parameter (float, 0-1), determining
+the proportion of the patch that will be blurred by the raised
+cosine edge.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.name" title="Link to this definition">¶</a></dt>
+<dd><p>The name (<cite>str</cite>) of the object to be using during logged messages
+about this stim. If you have multiple stimuli in your experiment this
+really helps to make sense of log files!</p>
+<p>If name = None your stimulus will be called “unnamed &lt;type&gt;”, e.g.
+visual.TextStim(win) will be called “unnamed TextStim” in the logs.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseBW">
+<span class="sig-name descname"><span class="pre">noiseBW</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseBW" title="Link to this definition">¶</a></dt>
+<dd><p>Spatial frequency bandwidth for Gabor or Isotropic noise, full width at half height in octaves.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseBWO">
+<span class="sig-name descname"><span class="pre">noiseBWO</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseBWO" title="Link to this definition">¶</a></dt>
+<dd><p>Orientation bandwidth for Gabor noise, full width at half height in degrees</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseBaseSf">
+<span class="sig-name descname"><span class="pre">noiseBaseSf</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseBaseSf" title="Link to this definition">¶</a></dt>
+<dd><p>Spatial frequency for Gabor or Isotropic noise in cycles per unit.
+Eg c/deg if units = degrees.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseClip">
+<span class="sig-name descname"><span class="pre">noiseClip</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseClip" title="Link to this definition">¶</a></dt>
+<dd><p>Ignored for types ‘Binary and Uniform’.
+For ‘Normal’ noise pixel values are divided by noiseClip
+to limit the standard deviation of the noise values.</p>
+<p>For all other noise types noiseClip determines the
+level at which pixel values are cliped and subsequently
+re-scaled so as to produce a final image appraching the
+desired RMS contrast.
+High values will tend to reduce the ultimate RMS
+contrast but increase fidelity of appearance.
+Low values prioritise accurate final contrast
+but result in a binarised or thresholded appearance.</p>
+<p>noiseClip is used to scale the luminance values as
+above whenever a filter is applied to the noise sample,
+regardless of the initial type of noise requested.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseElementSize">
+<span class="sig-name descname"><span class="pre">noiseElementSize</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseElementSize" title="Link to this definition">¶</a></dt>
+<dd><p>Noise element size for Binary, Normal or Uniform noise.
+In the units of the stimulus.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseFilterLower">
+<span class="sig-name descname"><span class="pre">noiseFilterLower</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseFilterLower" title="Link to this definition">¶</a></dt>
+<dd><p>Lower cuttoff for filtered noise.
+In cycles/unit eg c/deg when units is degrees.
+Zero creates low pass filter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseFilterOrder">
+<span class="sig-name descname"><span class="pre">noiseFilterOrder</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseFilterOrder" title="Link to this definition">¶</a></dt>
+<dd><p>Order of Butterworth filter for filtered noise. High = fast fall off withfrequency outside pass band.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseFilterUpper">
+<span class="sig-name descname"><span class="pre">noiseFilterUpper</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseFilterUpper" title="Link to this definition">¶</a></dt>
+<dd><p>Upper cuttoff for filtered noise.
+In cycles/unit eg c/deg when units is degrees.
+&gt; size/2 creates high pass filter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseFractalPower">
+<span class="sig-name descname"><span class="pre">noiseFractalPower</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseFractalPower" title="Link to this definition">¶</a></dt>
+<dd><p>Exponent for ‘coloured’ noise.
+Amplitide spectrum = f^noiseFractalPower.
+-1 gives pink noise.
+Note power spectrum of a pink noise image should
+fall as f^-2. But as power spectrum = amplitude spectrum squared
+this is achieved by setting amplitude spectrum to f^-1.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseImage">
+<span class="sig-name descname"><span class="pre">noiseImage</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseImage" title="Link to this definition">¶</a></dt>
+<dd><p>Image from which to derive the amplitude or phase spectrum of noise type Image.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.noiseType">
+<span class="sig-name descname"><span class="pre">noiseType</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.noiseType" title="Link to this definition">¶</a></dt>
+<dd><p>Type of noise to generate
+‘Binary, Normal and Uniform’ produce pixel based random samples from the indicated distribitions.</p>
+<blockquote>
+<div><p>Binary has zero mean lumiannce, Normal and Uniform approximate this.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>‘Gabor and Isotropic’ produce dense, random scatterd Gabor elements with</dt><dd><p>fixed (Gabor) or random (Isotropic) orientations. Zero mean lumiannce.</p>
+</dd>
+</dl>
+<p>‘White’ produces white noise with a flat amplitude spectrum. Zero mean lumiannce.
+‘Filtered’ Produces white noise filtered by a low-, high- or band-pass filter. Zero mean lumiannce.</p>
+<blockquote>
+<div><p>Use the noiseFractalPower attribute to skew the spectrum of filtered noise.</p>
+</div></blockquote>
+<p>‘Image’ produces noise with the same spectrum as the supplied image but with mean lumiance set to zero.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.opacity">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opacity</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.opacity" title="Link to this definition">¶</a></dt>
+<dd><p>Determines how visible the stimulus is relative to background.</p>
+<p>The value should be a single float ranging 1.0 (opaque) to 0.0
+(transparent). <span class="xref std std-ref">Operations</span> are supported.
+Precisely how this is used depends on the <span class="xref std std-ref">blendMode</span>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.ori">
+<span class="sig-name descname"><span class="pre">ori</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.ori" title="Link to this definition">¶</a></dt>
+<dd><p>The orientation of the stimulus (in degrees).</p>
+<p>Should be a single value (<span class="xref std std-ref">scalar</span>).
+<span class="xref std std-ref">Operations</span> are supported.</p>
+<p>Orientation convention is like a clock: 0 is vertical, and positive
+values rotate clockwise. Beyond 360 and below zero values wrap
+appropriately.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.overlaps">
+<span class="sig-name descname"><span class="pre">overlaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polygon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.overlaps" title="Link to this definition">¶</a></dt>
+<dd><p>Returns <cite>True</cite> if this stimulus intersects another one.</p>
+<p>If <cite>polygon</cite> is another stimulus instance, then the vertices
+and location of that stimulus will be used as the polygon.
+Overlap detection is typically very good, but it
+can fail with very pointy shapes in a crossed-swords configuration.</p>
+<p>Note that, if your stimulus uses a mask (such as a Gaussian blob)
+then this is not accounted for by the <cite>overlaps</cite> method; the extent
+of the stimulus is determined purely by the size, pos, and
+orientation settings (and by the vertices for shape stimuli).</p>
+<p>See coder demo, shapeContains.py</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.phase">
+<span class="sig-name descname"><span class="pre">phase</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.phase" title="Link to this definition">¶</a></dt>
+<dd><p>Phase of the stimulus in each dimension of the texture.</p>
+<p>Should be an <span class="xref std std-ref">x,y-pair</span> or <span class="xref std std-ref">scalar</span></p>
+<p><strong>NB</strong> phase has modulus 1 (rather than 360 or 2*pi) This is a little
+unconventional but has the nice effect that setting phase=t*n drifts a
+stimulus at <em>n</em> Hz.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.pos">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.pos" title="Link to this definition">¶</a></dt>
+<dd><p>The position of the center of the stimulus in the stimulus
+<span class="xref std std-ref">units</span></p>
+<p><cite>value</cite> should be an <span class="xref std std-ref">x,y-pair</span>.
+<span class="xref std std-ref">Operations</span> are also supported.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Set slightly to the right of center</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Increment pos rightwards and upwards.</span>
+    <span class="n">Is</span> <span class="n">now</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">*=</span> <span class="mf">0.2</span>  <span class="c1"># Move stim towards the center.</span>
+    <span class="n">Is</span> <span class="n">now</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tip: If you need the position of stim in pixels, you can obtain
+it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy.tools.monitorunittools</span> <span class="kn">import</span> <span class="n">posToPix</span>
+<span class="n">posPix</span> <span class="o">=</span> <span class="n">posToPix</span><span class="p">(</span><span class="n">stim</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setAnchor">
+<span class="sig-name descname"><span class="pre">setAnchor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setAnchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setAutoDraw">
+<span class="sig-name descname"><span class="pre">setAutoDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setAutoDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Sets autoDraw. Usually you can use ‘stim.attribute = value’
+syntax instead, but use this method to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setAutoLog">
+<span class="sig-name descname"><span class="pre">setAutoLog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setAutoLog" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBackColor">
+<span class="sig-name descname"><span class="pre">setBackColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBackColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBackColorSpace">
+<span class="sig-name descname"><span class="pre">setBackColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBackColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBackRGB">
+<span class="sig-name descname"><span class="pre">setBackRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBackRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for fill RGB, instead set <cite>obj._fillColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBackgroundColor">
+<span class="sig-name descname"><span class="pre">setBackgroundColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBackgroundColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBlendmode">
+<span class="sig-name descname"><span class="pre">setBlendmode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBlendmode" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBorderColor">
+<span class="sig-name descname"><span class="pre">setBorderColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBorderColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for <cite>fillColor</cite>, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBorderColorSpace">
+<span class="sig-name descname"><span class="pre">setBorderColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBorderColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBorderRGB">
+<span class="sig-name descname"><span class="pre">setBorderRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBorderRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for border RGB, instead set <cite>obj._borderColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setBorderWidth">
+<span class="sig-name descname"><span class="pre">setBorderWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newWidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setBorderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setColor">
+<span class="sig-name descname"><span class="pre">setColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setColorSpace">
+<span class="sig-name descname"><span class="pre">setColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setContrast">
+<span class="sig-name descname"><span class="pre">setContrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newContrast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setContrast" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setDKL">
+<span class="sig-name descname"><span class="pre">setDKL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setDKL" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED since v1.60.05: Please use the <cite>color</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setDepth">
+<span class="sig-name descname"><span class="pre">setDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newDepth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setDepth" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setDraggable">
+<span class="sig-name descname"><span class="pre">setDraggable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setDraggable" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFillColor">
+<span class="sig-name descname"><span class="pre">setFillColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFillColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for fillColor, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFillColorSpace">
+<span class="sig-name descname"><span class="pre">setFillColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFillColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFillRGB">
+<span class="sig-name descname"><span class="pre">setFillRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFillRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for fill RGB, instead set <cite>obj._fillColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFilter">
+<span class="sig-name descname"><span class="pre">setFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFilter" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFlip">
+<span class="sig-name descname"><span class="pre">setFlip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFlip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFlipHoriz">
+<span class="sig-name descname"><span class="pre">setFlipHoriz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFlipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFlipVert">
+<span class="sig-name descname"><span class="pre">setFlipVert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFlipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setFontColor">
+<span class="sig-name descname"><span class="pre">setFontColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setFontColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setForeColor">
+<span class="sig-name descname"><span class="pre">setForeColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setForeColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for foreColor, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setForeColorSpace">
+<span class="sig-name descname"><span class="pre">setForeColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setForeColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setForeRGB">
+<span class="sig-name descname"><span class="pre">setForeRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setForeRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for foreground RGB, instead set <cite>obj._foreColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setHeight">
+<span class="sig-name descname"><span class="pre">setHeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setHeight" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setImageCompoment">
+<span class="sig-name descname"><span class="pre">setImageCompoment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setImageCompoment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setImageCompoment" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setInterpolate">
+<span class="sig-name descname"><span class="pre">setInterpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setInterpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setLMS">
+<span class="sig-name descname"><span class="pre">setLMS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setLMS" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED since v1.60.05: Please use the <cite>color</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setLineColor">
+<span class="sig-name descname"><span class="pre">setLineColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setLineColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setLineColorSpace">
+<span class="sig-name descname"><span class="pre">setLineColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setLineColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setLineRGB">
+<span class="sig-name descname"><span class="pre">setLineRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setLineRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for border RGB, instead set <cite>obj._borderColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setLineWidth">
+<span class="sig-name descname"><span class="pre">setLineWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newWidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setLineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setMask">
+<span class="sig-name descname"><span class="pre">setMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setMask" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setMaskParams">
+<span class="sig-name descname"><span class="pre">setMaskParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setMaskParams" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseBW">
+<span class="sig-name descname"><span class="pre">setNoiseBW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseBW"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseBW" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseBWO">
+<span class="sig-name descname"><span class="pre">setNoiseBWO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseBWO"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseBWO" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseBaseSf">
+<span class="sig-name descname"><span class="pre">setNoiseBaseSf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseBaseSf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseBaseSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseClip">
+<span class="sig-name descname"><span class="pre">setNoiseClip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseClip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseClip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseElementSize">
+<span class="sig-name descname"><span class="pre">setNoiseElementSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseElementSize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseElementSize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseFilterLower">
+<span class="sig-name descname"><span class="pre">setNoiseFilterLower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseFilterLower"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseFilterLower" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseFilterOrder">
+<span class="sig-name descname"><span class="pre">setNoiseFilterOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseFilterOrder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseFilterOrder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseFilterUpper">
+<span class="sig-name descname"><span class="pre">setNoiseFilterUpper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseFilterUpper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseFilterUpper" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseFractalPower">
+<span class="sig-name descname"><span class="pre">setNoiseFractalPower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseFractalPower"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseFractalPower" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseImage">
+<span class="sig-name descname"><span class="pre">setNoiseImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseImage" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseOri">
+<span class="sig-name descname"><span class="pre">setNoiseOri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseOri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseOri" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setNoiseType">
+<span class="sig-name descname"><span class="pre">setNoiseType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setNoiseType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setNoiseType" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setOpacity">
+<span class="sig-name descname"><span class="pre">setOpacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newOpacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setOpacity" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for opacity, allows the suppression of log messages and calls the update method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setOri">
+<span class="sig-name descname"><span class="pre">setOri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newOri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setOri" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setPhase">
+<span class="sig-name descname"><span class="pre">setPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setPhase" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setPos">
+<span class="sig-name descname"><span class="pre">setPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newPos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setPos" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setRGB">
+<span class="sig-name descname"><span class="pre">setRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for foreground RGB, instead set <cite>obj._foreColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setSF">
+<span class="sig-name descname"><span class="pre">setSF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setSF" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setSf">
+<span class="sig-name descname"><span class="pre">setSf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setSize">
+<span class="sig-name descname"><span class="pre">setSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setSize" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setTex">
+<span class="sig-name descname"><span class="pre">setTex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setTex" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setTexRes">
+<span class="sig-name descname"><span class="pre">setTexRes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setTexRes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setTexRes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setUnits">
+<span class="sig-name descname"><span class="pre">setUnits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setUnits" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setVertices">
+<span class="sig-name descname"><span class="pre">setVertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setVertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setWidth">
+<span class="sig-name descname"><span class="pre">setWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setWin">
+<span class="sig-name descname"><span class="pre">setWin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setWin" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.setblendMode">
+<span class="sig-name descname"><span class="pre">setblendMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.setblendMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.setblendMode" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.sf">
+<span class="sig-name descname"><span class="pre">sf</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.sf" title="Link to this definition">¶</a></dt>
+<dd><p>Spatial frequency of the grating texture.</p>
+<p>Should be a <span class="xref std std-ref">x,y-pair</span> or <span class="xref std std-ref">scalar</span>
+or None. If <cite>units</cite> == ‘deg’ or ‘cm’ units are in cycles per deg or cm
+as appropriate. If <cite>units</cite> == ‘norm’ then sf units are in cycles per
+stimulus (and so SF scales with stimulus size). If texture is an image
+loaded from a file then sf=None defaults to 1/stimSize to give one cycle
+of the image.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.size" title="Link to this definition">¶</a></dt>
+<dd><p>The size (width, height) of the stimulus in the stimulus
+<span class="xref std std-ref">units</span></p>
+<p>Value should be <span class="xref std std-ref">x,y-pair</span>,
+<span class="xref std std-ref">scalar</span> (applies to both dimensions)
+or None (resets to default). <span class="xref std std-ref">Operations</span>
+are supported.</p>
+<p>Sizes can be negative (causing a mirror-image reversal) and can
+extend beyond the window.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mf">0.8</span>  <span class="c1"># Set size to (xsize, ysize) = (0.8, 0.8)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stim</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># Outputs array([0.8, 0.8])</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">size</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># make wider and flatter: (1.3, 0.3)</span>
+</pre></div>
+</div>
+<p>Tip: if you can see the actual pixel range this corresponds to by
+looking at <cite>stim._sizeRendered</cite></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.tex">
+<span class="sig-name descname"><span class="pre">tex</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.tex" title="Link to this definition">¶</a></dt>
+<dd><p>Texture to used on the stimulus as a grating (aka carrier).</p>
+<dl class="simple">
+<dt>This can be one of various options:</dt><dd><ul class="simple">
+<li><p><strong>‘sin’</strong>,’sqr’, ‘saw’, ‘tri’, None (resets to default)</p></li>
+<li><p>the name of an image file (most formats supported)</p></li>
+<li><p>a numpy array (1xN or NxN) ranging -1:1</p></li>
+</ul>
+</dd>
+</dl>
+<p>If specifying your own texture using an image or numpy array you should
+ensure that the image has square power-of-two dimensions (e.g. 256 x
+256). If not then PsychoPy will up-sample your stimulus to the next
+larger power of two.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.texRes">
+<span class="sig-name descname"><span class="pre">texRes</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.texRes" title="Link to this definition">¶</a></dt>
+<dd><p>Power-of-two int. Sets the resolution of the mask and texture.
+maybe used as the side length for generating the noise texture but is not used if units = pix.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.units" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.updateColors">
+<span class="sig-name descname"><span class="pre">updateColors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.updateColors" title="Link to this definition">¶</a></dt>
+<dd><p>Placeholder method to update colours when set externally, for example updating the <cite>pallette</cite> attribute of
+a textbox</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.updateNoise">
+<span class="sig-name descname"><span class="pre">updateNoise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/noise/#NoiseStim.updateNoise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.updateNoise" title="Link to this definition">¶</a></dt>
+<dd><p>Updates the noise sample. Does not change any of the noise parameters
+but choses a new random sample given the previously set parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.updateOpacity">
+<span class="sig-name descname"><span class="pre">updateOpacity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.updateOpacity" title="Link to this definition">¶</a></dt>
+<dd><p>Placeholder method to update colours when set externally, for example
+updating the <cite>pallette</cite> attribute of a textbox.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.vertices">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vertices</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.vertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.verticesPix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verticesPix</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.verticesPix" title="Link to this definition">¶</a></dt>
+<dd><p>This determines the coordinates of the vertices for the
+current stimulus in pixels, accounting for size, ori, pos and units</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.width" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.noise.NoiseStim.win">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">win</span></span><a class="headerlink" href="#psychopy_visionscience.noise.NoiseStim.win" title="Link to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code> object in which the
+stimulus will be rendered by default. (required)</p>
+<p>Example, drawing same stimulus in two different windows and display
+simultaneously. Assuming that you have two windows and a stimulus
+(win1, win2 and stim):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">win1</span>  <span class="c1"># stimulus will be drawn in win1</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># stimulus is now drawn to win1</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">win2</span>  <span class="c1"># stimulus will be drawn in win2</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># it is now drawn in win2</span>
+<span class="n">win1</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">waitBlanking</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># do not wait for next</span>
+             <span class="c1"># monitor update</span>
+<span class="n">win2</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>  <span class="c1"># wait for vertical blanking.</span>
+</pre></div>
+</div>
+<p>Note that this just changes <strong>default</strong> window for stimulus.</p>
+<p>You could also specify window-to-draw-to when drawing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win1</span><span class="p">)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+<div id="sourcelink">
+  <a href="https://github.com/psychopy/psychopy/blob/master/docs/source/coder/NoiseStim.rst"
+     rel="nofollow">Source</a>
+</div>
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>psychopy_visionscience.noise &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/EnvGratingComponent/">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/EnvelopeGrating/">Envelope Grating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/NoiseStim/">Noise Stim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/RadialStim/">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <h1>Source code for psychopy_visionscience.noise</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;Stimulus object for drawing arbitrary bitmap carriers with an arbitrary</span>
+<span class="sd">second order envelope carrier and envelope can vary independently for</span>
+<span class="sd">orientation, frequencyand phase. Also does beat stimuli. &quot;&quot;&quot;</span>
+
+<span class="c1"># Part of the PsychoPy library</span>
+<span class="c1"># Copyright (C) 2002-2018 Jonathan Peirce (C) 2019-2022 Open Science Tools Ltd.</span>
+<span class="c1"># some code provided by Andrew Schofield</span>
+<span class="c1"># Distributed under the terms of the GNU General Public License (GPL).</span>
+
+<span class="c1"># Requires shaders if you don&#39;t have them it will just throw and error.</span>
+<span class="c1"># Ensure setting pyglet.options[&#39;debug_gl&#39;] to False is done prior to any</span>
+<span class="c1"># other calls to pyglet or pyglet submodules, otherwise it may not get picked</span>
+<span class="c1"># up by the pyglet GL engine and have no effect.</span>
+<span class="c1"># Shaders will work but require OpenGL2.0 drivers AND PyOpenGL3.0+</span>
+
+<span class="kn">import</span> <span class="nn">pyglet</span>
+<span class="n">pyglet</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;debug_gl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">GL</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">Image</span>
+
+<span class="kn">import</span> <span class="nn">psychopy</span>  <span class="c1"># so we can get the __path__</span>
+<span class="kn">from</span> <span class="nn">psychopy.visual</span> <span class="kn">import</span> <span class="n">filters</span>
+<span class="kn">from</span> <span class="nn">psychopy.tools.attributetools</span> <span class="kn">import</span> <span class="n">attributeSetter</span>
+<span class="kn">from</span> <span class="nn">psychopy.visual.grating</span> <span class="kn">import</span> <span class="n">GratingStim</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span>
+<span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="kn">import</span> <span class="n">fft2</span><span class="p">,</span> <span class="n">ifft2</span><span class="p">,</span> <span class="n">fftshift</span><span class="p">,</span> <span class="n">ifftshift</span>
+
+<span class="kn">from</span> <span class="nn">psychopy.visual</span> <span class="kn">import</span> <span class="n">shaders</span> <span class="k">as</span> <span class="n">_shaders</span>
+
+
+<div class="viewcode-block" id="NoiseStim">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim">[docs]</a>
+<span class="k">class</span> <span class="nc">NoiseStim</span><span class="p">(</span><span class="n">GratingStim</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A stimulus with 2 textures: a random noise sample and a mask</span>
+
+<span class="sd">    **Example**::</span>
+
+<span class="sd">        noise1 = noise = visual.NoiseStim(</span>
+<span class="sd">                        win=win, name=&#39;noise&#39;,units=&#39;pix&#39;,</span>
+<span class="sd">                        noiseImage=&#39;testImg.jpg&#39;, mask=&#39;circle&#39;,</span>
+<span class="sd">                        ori=1.0, pos=(0, 0), size=(512, 512), sf=None, phase=0,</span>
+<span class="sd">                        color=[1,1,1], colorSpace=&#39;rgb&#39;, opacity=1, blendmode=&#39;add&#39;, contrast=1.0,</span>
+<span class="sd">                        texRes=512, filter=&#39;None&#39;, imageComponent=&#39;Phase&#39;</span>
+<span class="sd">                        noiseType=&#39;Gabor&#39;, noiseElementSize=4, noiseBaseSf=32.0/512,</span>
+<span class="sd">                        noiseBW=1.0, noiseBWO=30, noiseFractalPower=-1,noiseFilterLower=3/512, noiseFilterUpper=8.0/512.0,</span>
+<span class="sd">                        noiseFilterOrder=3.0, noiseClip=3.0, filter=False, interpolate=False, depth=-1.0)</span>
+<span class="sd">        # gives a circular patch of noise made up of scattered Gabor elements with peak frequency = 32.0/512 cycles per pixel,</span>
+<span class="sd">        # orientation = 0 , frequency bandwidth = 1 octave and orientation bandwidth 30 degrees</span>
+
+<span class="sd">    **Types of noise available**</span>
+
+<span class="sd">    * Binary, Normal, Uniform - pixel based noise samples drawn from a binary (blank and white), normal or uniform distribution respectively. Binary noise is always exactly zero mean, Normal and Uniform are approximately so.</span>
+<span class="sd">      Parameters:</span>
+
+<span class="sd">        * noiseElementSize - (can be a tuple) defines the size of the noise elements in the components units.</span>
+<span class="sd">        * noiseClip the values in normally distributed noise are divided by noiseClip to limit excessively high or low values.</span>
+<span class="sd">          However, values can still go out of range -1 to 1 whih will throw a soft error message high values of noiseClip are recommended if using &#39;Normal&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    * **Gabor**, **Isotropic**: Effectively a dense scattering of Gabor elements with random amplitude and fixed orientation</span>
+<span class="sd">      for Gabor or random orientation for Isotropic noise. In practice the desired amplitude spectrum for the noise is</span>
+<span class="sd">      built in Fourier space with a random phase spectrum. DC term is set to zero - ie zero mean.</span>
+<span class="sd">      Parameters:</span>
+
+<span class="sd">        * noiseBaseSf - centre spatial frequency in the component units.</span>
+<span class="sd">        * noiseBW - spatial frequency bandwidth full width half height in octaves.</span>
+<span class="sd">        * ori - center orientation for Gabor noise (works as for gratingStim so twists the final image at render time).</span>
+<span class="sd">        * noiseBWO - orientation bandwidth for Gabor noise full width half height in degrees.</span>
+<span class="sd">        * noiseOri - alternative center orientation for Gabor which sets the orientation during the image build rather</span>
+<span class="sd">          than at render time. Useful for setting the orientation of a filter to be applied to some other noise type</span>
+<span class="sd">          with a different base orientation.</span>
+
+
+<span class="sd">    * **Filtered** - A white noise sample that has been filtered with a low, high or bandpass Butterworth filter. The</span>
+<span class="sd">      initial sample can have its spectrum skewed towards low or high frequencies. The contrast of the noise falls</span>
+<span class="sd">      by half its maximum (3dB) at the cutoff frequencies.</span>
+<span class="sd">      Parameters:</span>
+
+<span class="sd">        * noiseFilterUpper - upper cutoff frequency - if greater than texRes/2 cycles per image low pass filter used.</span>
+<span class="sd">        * noiseFilterLower - Lower cutoff frequency - if zero low pass filter used.</span>
+<span class="sd">        * noiseFilterOrder - The order of the filter controls the steepness of the falloff outside the passband is</span>
+<span class="sd">          zero no filter is applied.</span>
+<span class="sd">        * noiseFractalPower - spectrum = f^noiseFractalPower  - determines the spatial frequency bias of the initial</span>
+<span class="sd">          noise sample. 0 = flat spectrum, negative = low frequency bias, positive = high frequency bias, -1 = fractal</span>
+<span class="sd">          or brownian noise.</span>
+<span class="sd">        * noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that</span>
+<span class="sd">          requested by contrast parameter while keeping pixel values in range -1, 1.</span>
+
+<span class="sd">    * **White** - A short cut to obtain noise with a flat, unfiltered spectrum. In practice the desired amplitude spectrum</span>
+<span class="sd">      is built in the Fourier Domain with a random phase spectrum. DC term is set to zero - ie zero mean</span>
+<span class="sd">      Note despite name the noise contains all grey levels.</span>
+<span class="sd">      Parameters:</span>
+
+<span class="sd">        * noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that</span>
+<span class="sd">          requested by contrast parameter while keeping pixel values in range -1, 1.</span>
+
+<span class="sd">    * **Image**: A noise sample whose spatial frequency spectrum is taken from the supplied image. In practice the</span>
+<span class="sd">      desired amplitude spectrum is taken from the image and paired with a random phase spectrum. DC term is set to</span>
+<span class="sd">      zero - ie zero mean.</span>
+<span class="sd">      Parameters:</span>
+
+<span class="sd">        * noiseImage name of ndarray or image file from which to take spectrum - should be same size as largest side</span>
+<span class="sd">          requested for component if units is pix or texRes x texRes otherwise</span>
+<span class="sd">        * imageComponent: &#39;Phase&#39; randomizes the phase spectrum leaving the amplitude spectrum untouched. &#39;Amplitude&#39;</span>
+<span class="sd">          randomizes the amplitude spectrum leaving the phase spectrum untouched - retains spatial structure of image.</span>
+<span class="sd">          &#39;Neither&#39; keeps the image as is - but you can now apply a spatial filter to the image.</span>
+<span class="sd">        * noiseClip - determines clipping values and rescaling factor such that final rms contrast is close to that</span>
+<span class="sd">          requested by contrast parameter while keeping pixel values in range -1, 1.</span>
+
+<span class="sd">    **Filter parameter**</span>
+
+<span class="sd">    * Butterworth: a spectral filter defined by the filtered noise parameters will be applied to the other noise types.</span>
+<span class="sd">    * Gabor: a spectral filter defined by the Gabor noise parameters will be applied to the other noise types.</span>
+<span class="sd">    * Isotropic: then a spectral filter defined by the Isotropic noise parameters will be applied to the other noise</span>
+<span class="sd">      types.</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    **Updating noise samples and timing**</span>
+
+<span class="sd">    The noise is rebuilt at next call of the draw function whenever a parameter starting &#39;noise&#39; is notionally changed</span>
+<span class="sd">    even if the value does not actually change every time. eg. setting a parameter to update every frame will cause a</span>
+<span class="sd">    new noise sample on every frame but see below.</span>
+<span class="sd">    A rebuild can also be forced at any time using the buildNoise() function.</span>
+<span class="sd">    The updateNoise() function can be used at any time to produce a new random saple of noise without doing a full</span>
+<span class="sd">    build. ie it is quicker than a full build.</span>
+<span class="sd">    Both buildNoise and updateNoise can be slow for large samples. </span>
+<span class="sd">    Samples of Binary, Normal or Uniform noise can usually be made at frame rate using noiseUpdate. </span>
+<span class="sd">    Updating or building other noise types at frame rate may result in dropped frames. </span>
+<span class="sd">    An alternative is to build a large sample of noise at the start of the routien and place it off the screen then</span>
+<span class="sd">    cut a samples out of this at random locations and feed that as a numpy array into the texture of a visible</span>
+<span class="sd">    gratingStim.</span>
+
+<span class="sd">    **Notes on size**</span>
+<span class="sd">    If units = pix and noiseType = Binary, Normal or Uniform will make noise sample of requested size.</span>
+<span class="sd">    If units = pix and noiseType is Gabor, Isotropic, Filtered, White, Coloured or Image will make square noise sample with side length equal that of the largest dimetions requested.</span>
+<span class="sd">    if units is not pix will make square noise sample with side length equal to texRes then rescale to present.</span>
+<span class="sd">    </span>
+<span class="sd">    **Notes on interpolation**</span>
+<span class="sd">    For pixel based noise interpolation = nearest is usually best.</span>
+<span class="sd">    For other noise types linear is better if the size of the noise sample does not match the final size of the image well.</span>
+<span class="sd">    </span>
+<span class="sd">    **Notes on frequency**</span>
+<span class="sd">    Frequencies for cutoffs etc are converted between units for you but can be counter intuitive. 1/size is always 1 cycle per image.</span>
+<span class="sd">    For the sf (final spatial frequency) parameter itself 1/size (or None for units pix) will faithfully represent the image without further scaling.</span>
+<span class="sd">        </span>
+<span class="sd">    Filter cuttoff and Gabor/Isotropic base frequencies should not be too high you should aim to keep them below 0.5 c/pixel on the screen.</span>
+<span class="sd">    The function will produce an error when it can&#39;t draw the stimulus in the buffer but it may still be wrong when displayed.</span>
+<span class="sd">    </span>
+<span class="sd">    **Notes on orientation and phase**</span>
+<span class="sd">    The ori parameter twists the final image so the samples in noiseType Binary, Normal or Uniform will no longer be aligned to the sides of the monitor if ori is not a multiple of 90.</span>
+<span class="sd">    Most other noise types look broadly the same for all values of ori but the specific sample shown can be made to rotate by changing ori.</span>
+<span class="sd">    The dominant orientation for Gabor noise is determined by ori at render time, not before.</span>
+<span class="sd">    </span>
+<span class="sd">    The phase parameter similarly shifts the sample around within the display window at render time and will not choose new random phases for the noise sample.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">win</span><span class="p">,</span>
+                 <span class="n">mask</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+                 <span class="n">units</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">sf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">ori</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">phase</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">noiseType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">noiseElementSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+                 <span class="n">noiseBaseSf</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">noiseBW</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">noiseBWO</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                 <span class="n">noiseOri</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">noiseFractalPower</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">noiseFilterUpper</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+                 <span class="n">noiseFilterLower</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">noiseFilterOrder</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">noiseClip</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                 <span class="n">noiseImage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">imageComponent</span><span class="o">=</span><span class="s1">&#39;Phase&#39;</span><span class="p">,</span>
+                 <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">texRes</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
+                 <span class="n">rgb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dkl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">lms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                 <span class="n">colorSpace</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span>
+                 <span class="n">contrast</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># see doc</span>
+                 <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                 <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">rgbPedestal</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">interpolate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">blendmode</span><span class="o">=</span><span class="s1">&#39;avg&#39;</span><span class="p">,</span>
+                 <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">autoLog</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">autoDraw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">maskParams</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>  <span class="c1"># Empty docstring. All doc is in attributes</span>
+        <span class="c1"># what local vars are defined (these are the init params) for use by</span>
+        <span class="c1"># __repr__</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initParams</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">noiseType</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;noiseType not recognized. Valid types are: </span><span class="se">\n</span><span class="s1">&#39;</span>
+                   <span class="s1">&#39;binary, uniform, normal, white, filtered, gabor, &#39;</span>
+                   <span class="s1">&#39;isotropic, or image.&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">noiseType</span> <span class="o">==</span> <span class="s1">&#39;image&#39;</span> <span class="ow">and</span> <span class="n">noiseImage</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;You need to supply an image via the noiseImage keyword &#39;</span>
+                   <span class="s1">&#39;argument.&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">unecess</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;self&#39;</span><span class="p">,</span> <span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="s1">&#39;dkl&#39;</span><span class="p">,</span> <span class="s1">&#39;lms&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_initParams</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">unecess</span><span class="p">)</span>
+        <span class="c1"># initialise parent class</span>
+        <span class="n">GratingStim</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span> <span class="n">tex</span><span class="o">=</span><span class="s1">&#39;sin&#39;</span><span class="p">,</span>
+                             <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">sf</span><span class="o">=</span><span class="n">sf</span><span class="p">,</span>
+                             <span class="n">ori</span><span class="o">=</span><span class="n">ori</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">,</span>
+                             <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">colorSpace</span><span class="o">=</span><span class="n">colorSpace</span><span class="p">,</span>
+                             <span class="n">contrast</span><span class="o">=</span><span class="n">contrast</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span>
+                             <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="n">interpolate</span><span class="p">,</span>
+                             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">autoLog</span><span class="o">=</span><span class="n">autoLog</span><span class="p">,</span> <span class="n">autoDraw</span><span class="o">=</span><span class="n">autoDraw</span><span class="p">,</span>
+                             <span class="n">blendmode</span><span class="o">=</span><span class="n">blendmode</span><span class="p">,</span>
+                             <span class="n">maskParams</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># UGLY HACK: Some parameters depend on each other for processing.</span>
+        <span class="c1"># They are set &quot;superficially&quot; here.</span>
+        <span class="c1"># TO DO: postpone calls to _createTexture, setColor and</span>
+        <span class="c1"># _calcCyclesPerStim whin initiating stimulus</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;mask&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mask</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;maskParams&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maskParams</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">blendmode</span><span class="o">=</span><span class="n">blendmode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">texRes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span><span class="o">=</span><span class="n">noiseType</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseImage</span><span class="o">=</span><span class="n">noiseImage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imageComponent</span><span class="o">=</span><span class="n">imageComponent</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseElementSize</span><span class="o">=</span><span class="n">noiseElementSize</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseBaseSf</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseBaseSf</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseBW</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseBW</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseBWO</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseBWO</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseOri</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseOri</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseFractalPower</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseFractalPower</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterUpper</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseFilterUpper</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterLower</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseFilterLower</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterOrder</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseFilterOrder</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">noiseClip</span> <span class="o">!=</span> <span class="s1">&#39;none&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseClip</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">noiseClip</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseClip</span><span class="o">=</span><span class="n">noiseClip</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="o">=</span> <span class="nb">filter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">local</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">texRes</span><span class="p">,</span> <span class="n">texRes</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">ubyte</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">local_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">ctypes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="o">=</span><span class="mf">1.0</span>   
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="o">=</span><span class="mi">512</span>         <span class="c1"># in unlikely case where it does not get set anywhere else before use.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buildNoise</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseType</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Type of noise to generate</span>
+<span class="sd">            &#39;Binary, Normal and Uniform&#39; produce pixel based random samples from the indicated distribitions. </span>
+<span class="sd">                Binary has zero mean lumiannce, Normal and Uniform approximate this.</span>
+<span class="sd">            &#39;Gabor and Isotropic&#39; produce dense, random scatterd Gabor elements with </span>
+<span class="sd">                fixed (Gabor) or random (Isotropic) orientations. Zero mean lumiannce.</span>
+<span class="sd">            &#39;White&#39; produces white noise with a flat amplitude spectrum. Zero mean lumiannce.</span>
+<span class="sd">            &#39;Filtered&#39; Produces white noise filtered by a low-, high- or band-pass filter. Zero mean lumiannce.</span>
+<span class="sd">                Use the noiseFractalPower attribute to skew the spectrum of filtered noise.</span>
+<span class="sd">            &#39;Image&#39; produces noise with the same spectrum as the supplied image but with mean lumiance set to zero.</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseType&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseImage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Image from which to derive the amplitude or phase spectrum of noise type Image. </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+       
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseImage&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">imageCompoment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Which component of an image to randomise, amplitude or phase. </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+       
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;imageComponent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseElementSize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Noise element size for Binary, Normal or Uniform noise.</span>
+<span class="sd">           In the units of the stimulus.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseElementSize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseBaseSf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Spatial frequency for Gabor or Isotropic noise in cycles per unit.</span>
+<span class="sd">           Eg c/deg if units = degrees.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseBaseSf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseBW</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Spatial frequency bandwidth for Gabor or Isotropic noise, full width at half height in octaves.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseBW&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseBWO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Orientation bandwidth for Gabor noise, full width at half height in degrees</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseBWO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseFractalPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Exponent for &#39;coloured&#39; noise. </span>
+<span class="sd">           Amplitide spectrum = f^noiseFractalPower.</span>
+<span class="sd">           -1 gives pink noise.</span>
+<span class="sd">           Note power spectrum of a pink noise image should</span>
+<span class="sd">           fall as f^-2. But as power spectrum = amplitude spectrum squared</span>
+<span class="sd">           this is achieved by setting amplitude spectrum to f^-1.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseFractalPower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseFilterUpper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Upper cuttoff for filtered noise. </span>
+<span class="sd">           In cycles/unit eg c/deg when units is degrees.</span>
+<span class="sd">           &gt; size/2 creates high pass filter.   </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseFilterUpper&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseFilterLower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Lower cuttoff for filtered noise. </span>
+<span class="sd">           In cycles/unit eg c/deg when units is degrees.</span>
+<span class="sd">           Zero creates low pass filter.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseFilterLower&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseFilterOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Order of Butterworth filter for filtered noise. High = fast fall off withfrequency outside pass band.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseFilterOrder&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">noiseClip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ignored for types &#39;Binary and Uniform&#39;.</span>
+<span class="sd">            For &#39;Normal&#39; noise pixel values are divided by noiseClip </span>
+<span class="sd">            to limit the standard deviation of the noise values.</span>
+<span class="sd">            </span>
+<span class="sd">            For all other noise types noiseClip determines the </span>
+<span class="sd">            level at which pixel values are cliped and subsequently </span>
+<span class="sd">            re-scaled so as to produce a final image appraching the </span>
+<span class="sd">            desired RMS contrast.</span>
+<span class="sd">            High values will tend to reduce the ultimate RMS </span>
+<span class="sd">            contrast but increase fidelity of appearance.</span>
+<span class="sd">            Low values prioritise accurate final contrast</span>
+<span class="sd">            but result in a binarised or thresholded appearance.</span>
+<span class="sd">            </span>
+<span class="sd">            noiseClip is used to scale the luminance values as</span>
+<span class="sd">            above whenever a filter is applied to the noise sample, </span>
+<span class="sd">            regardless of the initial type of noise requested. </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseClip&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+    
+<div class="viewcode-block" id="NoiseStim.setNoiseOri">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseOri">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseOri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">noiseOri</span> <span class="o">=</span> <span class="n">value</span></div>
+
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;If True apply spatial frequency filter to noise.&quot;&quot;&quot;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;filter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">texRes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Power-of-two int. Sets the resolution of the mask and texture.</span>
+<span class="sd">        maybe used as the side length for generating the noise texture but is not used if units = pix.</span>
+
+<span class="sd">        :ref:`Operations &lt;attrib-operations&gt;` supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;texRes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="c1"># ... now rebuild textures (call attributeSetters without logging).</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;tex&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;tex&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;mask&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<div class="viewcode-block" id="NoiseStim.setTexRes">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setTexRes">[docs]</a>
+    <span class="k">def</span> <span class="nf">setTexRes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;texRes&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseType">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseType">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseType</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseType&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseImage">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseImage">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseImage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseImage&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="NoiseStim.setImageCompoment">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setImageCompoment">[docs]</a>
+    <span class="k">def</span> <span class="nf">setImageCompoment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;imageCompoment&#39;</span><span class="p">,</span><span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="NoiseStim.setNoiseClip">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseClip">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseClip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseClip&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setFilter">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFilter">[docs]</a>
+    <span class="k">def</span> <span class="nf">setFilter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;filter&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseElementSize">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseElementSize">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseElementSize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseElementSize&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseBaseSf">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseBaseSf">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseBaseSf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseBaseSf&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseBW">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseBW">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseBW</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseBW&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseBWO">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseBWO">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseBWO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseBWO&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+       
+<div class="viewcode-block" id="NoiseStim.setNoiseFractalPower">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFractalPower">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseFractalPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseFractalPower&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+       
+<div class="viewcode-block" id="NoiseStim.setNoiseFilterUpper">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFilterUpper">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseFilterUpper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseFilterUpper&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseFilterLower">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFilterLower">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseFilterLower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseFilterLower&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="NoiseStim.setNoiseFilterOrder">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFilterOrder">[docs]</a>
+    <span class="k">def</span> <span class="nf">setNoiseFilterOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;noiseFilterOrder&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NoiseStim.setblendMode">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setblendMode">[docs]</a>
+    <span class="k">def</span> <span class="nf">setblendMode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;blendMode&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NoiseStim.draw">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.draw">[docs]</a>
+    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Draw the stimulus in its relevant window. You must call</span>
+<span class="sd">        this method after every MyWin.flip() if you want the</span>
+<span class="sd">        stimulus to appear on that frame and then update the screen</span>
+<span class="sd">        again.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">win</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">win</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">win</span>
+        <span class="n">saveBlendMode</span> <span class="o">=</span> <span class="n">win</span><span class="o">.</span><span class="n">blendMode</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">setBlendMode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">blendmode</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_selectWindow</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+
+        <span class="c1">#do scaling</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glPushMatrix</span><span class="p">()</span>  <span class="c1"># push before the list, pop after</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">setScale</span><span class="p">(</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+        <span class="c1">#the list just does the texture mapping</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glColor4f</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_foreColor</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s1">&#39;rgba1&#39;</span><span class="p">))</span>
+
+        <span class="c1"># re-build the noise if not done so since last parameter update</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buildNoise</span><span class="p">()</span>
+        <span class="c1"># remake textures if necessary</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_needTextureUpdate</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setTex</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tex</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_updateList</span><span class="p">()</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glCallList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_listID</span><span class="p">)</span>
+
+        <span class="c1">#return the view to previous state</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glPopMatrix</span><span class="p">()</span>
+        <span class="n">win</span><span class="o">.</span><span class="n">setBlendMode</span><span class="p">(</span><span class="n">saveBlendMode</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+        
+    <span class="k">def</span> <span class="nf">_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">FT</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Helper function to apply Butterworth filter in </span>
+<span class="sd">            frequensy domain.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filterSize</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)</span>
+        <span class="n">pin</span><span class="o">=</span><span class="n">filters</span><span class="o">.</span><span class="n">makeRadialMatrix</span><span class="p">(</span><span class="n">matrixSize</span><span class="o">=</span><span class="n">filterSize</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">pin</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">filterSize</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)][</span><span class="nb">int</span><span class="p">(</span><span class="n">filterSize</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="mf">0.00000001</span>  <span class="c1"># Prevents divide by zero error. This is DC and is set to zero later anyway.</span>
+        <span class="n">FT</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">FT</span><span class="p">,(</span><span class="n">pin</span><span class="p">)</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseFractalPower</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterOrder</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_upsf</span><span class="o">&lt;</span><span class="p">(</span><span class="n">filterSize</span><span class="o">/</span><span class="mf">2.0</span><span class="p">):</span>
+                <span class="nb">filter</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">butter2d_lp_elliptic</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">filterSize</span><span class="p">,</span><span class="n">filterSize</span><span class="p">],</span> 
+                                                            <span class="n">cutoff_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_upsf</span> <span class="o">/</span> <span class="n">filterSize</span><span class="p">,</span> 
+                                                            <span class="n">cutoff_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_upsf</span> <span class="o">/</span> <span class="n">filterSize</span><span class="p">,</span> 
+                                                            <span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterOrder</span><span class="p">,</span> 
+                                                            <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                                                                <span class="n">offset_x</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">/</span><span class="n">filterSize</span><span class="p">,</span>  <span class="c1">#because FFTs are slightly off centred.</span>
+                                                                <span class="n">offset_y</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">/</span><span class="n">filterSize</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">filter</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">filterSize</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">filterSize</span><span class="p">)))</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lowsf</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lowsf</span> <span class="o">&gt;</span> <span class="n">filterSize</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Lower cut off frequency for filtered &#39;</span>
+                    <span class="s1">&#39;noise is too high (exceeds Nyquist limit).&#39;</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="ne">Warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="nb">filter</span> <span class="o">=</span> <span class="nb">filter</span><span class="o">-</span><span class="n">filters</span><span class="o">.</span><span class="n">butter2d_lp_elliptic</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="n">filterSize</span><span class="p">,</span><span class="n">filterSize</span><span class="p">],</span> 
+                                                                <span class="n">cutoff_x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lowsf</span> <span class="o">/</span> <span class="n">filterSize</span><span class="p">,</span> 
+                                                                <span class="n">cutoff_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lowsf</span> <span class="o">/</span> <span class="n">filterSize</span><span class="p">,</span> 
+                                                                <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterOrder</span><span class="p">,</span> 
+                                                                <span class="n">alpha</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
+                                                                <span class="n">offset_x</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">/</span><span class="n">filterSize</span><span class="p">,</span> <span class="c1">#because FFTs are slightly off centred.</span>
+                                                                <span class="n">offset_y</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">/</span><span class="n">filterSize</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">FT</span> <span class="o">*</span> <span class="nb">filter</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">FT</span>
+            
+    <span class="k">def</span> <span class="nf">_isotropic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">FT</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Helper function to apply isotropic filter in </span>
+<span class="sd">            frequensy domain.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_sf</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sf</span><span class="p">)</span>
+        <span class="n">_mysize</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)</span>
+<span class="c1"># self._sf and self._mysize can be a tuple which causes issues</span>
+<span class="c1"># but we can only filer sqaure images anyway so taking max here is OK becuase</span>
+<span class="c1"># the two elements in the tuple must be the same at this point</span>
+        <span class="k">if</span> <span class="n">_sf</span> <span class="o">&gt;</span> <span class="n">_mysize</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Base frequency for isotropic &#39;</span>
+                  <span class="s1">&#39;noise is  too high (exceeds Nyquist limit).&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="n">localf</span> <span class="o">=</span> <span class="n">_sf</span> <span class="o">/</span> <span class="n">_mysize</span>
+        <span class="n">linbw</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseBW</span>
+        <span class="n">lowf</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">localf</span> <span class="o">/</span> <span class="p">(</span><span class="n">linbw</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">highf</span> <span class="o">=</span> <span class="n">linbw</span> <span class="o">*</span> <span class="n">lowf</span>
+        <span class="n">FWF</span> <span class="o">=</span> <span class="n">highf</span> <span class="o">-</span> <span class="n">lowf</span>
+        <span class="n">sigmaF</span> <span class="o">=</span> <span class="n">FWF</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="n">pin</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">makeRadialMatrix</span><span class="p">(</span><span class="n">matrixSize</span><span class="o">=</span><span class="n">_mysize</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="nb">filter</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">makeGauss</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="n">localf</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="n">sigmaF</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">FT</span><span class="o">*</span><span class="nb">filter</span>
+        
+    <span class="k">def</span> <span class="nf">_gabor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">FT</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; Helper function to apply Gabor filter in </span>
+<span class="sd">            frequensy domain.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_sf</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sf</span><span class="p">)</span>
+        <span class="n">_mysize</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)</span>
+<span class="c1"># self._sf and self._mysize can be a tuple which causes issues</span>
+<span class="c1"># but we can only filer sqaure images anyway so taking max here is OK becuase</span>
+<span class="c1"># the two elements in the tuple must be the same at this point</span>
+        
+        <span class="k">if</span> <span class="n">_sf</span> <span class="o">&gt;</span> <span class="n">_mysize</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>   
+    
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Base frequency for Gabor &#39;</span>
+                  <span class="s1">&#39;noise is  too high (exceeds Nyquist limit).&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">Warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="n">localf</span> <span class="o">=</span> <span class="n">_sf</span> <span class="o">/</span> <span class="n">_mysize</span>
+        <span class="n">linbw</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseBW</span>
+        <span class="n">lowf</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">localf</span> <span class="o">/</span> <span class="p">(</span><span class="n">linbw</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">highf</span> <span class="o">=</span> <span class="n">linbw</span> <span class="o">*</span> <span class="n">lowf</span>
+        <span class="n">FWF</span> <span class="o">=</span> <span class="n">highf</span> <span class="o">-</span> <span class="n">lowf</span>
+        <span class="n">sigmaF</span> <span class="o">=</span> <span class="n">FWF</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="n">FWO</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">*</span><span class="n">localf</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseBWO</span><span class="o">/</span><span class="mf">360.0</span><span class="p">)</span>
+        <span class="n">sigmaO</span> <span class="o">=</span> <span class="n">FWO</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="n">yy</span><span class="p">,</span> <span class="n">xx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">_mysize</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">_mysize</span><span class="p">]</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">_mysize</span> <span class="o">*</span> <span class="n">xx</span><span class="p">)</span>
+        <span class="n">yy</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span> <span class="o">-</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">_mysize</span> <span class="o">*</span> <span class="n">yy</span><span class="p">)</span>
+        <span class="nb">filter</span><span class="o">=</span><span class="n">filters</span><span class="o">.</span><span class="n">make2DGauss</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span><span class="n">mean</span><span class="o">=</span><span class="p">(</span><span class="n">localf</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="p">(</span><span class="n">sigmaF</span><span class="p">,</span><span class="n">sigmaO</span><span class="p">))</span>
+        <span class="nb">filter</span><span class="o">=</span><span class="nb">filter</span><span class="o">+</span><span class="n">filters</span><span class="o">.</span><span class="n">make2DGauss</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="n">yy</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">localf</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="p">(</span><span class="n">sigmaF</span><span class="p">,</span><span class="n">sigmaO</span><span class="p">))</span>
+        <span class="nb">filter</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">noiseOri</span><span class="p">,</span>
+                        <span class="n">Image</span><span class="o">.</span><span class="n">BICUBIC</span>
+                <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">FT</span><span class="o">*</span><span class="nb">filter</span>
+
+<div class="viewcode-block" id="NoiseStim.updateNoise">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.updateNoise">[docs]</a>
+    <span class="k">def</span> <span class="nf">updateNoise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the noise sample. Does not change any of the noise parameters </span>
+<span class="sd">            but choses a new random sample given the previously set parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;Binary&#39;</span><span class="p">,</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span><span class="s1">&#39;Uniform&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="s1">&#39;Image&#39;</span><span class="p">])</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imageComponent</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">,(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)))</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Butterworth&#39;</span><span class="p">,</span><span class="s1">&#39;butterworth&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Gabor&#39;</span><span class="p">,</span><span class="s1">&#39;gabor&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gabor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Isotropic&#39;</span><span class="p">,</span><span class="s1">&#39;isotropic&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_isotropic</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">In</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">noisePh</span><span class="p">)</span>
+                <span class="n">Im</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">ifft2</span><span class="p">(</span><span class="n">In</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">Ph</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+                <span class="n">Ph</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Ph</span><span class="p">,(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)))</span>
+                <span class="n">In</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Ph</span><span class="p">)</span>
+                <span class="n">Im</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">ifft2</span><span class="p">(</span><span class="n">In</span><span class="p">))</span>
+                <span class="n">Im</span> <span class="o">=</span> <span class="n">ifftshift</span><span class="p">(</span><span class="n">Im</span><span class="p">)</span>
+            <span class="n">gsd</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">getRMScontrast</span><span class="p">(</span><span class="n">Im</span><span class="p">)</span>
+            <span class="n">factor</span> <span class="o">=</span> <span class="n">gsd</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseClip</span>
+            <span class="n">numpy</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Im</span><span class="p">,</span> <span class="o">-</span><span class="n">factor</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">Im</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tex</span> <span class="o">=</span> <span class="n">Im</span> <span class="o">/</span> <span class="n">factor</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span><span class="s1">&#39;Normal&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseClip</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span><span class="s1">&#39;Uniform&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">-</span> <span class="mf">1.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span>  <span class="c1"># pick random noise sample by shuffleing values</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">,(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;Binary&#39;</span><span class="p">,</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span><span class="s1">&#39;Uniform&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;butterworth&#39;</span><span class="p">,</span> <span class="s1">&#39;Butterworth&#39;</span><span class="p">,</span> <span class="s1">&#39;Gabor&#39;</span><span class="p">,</span><span class="s1">&#39;gabor&#39;</span><span class="p">,</span><span class="s1">&#39;Isotropic&#39;</span><span class="p">,</span><span class="s1">&#39;isotropic&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">==</span> <span class="s1">&#39;pix&#39;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                        <span class="n">baseImage</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                                <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span>
+                                        <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span>
+                                        <span class="n">Image</span><span class="o">.</span><span class="n">NEAREST</span>
+                                <span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;NoiseStim can only apply filters to square noise images&#39;</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">baseImage</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                            <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span>
+                                    <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)),</span>
+                                    <span class="n">Image</span><span class="o">.</span><span class="n">NEAREST</span>
+                            <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="n">baseImage</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">baseImage</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+                        <span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0078431372549019607</span> <span class="o">-</span> <span class="mf">1.0</span>
+                <span class="n">FT</span> <span class="o">=</span> <span class="n">fft2</span><span class="p">(</span><span class="n">baseImage</span><span class="p">)</span>
+                <span class="n">spectrum</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">fftshift</span><span class="p">(</span><span class="n">FT</span><span class="p">))</span>
+                <span class="n">angle</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">FT</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;butterworth&#39;</span><span class="p">,</span><span class="s1">&#39;Butterworth&#39;</span><span class="p">]:</span>
+                    <span class="n">spectrum</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filter</span><span class="p">(</span><span class="n">spectrum</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;isotropic&#39;</span><span class="p">,</span><span class="s1">&#39;Isotropic&#39;</span><span class="p">]:</span>
+                    <span class="n">spectrum</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_isotropic</span><span class="p">(</span><span class="n">spectrum</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;gabor&#39;</span><span class="p">,</span><span class="s1">&#39;Gabor&#39;</span><span class="p">]:</span>
+                    <span class="n">spectrum</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_gabor</span><span class="p">(</span><span class="n">spectrum</span><span class="p">))</span>
+                <span class="n">spectrum</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># set DC to zero</span>
+                <span class="n">FT</span> <span class="o">=</span> <span class="n">spectrum</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">angle</span><span class="p">)</span>
+                
+                <span class="n">Im</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">ifft2</span><span class="p">(</span><span class="n">FT</span><span class="p">))</span>
+                <span class="n">gsd</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">getRMScontrast</span><span class="p">(</span><span class="n">Im</span><span class="p">)</span>
+                <span class="n">factor</span> <span class="o">=</span> <span class="n">gsd</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseClip</span>
+                <span class="n">numpy</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">Im</span><span class="p">,</span> <span class="o">-</span><span class="n">factor</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">Im</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">tex</span> <span class="o">=</span> <span class="n">Im</span> <span class="o">/</span> <span class="n">factor</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="s1">&#39;Image&#39;</span><span class="p">]):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">tex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span></div>
+
+                
+    
+            
+<div class="viewcode-block" id="NoiseStim.buildNoise">
+<a class="viewcode-back" href="../../../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.buildNoise">[docs]</a>
+    <span class="k">def</span> <span class="nf">buildNoise</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;build a new noise sample. Required to act on changes to any noise parameters or texRes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="o">==</span> <span class="s1">&#39;pix&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Binary&#39;</span><span class="p">,</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span><span class="s1">&#39;Uniform&#39;</span><span class="p">]):</span>
+                <span class="n">mysize</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">mysize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+            <span class="n">sampleSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseElementSize</span>
+            <span class="n">mysf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;noiseBaseSf&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">mysize</span>
+            <span class="n">lowsf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterLower</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mysize</span><span class="p">)</span> <span class="c1"># filter can only be applied to square images anyway</span>
+            <span class="n">upsf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterUpper</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mysize</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mysize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">texRes</span>
+            <span class="n">pixSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span>
+            <span class="n">sampleSize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseElementSize</span><span class="o">/</span><span class="n">pixSize</span>
+            <span class="n">mysf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseBaseSf</span>
+            <span class="n">lowsf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterLower</span>
+            <span class="n">upsf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseFilterUpper</span>
+       
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span> <span class="o">=</span> <span class="n">mysize</span>  <span class="c1"># store for use by updateNoise()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sf</span> <span class="o">=</span> <span class="n">mysf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lowsf</span> <span class="o">=</span> <span class="n">lowsf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_upsf</span> <span class="o">=</span> <span class="n">upsf</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;Binary&#39;</span><span class="p">,</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span><span class="s1">&#39;Uniform&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">mysize</span><span class="o">/</span><span class="n">sampleSize</span><span class="p">)</span>  <span class="c1"># dummy side length for use when unpacking noise samples in updateNoise()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)):</span>
+                <span class="n">msg</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Noise sample size &#39;</span>
+                     <span class="s1">&#39;must result in more than &#39;</span>
+                     <span class="s1">&#39;1 sample per image dimension.&#39;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">totalSamples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_sideLength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;Binary&#39;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">totalSamples</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))),</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">totalSamples</span><span class="o">/</span><span class="mf">2.0</span><span class="p">))))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;White&#39;</span><span class="p">,</span><span class="s1">&#39;white&#39;</span><span class="p">,</span><span class="s1">&#39;filtered&#39;</span><span class="p">,</span><span class="s1">&#39;Filtered&#39;</span><span class="p">,</span><span class="s1">&#39;isotropic&#39;</span><span class="p">,</span><span class="s1">&#39;Isotropic&#39;</span><span class="p">,</span><span class="s1">&#39;Gabor&#39;</span><span class="p">,</span><span class="s1">&#39;gabor&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">mysize</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">mysize</span><span class="p">)))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Image&#39;</span><span class="p">,</span><span class="s1">&#39;image&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseImage</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;None&#39;</span><span class="p">,</span><span class="s1">&#39;none&#39;</span><span class="p">]):</span>  
+                <span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseImage</span><span class="p">)</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">FLIP_TOP_BOTTOM</span><span class="p">)</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>  <span class="c1"># FORCE TO LUMINANCE</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">im</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)),</span>
+                               <span class="n">Image</span><span class="o">.</span><span class="n">BILINEAR</span><span class="p">)</span>
+                <span class="n">intensity</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">im</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+                        <span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.0078431372549019607</span> <span class="o">-</span> <span class="mf">1.0</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">imageComponent</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;phase&#39;</span><span class="p">,</span> <span class="s1">&#39;Phase&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">fftshift</span><span class="p">(</span><span class="n">fft2</span><span class="p">(</span><span class="n">intensity</span><span class="p">)))</span> <span class="c1"># fftshift here is undone later</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">imageComponent</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Amplitude&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">noisePh</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">angle</span><span class="p">((</span><span class="n">fft2</span><span class="p">(</span><span class="n">intensity</span><span class="p">)))</span> <span class="c1"># fftshift here is undone later</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">,(</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_mysize</span><span class="p">)))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown value for imageComponent in noiseStim&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">mysize</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">mysize</span><span class="p">)))</span>  <span class="c1"># if image is &#39;None&#39; will make white noise as temporary measure</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Noise type not recognised. Valid types are Binary, Uniform, Normal,&#39;</span>
+                    <span class="s1">&#39;White, Filtered, Gabor, Isotropic or Image&#39;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;binary&#39;</span><span class="p">,</span><span class="s1">&#39;Binary&#39;</span><span class="p">,</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span><span class="s1">&#39;Normal&#39;</span><span class="p">,</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span><span class="s1">&#39;Uniform&#39;</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;filtered&#39;</span><span class="p">,</span><span class="s1">&#39;Filtered&#39;</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;butterworth&#39;</span><span class="p">,</span> <span class="s1">&#39;Butterworth&#39;</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_filter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Isotropic&#39;</span><span class="p">,</span><span class="s1">&#39;isotropic&#39;</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;isotropic&#39;</span><span class="p">,</span> <span class="s1">&#39;Isotropic&#39;</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_isotropic</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseType</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Gabor&#39;</span><span class="p">,</span><span class="s1">&#39;gabor&#39;</span><span class="p">])</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;gabor&#39;</span><span class="p">,</span> <span class="s1">&#39;Gabor&#39;</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_gabor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span> <span class="o">=</span> <span class="n">fftshift</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noiseTex</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Set DC to zero</span>
+  
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needBuild</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># prevent noise from being re-built at next draw() unless a parameter is changed in the mean time.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">updateNoise</span><span class="p">()</span>  <span class="c1"># now choose the initial random sample.</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

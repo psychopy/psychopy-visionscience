@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Radial Stim &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="prev" title="Noise Stim" href="../NoiseStim/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../../">
+        <img src="../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../../">
+        <img src="../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/EnvGratingComponent/">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../EnvelopeGrating/">Envelope Grating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NoiseStim/">Noise Stim</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <section id="radial-stim">
+<h1>Radial Stim<a class="headerlink" href="#radial-stim" title="Link to this heading">¶</a></h1>
+<p>To import RadialStim, you can either use:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">psychopy_visionscience.radial</span> <span class="pre">import</span> <span class="pre">RadialStim</span>
+<span class="pre">`</span></code>
+or, any time after <cite>psychopy.plugins.activatePlugins</cite> has been called:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">psychopy.visual</span> <span class="pre">import</span> <span class="pre">RadialStim</span>
+<span class="pre">`</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psychopy_visionscience.radial.</span></span><span class="sig-name descname"><span class="pre">RadialStim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sqrXsqr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,</span> <span class="pre">1.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radialCycles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularCycles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radialPhase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularPhase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texRes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">angularRes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visibleWedge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">360)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,</span> <span class="pre">1.0,</span> <span class="pre">1.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dkl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgbPedestal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autoLog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maskParams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/radial/#RadialStim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim" title="Link to this definition">¶</a></dt>
+<dd><p>Stimulus object for drawing radial stimuli. This is
+a lazy-imported class, therefore import using full path
+<cite>from psychopy.visual.radial import RadialStim</cite> when
+inheriting from it.</p>
+<p>Examples: annulus, rotating wedge, checkerboard.</p>
+<p>Ideal for fMRI retinotopy stimuli!</p>
+<p>Many of the capabilities are built on top of the GratingStim.</p>
+<p>This stimulus is still relatively new and I’m finding occasional glitches.
+It also takes longer to draw than a typical GratingStim, so not
+recommended for tasks where high frame rates are needed.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.RGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RGB</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.RGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the foreground color of a stimulus in RGB, instead use <cite>obj._foreColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.anchor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anchor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.anchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.angularCycles">
+<span class="sig-name descname"><span class="pre">angularCycles</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.angularCycles" title="Link to this definition">¶</a></dt>
+<dd><p>Float (but Int is prettiest). Set the number of cycles going
+around the stimulus. i.e. it controls the number of ‘spokes’.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.angularPhase">
+<span class="sig-name descname"><span class="pre">angularPhase</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.angularPhase" title="Link to this definition">¶</a></dt>
+<dd><p>Float. Set the angular phase (like orientation) of the texture
+(wraps 0-1).</p>
+<p>This is akin to setting the orientation of the texture around the
+stimulus in radians. If possible, it is more efficient to rotate the
+stimulus using its <cite>ori</cite> setting instead.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.angularRes">
+<span class="sig-name descname"><span class="pre">angularRes</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.angularRes" title="Link to this definition">¶</a></dt>
+<dd><p>The number of triangles used to make the sti.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.autoDraw">
+<span class="sig-name descname"><span class="pre">autoDraw</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.autoDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Determines whether the stimulus should be automatically drawn
+on every frame flip.</p>
+<p>Value should be: <cite>True</cite> or <cite>False</cite>. You do NOT need to set this
+on every frame flip!</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.autoLog">
+<span class="sig-name descname"><span class="pre">autoLog</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.autoLog" title="Link to this definition">¶</a></dt>
+<dd><p>Whether every change in this stimulus should be auto logged.</p>
+<p>Value should be: <cite>True</cite> or <cite>False</cite>. Set to <cite>False</cite> if your stimulus is
+updating frequently (e.g. updating its position every frame) and you
+want to avoid swamping the log file with messages that aren’t likely to
+be useful.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.backColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backColor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.backColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting fillColor</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.backColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.backColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.backRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backRGB</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.backRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the fill color of a stimulus in RGB, instead use <cite>obj._fillColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.backgroundColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backgroundColor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.backgroundColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting fillColor</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.blendmode">
+<span class="sig-name descname"><span class="pre">blendmode</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.blendmode" title="Link to this definition">¶</a></dt>
+<dd><p>The OpenGL mode in which the stimulus is draw</p>
+<p>Can the ‘avg’ or ‘add’. Average (avg) places the new stimulus over the
+old one with a transparency given by its opacity. Opaque stimuli will
+hide other stimuli transparent stimuli won’t. Add performs the
+arithmetic sum of the new stimulus and the ones already present.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.borderColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderColor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.borderColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.borderColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.borderColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.borderRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderRGB</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.borderRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the border color of a stimulus in RGB, instead use <cite>obj._borderColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.borderWidth">
+<span class="sig-name descname"><span class="pre">borderWidth</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.borderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.clearTextures">
+<span class="sig-name descname"><span class="pre">clearTextures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.clearTextures" title="Link to this definition">¶</a></dt>
+<dd><p>Clear all textures associated with the stimulus.</p>
+<p>As of v1.61.00 this is called automatically during garbage collection
+of your stimulus, so doesn’t need calling explicitly by the user.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.color">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.color" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>foreColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.colorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">colorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.colorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the color space currently being used</p>
+<p>Value should be: a string or None</p>
+<p>For strings and hex values this is not needed.
+If None the default colorSpace for the stimulus is
+used (defined during initialisation).</p>
+<p>Please note that changing colorSpace does not change stimulus
+parameters. Thus you usually want to specify colorSpace before
+setting the color. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A light green text</span>
+<span class="n">stim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="s1">&#39;Color me!&#39;</span><span class="p">,</span>
+                       <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colorSpace</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">)</span>
+
+<span class="c1"># An almost-black text</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">colorSpace</span> <span class="o">=</span> <span class="s1">&#39;rgb255&#39;</span>
+
+<span class="c1"># Make it light green again</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.contains" title="Link to this definition">¶</a></dt>
+<dd><p>Returns True if a point x,y is inside the stimulus’ border.</p>
+<dl class="simple">
+<dt>Can accept variety of input options:</dt><dd><ul class="simple">
+<li><p>two separate args, x and y</p></li>
+<li><p>one arg (list, tuple or array) containing two vals (x,y)</p></li>
+<li><dl class="simple">
+<dt>an object with a getPos() method that returns x,y, such</dt><dd><p>as a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mouse</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Returns <cite>True</cite> if the point is within the area defined either by its
+<cite>border</cite> attribute (if one defined), or its <cite>vertices</cite> attribute if
+there is no .border. This method handles
+complex shapes, including concavities and self-crossings.</p>
+<p>Note that, if your stimulus uses a mask (such as a Gaussian) then
+this is not accounted for by the <cite>contains</cite> method; the extent of the
+stimulus is determined purely by the size, position (pos), and
+orientation (ori) settings (and by the vertices for shape stimuli).</p>
+<p>See Coder demos: shapeContains.py
+See Coder demos: shapeContains.py</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.contrast">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">contrast</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.contrast" title="Link to this definition">¶</a></dt>
+<dd><p>A value that is simply multiplied by the color.</p>
+<dl class="simple">
+<dt>Value should be: a float between -1 (negative) and 1 (unchanged).</dt><dd><p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd>
+</dl>
+<p>Set the contrast of the stimulus, i.e. scales how far the stimulus
+deviates from the middle grey. You can also use the stimulus
+<cite>opacity</cite> to control contrast, but that cannot be negative.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">1.0</span>  <span class="c1"># unchanged contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">0.5</span>  <span class="c1"># decrease contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">0.0</span>  <span class="c1"># uniform, no contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>  <span class="c1"># slightly inverted</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>  <span class="c1"># totally inverted</span>
+</pre></div>
+</div>
+<p>Setting contrast outside range -1 to 1 is permitted, but may
+produce strange results if color values exceeds the monitor limits.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">1.2</span>  <span class="c1"># increases contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.2</span>  <span class="c1"># inverts with increased contrast</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.depth">
+<span class="sig-name descname"><span class="pre">depth</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.depth" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED, depth is now controlled simply by drawing order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.doDragging">
+<span class="sig-name descname"><span class="pre">doDragging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.doDragging" title="Link to this definition">¶</a></dt>
+<dd><p>If this stimulus is draggable, do the necessary actions on a frame
+flip to drag it.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.draggable">
+<span class="sig-name descname"><span class="pre">draggable</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.draggable" title="Link to this definition">¶</a></dt>
+<dd><p>Can this stimulus be dragged by a mouse click?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/radial/#RadialStim.draw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.draw" title="Link to this definition">¶</a></dt>
+<dd><p>Draw the stimulus in its relevant window. You must call
+this method after every <cite>win.flip()</cite> if you want the
+stimulus to appear on that frame and then update the screen
+again.</p>
+<p>If <cite>win</cite> is specified then override the normal window of this
+stimulus.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.fillColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillColor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.fillColor" title="Link to this definition">¶</a></dt>
+<dd><p>Set the fill color for the shape.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.fillColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.fillColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.fillRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillRGB</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.fillRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the fill color of a stimulus in RGB, instead use <cite>obj._fillColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.flip">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flip</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.flip" title="Link to this definition">¶</a></dt>
+<dd><p>1x2 array for flipping vertices along each axis; set as True to flip or False to not flip. If set as a single value, will duplicate across both axes. Accessing the protected attribute (<cite>._flip</cite>) will give an array of 1s and -1s with which to multiply vertices.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.flipHoriz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flipHoriz</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.flipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.flipVert">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flipVert</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.flipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.fontColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fontColor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.fontColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>foreColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.foreColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreColor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.foreColor" title="Link to this definition">¶</a></dt>
+<dd><p>Foreground color of the stimulus</p>
+<dl class="simple">
+<dt>Value should be one of:</dt><dd><ul class="simple">
+<li><p>string: to specify a <span class="xref std std-ref">colorNames</span>. Any of the standard
+html/X11 <cite>color names
+&lt;http://www.w3schools.com/html/html_colornames.asp&gt;</cite>
+can be used.</p></li>
+<li><p><span class="xref std std-ref">hexColors</span></p></li>
+<li><dl class="simple">
+<dt>numerically: (scalar or triplet) for DKL, RGB or</dt><dd><p>other <span class="xref std std-ref">colorspaces</span>. For
+these, <span class="xref std std-ref">operations</span> are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>When color is specified using numbers, it is interpreted with
+respect to the stimulus’ current colorSpace. If color is given as a
+single value (scalar) then this will be applied to all 3 channels.</p>
+<p class="rubric">Examples</p>
+<p>For whatever stim you have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;RoyalBlue&#39;</span>  <span class="c1"># (the case is actually ignored)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#DDA0DD&#39;</span>  <span class="c1"># DDA0DD is hexadecimal for plum</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;rgb&#39;:</span>
+                <span class="c1"># a red color in rgb space</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;dkl&#39;:</span>
+                <span class="c1"># DKL space with elev=0, azimuth=45</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;rgb255&#39;:</span>
+                <span class="c1"># a blue stimulus using rgb255 space</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="mi">255</span>  <span class="c1"># interpreted as (255, 255, 255)</span>
+                  <span class="c1"># which is white in rgb255.</span>
+</pre></div>
+</div>
+<p><span class="xref std std-ref">Operations</span> work as normal for all numeric
+colorSpaces (e.g. ‘rgb’, ‘hsv’ and ‘rgb255’) but not for strings, like
+named and hex. For example, assuming that colorSpace=’rgb’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># increment all guns by 1 value</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># multiply the color by -1 (which in this</span>
+                    <span class="c1"># space inverts the contrast)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">*=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># decrease red, remove green, keep blue</span>
+</pre></div>
+</div>
+<p>You can use <cite>setColor</cite> if you want to set color and colorSpace in one
+line. These two are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">setColor</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;rgb255&#39;</span><span class="p">)</span>
+<span class="c1"># ... is equivalent to</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">colorSpace</span> <span class="o">=</span> <span class="s1">&#39;rgb255&#39;</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.foreColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.foreColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.foreRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreRGB</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.foreRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the foreground color of a stimulus in RGB, instead use <cite>obj._foreColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getAnchor">
+<span class="sig-name descname"><span class="pre">getAnchor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getAnchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getAngularCycles">
+<span class="sig-name descname"><span class="pre">getAngularCycles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getAngularCycles" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getAngularPhase">
+<span class="sig-name descname"><span class="pre">getAngularPhase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getAngularPhase" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getAngularRes">
+<span class="sig-name descname"><span class="pre">getAngularRes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getAngularRes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getAutoDraw">
+<span class="sig-name descname"><span class="pre">getAutoDraw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getAutoDraw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getAutoLog">
+<span class="sig-name descname"><span class="pre">getAutoLog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getAutoLog" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBackColor">
+<span class="sig-name descname"><span class="pre">getBackColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBackColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBackColorSpace">
+<span class="sig-name descname"><span class="pre">getBackColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBackColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBackRGB">
+<span class="sig-name descname"><span class="pre">getBackRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBackRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBackgroundColor">
+<span class="sig-name descname"><span class="pre">getBackgroundColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBackgroundColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBlendmode">
+<span class="sig-name descname"><span class="pre">getBlendmode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBlendmode" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBorderColor">
+<span class="sig-name descname"><span class="pre">getBorderColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBorderColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBorderColorSpace">
+<span class="sig-name descname"><span class="pre">getBorderColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBorderColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBorderRGB">
+<span class="sig-name descname"><span class="pre">getBorderRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBorderRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getBorderWidth">
+<span class="sig-name descname"><span class="pre">getBorderWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getBorderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getColor">
+<span class="sig-name descname"><span class="pre">getColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getColorSpace">
+<span class="sig-name descname"><span class="pre">getColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getContrast">
+<span class="sig-name descname"><span class="pre">getContrast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getContrast" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getDepth">
+<span class="sig-name descname"><span class="pre">getDepth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getDepth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getDraggable">
+<span class="sig-name descname"><span class="pre">getDraggable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getDraggable" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getFillColor">
+<span class="sig-name descname"><span class="pre">getFillColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getFillColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getFillColorSpace">
+<span class="sig-name descname"><span class="pre">getFillColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getFillColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getFillRGB">
+<span class="sig-name descname"><span class="pre">getFillRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getFillRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getFlip">
+<span class="sig-name descname"><span class="pre">getFlip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getFlip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getFlipHoriz">
+<span class="sig-name descname"><span class="pre">getFlipHoriz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getFlipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getFlipVert">
+<span class="sig-name descname"><span class="pre">getFlipVert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getFlipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getFontColor">
+<span class="sig-name descname"><span class="pre">getFontColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getFontColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getForeColor">
+<span class="sig-name descname"><span class="pre">getForeColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getForeColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getForeColorSpace">
+<span class="sig-name descname"><span class="pre">getForeColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getForeColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getForeRGB">
+<span class="sig-name descname"><span class="pre">getForeRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getForeRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getHeight">
+<span class="sig-name descname"><span class="pre">getHeight</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getHeight" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getInterpolate">
+<span class="sig-name descname"><span class="pre">getInterpolate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getInterpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getLineColor">
+<span class="sig-name descname"><span class="pre">getLineColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getLineColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getLineColorSpace">
+<span class="sig-name descname"><span class="pre">getLineColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getLineColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getLineRGB">
+<span class="sig-name descname"><span class="pre">getLineRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getLineRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getLineWidth">
+<span class="sig-name descname"><span class="pre">getLineWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getLineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getMask">
+<span class="sig-name descname"><span class="pre">getMask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getMask" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getMaskParams">
+<span class="sig-name descname"><span class="pre">getMaskParams</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getMaskParams" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getOpacity">
+<span class="sig-name descname"><span class="pre">getOpacity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getOpacity" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getOri">
+<span class="sig-name descname"><span class="pre">getOri</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getOri" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getPhase">
+<span class="sig-name descname"><span class="pre">getPhase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getPhase" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getPos">
+<span class="sig-name descname"><span class="pre">getPos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getPos" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getRGB">
+<span class="sig-name descname"><span class="pre">getRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getRadialCycles">
+<span class="sig-name descname"><span class="pre">getRadialCycles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getRadialCycles" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getRadialPhase">
+<span class="sig-name descname"><span class="pre">getRadialPhase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getRadialPhase" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getSf">
+<span class="sig-name descname"><span class="pre">getSf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getSize">
+<span class="sig-name descname"><span class="pre">getSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getSize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getTex">
+<span class="sig-name descname"><span class="pre">getTex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getTex" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getTexRes">
+<span class="sig-name descname"><span class="pre">getTexRes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getTexRes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getUnits">
+<span class="sig-name descname"><span class="pre">getUnits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getUnits" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getVertices">
+<span class="sig-name descname"><span class="pre">getVertices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getVertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getVerticesPix">
+<span class="sig-name descname"><span class="pre">getVerticesPix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getVerticesPix" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getVisibleWedge">
+<span class="sig-name descname"><span class="pre">getVisibleWedge</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getVisibleWedge" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getWidth">
+<span class="sig-name descname"><span class="pre">getWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.getWin">
+<span class="sig-name descname"><span class="pre">getWin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.getWin" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.get_borderPix">
+<span class="sig-name descname"><span class="pre">get_borderPix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.get_borderPix" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.height">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.height" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.interpolate" title="Link to this definition">¶</a></dt>
+<dd><p>Whether to interpolate (linearly) the texture in the stimulus.</p>
+<p>If set to False then nearest neighbour will be used when needed,
+otherwise some form of interpolation will be used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.isDragging">
+<span class="sig-name descname"><span class="pre">isDragging</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.isDragging" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.lineColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineColor</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.lineColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>borderColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.lineColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.lineColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.lineRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineRGB</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.lineRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the border color of a stimulus in RGB, instead use <cite>obj._borderColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.lineWidth">
+<span class="sig-name descname"><span class="pre">lineWidth</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.lineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.mask">
+<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.mask" title="Link to this definition">¶</a></dt>
+<dd><p>The alpha mask that forms the shape of the resulting image.</p>
+<p>Value should be one of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>‘circle’, ‘gauss’, ‘raisedCos’, <strong>None</strong> (resets to default)</p></li>
+<li><p>or the name of an image file (most formats supported)</p></li>
+<li><p>or a numpy array (1xN) ranging -1:1</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the mask for <cite>RadialStim</cite> is somewhat different to the
+mask for <code class="xref py py-class docutils literal notranslate"><span class="pre">ImageStim</span></code>. For <cite>RadialStim</cite> it is a 1D array
+specifying the luminance profile extending outwards from the
+center of the stimulus, rather than a 2D array</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.maskParams">
+<span class="sig-name descname"><span class="pre">maskParams</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.maskParams" title="Link to this definition">¶</a></dt>
+<dd><p>Various types of input. Default to <cite>None</cite>.</p>
+<p>This is used to pass additional parameters to the mask if those are
+needed.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For ‘gauss’ mask, pass dict {‘sd’: 5} to control</dt><dd><p>standard deviation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For the ‘raisedCos’ mask, pass a dict: {‘fringeWidth’:0.2},</dt><dd><p>where ‘fringeWidth’ is a parameter (float, 0-1), determining
+the proportion of the patch that will be blurred by the raised
+cosine edge.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.name" title="Link to this definition">¶</a></dt>
+<dd><p>The name (<cite>str</cite>) of the object to be using during logged messages
+about this stim. If you have multiple stimuli in your experiment this
+really helps to make sense of log files!</p>
+<p>If name = None your stimulus will be called “unnamed &lt;type&gt;”, e.g.
+visual.TextStim(win) will be called “unnamed TextStim” in the logs.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.opacity">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opacity</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.opacity" title="Link to this definition">¶</a></dt>
+<dd><p>Determines how visible the stimulus is relative to background.</p>
+<p>The value should be a single float ranging 1.0 (opaque) to 0.0
+(transparent). <span class="xref std std-ref">Operations</span> are supported.
+Precisely how this is used depends on the <span class="xref std std-ref">blendMode</span>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.ori">
+<span class="sig-name descname"><span class="pre">ori</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.ori" title="Link to this definition">¶</a></dt>
+<dd><p>The orientation of the stimulus (in degrees).</p>
+<p>Should be a single value (<span class="xref std std-ref">scalar</span>).
+<span class="xref std std-ref">Operations</span> are supported.</p>
+<p>Orientation convention is like a clock: 0 is vertical, and positive
+values rotate clockwise. Beyond 360 and below zero values wrap
+appropriately.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.overlaps">
+<span class="sig-name descname"><span class="pre">overlaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polygon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.overlaps" title="Link to this definition">¶</a></dt>
+<dd><p>Returns <cite>True</cite> if this stimulus intersects another one.</p>
+<p>If <cite>polygon</cite> is another stimulus instance, then the vertices
+and location of that stimulus will be used as the polygon.
+Overlap detection is typically very good, but it
+can fail with very pointy shapes in a crossed-swords configuration.</p>
+<p>Note that, if your stimulus uses a mask (such as a Gaussian blob)
+then this is not accounted for by the <cite>overlaps</cite> method; the extent
+of the stimulus is determined purely by the size, pos, and
+orientation settings (and by the vertices for shape stimuli).</p>
+<p>See coder demo, shapeContains.py</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.phase">
+<span class="sig-name descname"><span class="pre">phase</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.phase" title="Link to this definition">¶</a></dt>
+<dd><p>Phase of the stimulus in each dimension of the texture.</p>
+<p>Should be an <span class="xref std std-ref">x,y-pair</span> or <span class="xref std std-ref">scalar</span></p>
+<p><strong>NB</strong> phase has modulus 1 (rather than 360 or 2*pi) This is a little
+unconventional but has the nice effect that setting phase=t*n drifts a
+stimulus at <em>n</em> Hz.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.pos">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.pos" title="Link to this definition">¶</a></dt>
+<dd><p>The position of the center of the stimulus in the stimulus
+<span class="xref std std-ref">units</span></p>
+<p><cite>value</cite> should be an <span class="xref std std-ref">x,y-pair</span>.
+<span class="xref std std-ref">Operations</span> are also supported.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Set slightly to the right of center</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Increment pos rightwards and upwards.</span>
+    <span class="n">Is</span> <span class="n">now</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">*=</span> <span class="mf">0.2</span>  <span class="c1"># Move stim towards the center.</span>
+    <span class="n">Is</span> <span class="n">now</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tip: If you need the position of stim in pixels, you can obtain
+it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy.tools.monitorunittools</span> <span class="kn">import</span> <span class="n">posToPix</span>
+<span class="n">posPix</span> <span class="o">=</span> <span class="n">posToPix</span><span class="p">(</span><span class="n">stim</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.radialCycles">
+<span class="sig-name descname"><span class="pre">radialCycles</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.radialCycles" title="Link to this definition">¶</a></dt>
+<dd><p>Float (but Int is prettiest). Set the number of texture cycles
+from centre to periphery, i.e. it controls the number of ‘rings’.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.radialPhase">
+<span class="sig-name descname"><span class="pre">radialPhase</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.radialPhase" title="Link to this definition">¶</a></dt>
+<dd><p>Float. Set the radial phase of the texture (wraps 0-1). This is the
+phase of the texture from the centre to the perimeter of the stimulus
+(in radians). Can be used to drift concentric rings out/inwards.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setAnchor">
+<span class="sig-name descname"><span class="pre">setAnchor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setAnchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setAngularCycles">
+<span class="sig-name descname"><span class="pre">setAngularCycles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/radial/#RadialStim.setAngularCycles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setAngularCycles" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setAngularPhase">
+<span class="sig-name descname"><span class="pre">setAngularPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/radial/#RadialStim.setAngularPhase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setAngularPhase" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setAngularRes">
+<span class="sig-name descname"><span class="pre">setAngularRes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setAngularRes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setAutoDraw">
+<span class="sig-name descname"><span class="pre">setAutoDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setAutoDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Sets autoDraw. Usually you can use ‘stim.attribute = value’
+syntax instead, but use this method to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setAutoLog">
+<span class="sig-name descname"><span class="pre">setAutoLog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setAutoLog" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBackColor">
+<span class="sig-name descname"><span class="pre">setBackColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBackColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBackColorSpace">
+<span class="sig-name descname"><span class="pre">setBackColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBackColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBackRGB">
+<span class="sig-name descname"><span class="pre">setBackRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBackRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for fill RGB, instead set <cite>obj._fillColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBackgroundColor">
+<span class="sig-name descname"><span class="pre">setBackgroundColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBackgroundColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBlendmode">
+<span class="sig-name descname"><span class="pre">setBlendmode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBlendmode" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBorderColor">
+<span class="sig-name descname"><span class="pre">setBorderColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBorderColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for <cite>fillColor</cite>, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBorderColorSpace">
+<span class="sig-name descname"><span class="pre">setBorderColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBorderColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBorderRGB">
+<span class="sig-name descname"><span class="pre">setBorderRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBorderRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for border RGB, instead set <cite>obj._borderColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setBorderWidth">
+<span class="sig-name descname"><span class="pre">setBorderWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newWidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setBorderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setColor">
+<span class="sig-name descname"><span class="pre">setColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setColorSpace">
+<span class="sig-name descname"><span class="pre">setColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setContrast">
+<span class="sig-name descname"><span class="pre">setContrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newContrast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setContrast" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setDKL">
+<span class="sig-name descname"><span class="pre">setDKL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setDKL" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED since v1.60.05: Please use the <cite>color</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setDepth">
+<span class="sig-name descname"><span class="pre">setDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newDepth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setDepth" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setDraggable">
+<span class="sig-name descname"><span class="pre">setDraggable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setDraggable" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setFillColor">
+<span class="sig-name descname"><span class="pre">setFillColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setFillColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for fillColor, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setFillColorSpace">
+<span class="sig-name descname"><span class="pre">setFillColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setFillColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setFillRGB">
+<span class="sig-name descname"><span class="pre">setFillRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setFillRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for fill RGB, instead set <cite>obj._fillColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setFlip">
+<span class="sig-name descname"><span class="pre">setFlip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setFlip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setFlipHoriz">
+<span class="sig-name descname"><span class="pre">setFlipHoriz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setFlipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setFlipVert">
+<span class="sig-name descname"><span class="pre">setFlipVert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setFlipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setFontColor">
+<span class="sig-name descname"><span class="pre">setFontColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setFontColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setForeColor">
+<span class="sig-name descname"><span class="pre">setForeColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setForeColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for foreColor, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setForeColorSpace">
+<span class="sig-name descname"><span class="pre">setForeColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setForeColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setForeRGB">
+<span class="sig-name descname"><span class="pre">setForeRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setForeRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for foreground RGB, instead set <cite>obj._foreColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setHeight">
+<span class="sig-name descname"><span class="pre">setHeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setHeight" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setInterpolate">
+<span class="sig-name descname"><span class="pre">setInterpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setInterpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setLMS">
+<span class="sig-name descname"><span class="pre">setLMS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setLMS" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED since v1.60.05: Please use the <cite>color</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setLineColor">
+<span class="sig-name descname"><span class="pre">setLineColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setLineColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setLineColorSpace">
+<span class="sig-name descname"><span class="pre">setLineColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setLineColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setLineRGB">
+<span class="sig-name descname"><span class="pre">setLineRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setLineRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for border RGB, instead set <cite>obj._borderColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setLineWidth">
+<span class="sig-name descname"><span class="pre">setLineWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newWidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setLineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setMask">
+<span class="sig-name descname"><span class="pre">setMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/radial/#RadialStim.setMask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setMask" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setMaskParams">
+<span class="sig-name descname"><span class="pre">setMaskParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setMaskParams" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setOpacity">
+<span class="sig-name descname"><span class="pre">setOpacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newOpacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setOpacity" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for opacity, allows the suppression of log messages and calls the update method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setOri">
+<span class="sig-name descname"><span class="pre">setOri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newOri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setOri" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setPhase">
+<span class="sig-name descname"><span class="pre">setPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setPhase" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setPos">
+<span class="sig-name descname"><span class="pre">setPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newPos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setPos" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setRGB">
+<span class="sig-name descname"><span class="pre">setRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for foreground RGB, instead set <cite>obj._foreColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setRadialCycles">
+<span class="sig-name descname"><span class="pre">setRadialCycles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/radial/#RadialStim.setRadialCycles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setRadialCycles" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setRadialPhase">
+<span class="sig-name descname"><span class="pre">setRadialPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/radial/#RadialStim.setRadialPhase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setRadialPhase" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setSF">
+<span class="sig-name descname"><span class="pre">setSF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setSF" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setSf">
+<span class="sig-name descname"><span class="pre">setSf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setSize">
+<span class="sig-name descname"><span class="pre">setSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setSize" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setTex">
+<span class="sig-name descname"><span class="pre">setTex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setTex" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setTexRes">
+<span class="sig-name descname"><span class="pre">setTexRes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setTexRes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setUnits">
+<span class="sig-name descname"><span class="pre">setUnits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setUnits" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setVertices">
+<span class="sig-name descname"><span class="pre">setVertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setVertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setVisibleWedge">
+<span class="sig-name descname"><span class="pre">setVisibleWedge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setVisibleWedge" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setWidth">
+<span class="sig-name descname"><span class="pre">setWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.setWin">
+<span class="sig-name descname"><span class="pre">setWin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.setWin" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.sf">
+<span class="sig-name descname"><span class="pre">sf</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.sf" title="Link to this definition">¶</a></dt>
+<dd><p>Spatial frequency of the grating texture.</p>
+<p>Should be a <span class="xref std std-ref">x,y-pair</span> or <span class="xref std std-ref">scalar</span>
+or None. If <cite>units</cite> == ‘deg’ or ‘cm’ units are in cycles per deg or cm
+as appropriate. If <cite>units</cite> == ‘norm’ then sf units are in cycles per
+stimulus (and so SF scales with stimulus size). If texture is an image
+loaded from a file then sf=None defaults to 1/stimSize to give one cycle
+of the image.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.size" title="Link to this definition">¶</a></dt>
+<dd><p>The size (width, height) of the stimulus in the stimulus
+<span class="xref std std-ref">units</span></p>
+<p>Value should be <span class="xref std std-ref">x,y-pair</span>,
+<span class="xref std std-ref">scalar</span> (applies to both dimensions)
+or None (resets to default). <span class="xref std std-ref">Operations</span>
+are supported.</p>
+<p>Sizes can be negative (causing a mirror-image reversal) and can
+extend beyond the window.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mf">0.8</span>  <span class="c1"># Set size to (xsize, ysize) = (0.8, 0.8)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stim</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># Outputs array([0.8, 0.8])</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">size</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># make wider and flatter: (1.3, 0.3)</span>
+</pre></div>
+</div>
+<p>Tip: if you can see the actual pixel range this corresponds to by
+looking at <cite>stim._sizeRendered</cite></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.tex">
+<span class="sig-name descname"><span class="pre">tex</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.tex" title="Link to this definition">¶</a></dt>
+<dd><p>Texture to used on the stimulus as a grating (aka carrier).</p>
+<dl class="simple">
+<dt>This can be one of various options:</dt><dd><ul class="simple">
+<li><p><strong>‘sin’</strong>,’sqr’, ‘saw’, ‘tri’, None (resets to default)</p></li>
+<li><p>the name of an image file (most formats supported)</p></li>
+<li><p>a numpy array (1xN or NxN) ranging -1:1</p></li>
+</ul>
+</dd>
+</dl>
+<p>If specifying your own texture using an image or numpy array you should
+ensure that the image has square power-of-two dimensions (e.g. 256 x
+256). If not then PsychoPy will up-sample your stimulus to the next
+larger power of two.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.texRes">
+<span class="sig-name descname"><span class="pre">texRes</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.texRes" title="Link to this definition">¶</a></dt>
+<dd><p>Power-of-two int. Sets the resolution of the mask and texture.
+texRes is overridden if an array or image is provided as mask.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.units" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.updateColors">
+<span class="sig-name descname"><span class="pre">updateColors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.updateColors" title="Link to this definition">¶</a></dt>
+<dd><p>Placeholder method to update colours when set externally, for example updating the <cite>pallette</cite> attribute of
+a textbox</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.updateOpacity">
+<span class="sig-name descname"><span class="pre">updateOpacity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.updateOpacity" title="Link to this definition">¶</a></dt>
+<dd><p>Placeholder method to update colours when set externally, for example
+updating the <cite>pallette</cite> attribute of a textbox.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.vertices">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vertices</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.vertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.verticesPix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verticesPix</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.verticesPix" title="Link to this definition">¶</a></dt>
+<dd><p>This determines the coordinates of the vertices for the
+current stimulus in pixels, accounting for size, ori, pos and units</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.visibleWedge">
+<span class="sig-name descname"><span class="pre">visibleWedge</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.visibleWedge" title="Link to this definition">¶</a></dt>
+<dd><p>tuple (start, end) in degrees. Determines visible range.</p>
+<p>(0, 360) is full visibility.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.width" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.radial.RadialStim.win">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">win</span></span><a class="headerlink" href="#psychopy_visionscience.radial.RadialStim.win" title="Link to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code> object in which the
+stimulus will be rendered by default. (required)</p>
+<p>Example, drawing same stimulus in two different windows and display
+simultaneously. Assuming that you have two windows and a stimulus
+(win1, win2 and stim):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">win1</span>  <span class="c1"># stimulus will be drawn in win1</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># stimulus is now drawn to win1</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">win2</span>  <span class="c1"># stimulus will be drawn in win2</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># it is now drawn in win2</span>
+<span class="n">win1</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">waitBlanking</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># do not wait for next</span>
+             <span class="c1"># monitor update</span>
+<span class="n">win2</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>  <span class="c1"># wait for vertical blanking.</span>
+</pre></div>
+</div>
+<p>Note that this just changes <strong>default</strong> window for stimulus.</p>
+<p>You could also specify window-to-draw-to when drawing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win1</span><span class="p">)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+<div id="sourcelink">
+  <a href="https://github.com/psychopy/psychopy/blob/master/docs/source/coder/RadialStim.rst"
+     rel="nofollow">Source</a>
+</div>
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

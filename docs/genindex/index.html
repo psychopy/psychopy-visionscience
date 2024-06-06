@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../_static/doctools.js?v=b682be12"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../_static/js/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="../search/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../">
+        <img src="../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../">
+        <img src="../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../">Home</a></li>
+          <li><a href="../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../builder/components/EnvGratingComponent/">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder/components/NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../builder/components/RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../coder/EnvelopeGrating/">Envelope Grating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coder/NoiseStim/">Noise Stim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coder/RadialStim/">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.anchor">anchor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.anchor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.anchor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.angularCycles">angularCycles (psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.angularPhase">angularPhase (psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.angularRes">angularRes (psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.autoDraw">autoDraw (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.autoDraw">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.autoDraw">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.autoLog">autoLog (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.autoLog">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.autoLog">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.backColor">backColor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.backColor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.backColor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.backColorSpace">backColorSpace (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.backColorSpace">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.backColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.backgroundColor">backgroundColor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.backgroundColor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.backgroundColor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.backRGB">backRGB (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.backRGB">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.backRGB">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.beat">beat (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.blendmode">blendmode (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.blendmode">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.blendmode">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.borderColor">borderColor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.borderColor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.borderColor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.borderColorSpace">borderColorSpace (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.borderColorSpace">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.borderColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.borderRGB">borderRGB (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.borderRGB">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.borderRGB">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.borderWidth">borderWidth (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.borderWidth">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.borderWidth">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.buildNoise">buildNoise() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.carrier">carrier (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.clearTextures">clearTextures() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.clearTextures">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.clearTextures">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.color">color (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.color">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.color">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.colorSpace">colorSpace (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.colorSpace">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.colorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.contains">contains() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.contains">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.contains">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.contrast">contrast (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.contrast">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.contrast">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.depth">depth (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.depth">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.depth">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.doDragging">doDragging() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.doDragging">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.doDragging">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.draggable">draggable (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.draggable">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.draggable">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.draw">draw() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.draw">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.draw">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.envelope">envelope (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating">EnvelopeGrating (class in psychopy_visionscience.secondorder)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.envori">envori (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.envphase">envphase (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.envsf">envsf (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.fillColor">fillColor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.fillColor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.fillColor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.fillColorSpace">fillColorSpace (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.fillColorSpace">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.fillColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.fillRGB">fillRGB (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.fillRGB">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.fillRGB">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.filter">filter (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.flip">flip (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.flip">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.flip">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.flipHoriz">flipHoriz (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.flipHoriz">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.flipHoriz">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.flipVert">flipVert (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.flipVert">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.flipVert">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.fontColor">fontColor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.fontColor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.fontColor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.foreColor">foreColor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.foreColor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.foreColor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.foreColorSpace">foreColorSpace (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.foreColorSpace">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.foreColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.foreRGB">foreRGB (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.foreRGB">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.foreRGB">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.get_borderPix">get_borderPix() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.get_borderPix">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.get_borderPix">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getAnchor">getAnchor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getAnchor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getAnchor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getAngularCycles">getAngularCycles() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getAngularPhase">getAngularPhase() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getAngularRes">getAngularRes() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getAutoDraw">getAutoDraw() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getAutoDraw">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getAutoDraw">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getAutoLog">getAutoLog() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getAutoLog">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getAutoLog">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBackColor">getBackColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBackColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBackColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBackColorSpace">getBackColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBackColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBackColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBackgroundColor">getBackgroundColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBackgroundColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBackgroundColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBackRGB">getBackRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBackRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBackRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBeat">getBeat() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBlendmode">getBlendmode() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBlendmode">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBlendmode">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBorderColor">getBorderColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBorderColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBorderColorSpace">getBorderColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBorderColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBorderRGB">getBorderRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBorderRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getBorderWidth">getBorderWidth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getBorderWidth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderWidth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getCarrier">getCarrier() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getColor">getColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getColorSpace">getColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getContrast">getContrast() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getContrast">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getContrast">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getDepth">getDepth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getDepth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getDepth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getDraggable">getDraggable() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getDraggable">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getDraggable">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvelope">getEnvelope() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvori">getEnvori() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvphase">getEnvphase() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvsf">getEnvsf() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFillColor">getFillColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getFillColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getFillColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFillColorSpace">getFillColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getFillColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getFillColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFillRGB">getFillRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getFillRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getFillRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFilter">getFilter() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFlip">getFlip() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getFlip">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getFlip">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFlipHoriz">getFlipHoriz() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getFlipHoriz">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getFlipHoriz">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFlipVert">getFlipVert() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getFlipVert">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getFlipVert">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getFontColor">getFontColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getFontColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getFontColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getForeColor">getForeColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getForeColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getForeColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getForeColorSpace">getForeColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getForeColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getForeColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getForeRGB">getForeRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getForeRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getForeRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getHeight">getHeight() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getHeight">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getHeight">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getImageCompoment">getImageCompoment() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getInterpolate">getInterpolate() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getInterpolate">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getInterpolate">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getLineColor">getLineColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getLineColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getLineColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getLineColorSpace">getLineColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getLineColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getLineColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getLineRGB">getLineRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getLineRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getLineRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getLineWidth">getLineWidth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getLineWidth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getLineWidth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getMask">getMask() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getMask">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getMask">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getMaskParams">getMaskParams() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getMaskParams">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getMaskParams">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getModdepth">getModdepth() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getName">getName() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getName">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getName">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseBaseSf">getNoiseBaseSf() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseBW">getNoiseBW() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseBWO">getNoiseBWO() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseClip">getNoiseClip() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseElementSize">getNoiseElementSize() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseFilterLower">getNoiseFilterLower() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseFilterOrder">getNoiseFilterOrder() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseFilterUpper">getNoiseFilterUpper() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseFractalPower">getNoiseFractalPower() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseImage">getNoiseImage() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getNoiseType">getNoiseType() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getOpacity">getOpacity() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getOpacity">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getOpacity">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getOri">getOri() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getOri">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getOri">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getPhase">getPhase() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getPhase">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getPhase">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getPos">getPos() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getPos">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getPos">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getPower">getPower() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getRadialCycles">getRadialCycles() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getRadialPhase">getRadialPhase() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getRGB">getRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getSf">getSf() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getSf">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getSf">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getSize">getSize() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getSize">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getSize">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getTex">getTex() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getTex">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getTex">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getTexRes">getTexRes() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getTexRes">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getTexRes">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getUnits">getUnits() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getUnits">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getUnits">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getVertices">getVertices() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getVertices">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getVertices">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getVerticesPix">getVerticesPix() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getVerticesPix">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getVerticesPix">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getVisibleWedge">getVisibleWedge() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getWidth">getWidth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getWidth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getWidth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.getWin">getWin() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.getWin">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.getWin">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.height">height (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.height">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.height">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.imageCompoment">imageCompoment (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.interpolate">interpolate (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.interpolate">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.interpolate">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.isDragging">isDragging (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.isDragging">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.isDragging">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.lineColor">lineColor (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.lineColor">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.lineColor">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.lineColorSpace">lineColorSpace (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.lineColorSpace">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.lineColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.lineRGB">lineRGB (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.lineRGB">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.lineRGB">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.lineWidth">lineWidth (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.lineWidth">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.lineWidth">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.mask">mask (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.mask">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.mask">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.maskParams">maskParams (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.maskParams">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.maskParams">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.moddepth">moddepth (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.name">name (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.name">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.name">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseBaseSf">noiseBaseSf (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseBW">noiseBW (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseBWO">noiseBWO (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseClip">noiseClip (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseElementSize">noiseElementSize (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseFilterLower">noiseFilterLower (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseFilterOrder">noiseFilterOrder (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseFilterUpper">noiseFilterUpper (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseFractalPower">noiseFractalPower (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseImage">noiseImage (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim">NoiseStim (class in psychopy_visionscience.noise)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.noiseType">noiseType (psychopy_visionscience.noise.NoiseStim attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.opacity">opacity (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.opacity">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.opacity">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.ori">ori (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.ori">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.ori">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.overlaps">overlaps() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.overlaps">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.overlaps">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.phase">phase (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.phase">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.phase">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.pos">pos (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.pos">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.pos">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.power">power (psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.radialCycles">radialCycles (psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.radialPhase">radialPhase (psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim">RadialStim (class in psychopy_visionscience.radial)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.RGB">RGB (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.RGB">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.RGB">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setAnchor">setAnchor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAnchor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setAnchor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAngularCycles">setAngularCycles() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAngularPhase">setAngularPhase() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAngularRes">setAngularRes() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setAutoDraw">setAutoDraw() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAutoDraw">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setAutoDraw">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setAutoLog">setAutoLog() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setAutoLog">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setAutoLog">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBackColor">setBackColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBackColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBackColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBackColorSpace">setBackColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBackColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBackColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBackgroundColor">setBackgroundColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBackgroundColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBackgroundColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBackRGB">setBackRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBackRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBackRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBeat">setBeat() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBlendmode">setBlendmode() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setblendMode">setblendMode() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBlendmode">setBlendmode() (psychopy_visionscience.radial.RadialStim method)</a>
+
+      <ul>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBlendmode">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBorderColor">setBorderColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBorderColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBorderColorSpace">setBorderColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBorderColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBorderRGB">setBorderRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBorderRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setBorderWidth">setBorderWidth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setBorderWidth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderWidth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setCarrier">setCarrier() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setColor">setColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setColorSpace">setColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setContrast">setContrast() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setContrast">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setContrast">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setDepth">setDepth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setDepth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setDepth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setDKL">setDKL() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setDKL">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setDKL">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setDraggable">setDraggable() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setDraggable">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setDraggable">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvelope">setEnvelope() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvori">setEnvori() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvphase">setEnvphase() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvsf">setEnvsf() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFillColor">setFillColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setFillColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setFillColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFillColorSpace">setFillColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setFillColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setFillColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFillRGB">setFillRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setFillRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setFillRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFilter">setFilter() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFlip">setFlip() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setFlip">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setFlip">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFlipHoriz">setFlipHoriz() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setFlipHoriz">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setFlipHoriz">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFlipVert">setFlipVert() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setFlipVert">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setFlipVert">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setFontColor">setFontColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setFontColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setFontColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setForeColor">setForeColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setForeColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setForeColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setForeColorSpace">setForeColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setForeColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setForeColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setForeRGB">setForeRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setForeRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setForeRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setHeight">setHeight() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setHeight">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setHeight">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setImageCompoment">setImageCompoment() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setInterpolate">setInterpolate() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setInterpolate">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setInterpolate">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setLineColor">setLineColor() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setLineColor">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setLineColor">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setLineColorSpace">setLineColorSpace() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setLineColorSpace">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setLineColorSpace">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setLineRGB">setLineRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setLineRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setLineRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setLineWidth">setLineWidth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setLineWidth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setLineWidth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setLMS">setLMS() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setLMS">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setLMS">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setMask">setMask() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setMask">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setMask">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setMaskParams">setMaskParams() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setMaskParams">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setMaskParams">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setModdepth">setModdepth() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setName">setName() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setName">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setName">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseBaseSf">setNoiseBaseSf() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseBW">setNoiseBW() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseBWO">setNoiseBWO() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseClip">setNoiseClip() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseElementSize">setNoiseElementSize() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFilterLower">setNoiseFilterLower() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFilterOrder">setNoiseFilterOrder() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFilterUpper">setNoiseFilterUpper() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseFractalPower">setNoiseFractalPower() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseImage">setNoiseImage() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseOri">setNoiseOri() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setNoiseType">setNoiseType() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setOpacity">setOpacity() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setOpacity">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setOpacity">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setOri">setOri() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setOri">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setOri">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setPhase">setPhase() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setPhase">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setPhase">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setPos">setPos() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setPos">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setPos">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setPower">setPower() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setRadialCycles">setRadialCycles() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setRadialPhase">setRadialPhase() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setRGB">setRGB() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setRGB">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setRGB">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setSF">setSF() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setSf">setSf() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setSF">setSF() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setSf">setSf() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setSF">setSF() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setSf">setSf() (psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setSize">setSize() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setSize">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setSize">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setTex">setTex() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setTex">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setTex">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setTexRes">setTexRes() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setTexRes">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setTexRes">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setUnits">setUnits() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setUnits">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setUnits">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setVertices">setVertices() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setVertices">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setVertices">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setVisibleWedge">setVisibleWedge() (psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setWidth">setWidth() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setWidth">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setWidth">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.setWin">setWin() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.setWin">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setWin">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.sf">sf (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.sf">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.sf">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.size">size (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.size">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.size">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.tex">tex (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.tex">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.tex">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.texRes">texRes (psychopy_visionscience.noise.NoiseStim attribute)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.texRes">(psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.texRes">(psychopy_visionscience.secondorder.EnvelopeGrating attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.units">units (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.units">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.units">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.updateColors">updateColors() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.updateColors">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.updateColors">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.updateNoise">updateNoise() (psychopy_visionscience.noise.NoiseStim method)</a>
+</li>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.updateOpacity">updateOpacity() (psychopy_visionscience.noise.NoiseStim method)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.updateOpacity">(psychopy_visionscience.radial.RadialStim method)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.updateOpacity">(psychopy_visionscience.secondorder.EnvelopeGrating method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.vertices">vertices (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.vertices">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.vertices">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.verticesPix">verticesPix (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.verticesPix">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.verticesPix">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+      <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.visibleWedge">visibleWedge (psychopy_visionscience.radial.RadialStim attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.width">width (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.width">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.width">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="../coder/NoiseStim/#psychopy_visionscience.noise.NoiseStim.win">win (psychopy_visionscience.noise.NoiseStim property)</a>
+
+      <ul>
+        <li><a href="../coder/RadialStim/#psychopy_visionscience.radial.RadialStim.win">(psychopy_visionscience.radial.RadialStim property)</a>
+</li>
+        <li><a href="../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.win">(psychopy_visionscience.secondorder.EnvelopeGrating property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>EnvGratingComponent &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <link rel="next" title="NoiseStimComponent" href="../NoiseStimComponent/" />
+    <link rel="prev" title="Welcome to psychopy-visionscience’s documentation!" href="../../../" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/EnvelopeGrating/">Envelope Grating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/NoiseStim/">Noise Stim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/RadialStim/">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <section id="envgratingcomponent">
+<h1>EnvGratingComponent<a class="headerlink" href="#envgratingcomponent" title="Link to this heading">¶</a></h1>
+<p>A class for presenting grating stimuli</p>
+<blockquote>
+<div><p><strong>Categories:</strong> Stimuli
+<strong>Works in:</strong> PsychoPy</p>
+</div></blockquote>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h2>
+<section id="basic">
+<h3>Basic<a class="headerlink" href="#basic" title="Link to this heading">¶</a></h3>
+<dl>
+<dt><cite>Name</cite></dt><dd><p>Name of this component (alphanumeric or _, no spaces)</p>
+</dd>
+<dt><cite>start type</cite></dt><dd><p>How do you want to define your start point?</p>
+<p>Options:
+- time (s)
+- frame N
+- condition</p>
+</dd>
+<dt><cite>stop type</cite></dt><dd><p>How do you want to define your end point?</p>
+<p>Options:
+- duration (s)
+- duration (frames)
+- time (s)
+- frame N
+- condition</p>
+</dd>
+<dt><cite>Start</cite></dt><dd><p>When does the component start?</p>
+</dd>
+<dt><cite>Stop</cite></dt><dd><p>When does the component end? (blank is endless)</p>
+</dd>
+<dt><cite>Expected start (s)</cite></dt><dd><p>(Optional) expected start (s), purely for representing in the timeline</p>
+</dd>
+<dt><cite>Expected duration (s)</cite></dt><dd><p>(Optional) expected duration (s), purely for representing in the timeline</p>
+</dd>
+</dl>
+</section>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><cite>Save onset/offset times</cite></dt><dd><p>Store the onset/offset times in the data file (as well as in the log file).</p>
+</dd>
+<dt><cite>Sync timing with screen refresh</cite></dt><dd><p>Synchronize times with screen refresh (good for visual stimuli and responses based on them)</p>
+</dd>
+</dl>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading">¶</a></h3>
+<dl class="simple">
+<dt><cite>Disable component</cite></dt><dd><p>Disable this component</p>
+</dd>
+</dl>
+</section>
+<section id="layout">
+<h3>Layout<a class="headerlink" href="#layout" title="Link to this heading">¶</a></h3>
+<dl>
+<dt><cite>Spatial Units</cite></dt><dd><p>Units of dimensions for this stimulus</p>
+<p>Options:
+- from exp settings
+- deg
+- cm
+- pix
+- norm
+- height
+- degFlatPos
+- degFlat</p>
+</dd>
+<dt><cite>Position [x,y]</cite></dt><dd><p>Position of this stimulus (e.g. [1,2] )</p>
+</dd>
+<dt><cite>Size [w,h]</cite></dt><dd><p>Size of this stimulus (either a single value or x,y pair, e.g. 2.5, [1,2]</p>
+</dd>
+<dt><cite>Anchor</cite></dt><dd><p>Which point on the stimulus should be anchored to its exact position?</p>
+<p>Options:
+- center
+- top-center
+- bottom-center
+- center-left
+- center-right
+- top-left
+- top-right
+- bottom-left
+- bottom-right</p>
+</dd>
+</dl>
+</section>
+<section id="appearance">
+<h3>Appearance<a class="headerlink" href="#appearance" title="Link to this heading">¶</a></h3>
+<dl>
+<dt><cite>Foreground Color</cite></dt><dd><p>Foreground color of this stimulus (e.g. $[1,1,0], red )</p>
+</dd>
+<dt><cite>Color Space</cite></dt><dd><p>In what format (color space) have you specified the colors? (rgb, dkl, lms, hsv)</p>
+<p>Options:
+- rgb
+- dkl
+- lms
+- hsv</p>
+</dd>
+<dt><cite>Opacity</cite></dt><dd><p>Opacity of the stimulus (1=opaque, 0=fully transparent, 0.5=translucent). Leave blank for each color to have its own opacity (recommended if any color is None).</p>
+</dd>
+<dt><cite>OpenGL blend mode</cite></dt><dd><p>OpenGL Blendmode. Avg is most common mode in PsychoPy, add is useful if combining a beat with the carrier image or numpy array at point of display</p>
+<p>Options:
+- avg
+- add</p>
+</dd>
+</dl>
+</section>
+<section id="carrier">
+<h3>Carrier<a class="headerlink" href="#carrier" title="Link to this heading">¶</a></h3>
+<dl>
+<dt><cite>Carrier contrast</cite></dt><dd><p>Contrast of background carrier</p>
+</dd>
+<dt><cite>Orientation</cite></dt><dd><p>Orientation of this stimulus (in deg)</p>
+<p>Options:
+- -360
+- 360</p>
+</dd>
+<dt><cite>Carrier texture</cite></dt><dd><p>The (2D) texture of the background - can be sin, sqr, sinXsin… or a filename (including path)</p>
+<p>Options:
+- sin
+- sqr
+- sinXsin</p>
+</dd>
+<dt><cite>Mask</cite></dt><dd><p>An image to define the alpha mask (ie shape)- gauss, circle… or a filename (including path)</p>
+<p>Options:
+- gauss
+- circle</p>
+</dd>
+<dt><cite>Carrier spatial frequency</cite></dt><dd><p>Spatial frequency of background carrier repeats across the grating in 1 or 2 dimensions, e.g. 4 or [2,3]</p>
+</dd>
+<dt><cite>Carrier phase (in cycles)</cite></dt><dd><p>Spatial positioning of the background carrier (wraps in range 0-1.0)</p>
+</dd>
+<dt><cite>Texture resolution</cite></dt><dd><p>Resolution of the texture for standard ones such as sin, sqr etc. For most cases a value of 256 pixels will suffice</p>
+<p>Options:
+- 32
+- 64
+- 128
+- 256
+- 512</p>
+</dd>
+<dt><cite>Interpolate</cite></dt><dd><p>How should the image be interpolated if/when rescaled</p>
+<p>Options:
+- linear
+- nearest</p>
+</dd>
+</dl>
+</section>
+<section id="envelope">
+<h3>Envelope<a class="headerlink" href="#envelope" title="Link to this heading">¶</a></h3>
+<dl>
+<dt><cite>Envelope texture</cite></dt><dd><p>The (2D) texture of the envelope - can be sin, sqr, sinXsin… or a filename (including path)</p>
+<p>Options:
+- sin
+- sqr
+- sinXsin</p>
+</dd>
+<dt><cite>Envelope spatial frequency</cite></dt><dd><p>Spatial frequency of the modulation envelope repeats across the grating in 1 or 2 dimensions, e.g. 4 or [2,3]</p>
+</dd>
+<dt><cite>Envelope phase</cite></dt><dd><p>Spatial positioning of the modulation envelope(wraps in range 0-1.0)</p>
+</dd>
+<dt><cite>Envelope orientation</cite></dt><dd><p>Orientation of the modulation envelope(wraps in range 0-360)</p>
+</dd>
+<dt><cite>Envelope modulation depth</cite></dt><dd><p>Modulation depth of modulation envelope</p>
+</dd>
+<dt><cite>Power to which envelope is raised</cite></dt><dd><p>Power of modulation envelope. The modulator will be raised to this power according to the equation S=cC*(1+mM)^power, where C is the carrier and M is the modulator. and c and m are there respective contrast and modulation depth. Only works with AM envelopes (hence +1) in equation. Power is ignored if a beat is requested. This is used to obtain the square root of the modulator (power = 0.5) which is useful if combining two envelope gratings with different carriers and a 180 degree phase shift as the resulting combined signal will not have any reduction in local contrast at any point in the image. This is similar - but not identical to - the method used by Landy and Oruc, Vis Res 2002. Note overall contrast (apparent carrier contrast) will be altered.</p>
+</dd>
+<dt><cite>Is modulation a beat</cite></dt><dd><p>Do you want a ‘beat’? [beat = carrier*envelope, no beat = carrier*(1+envelope), True/False, Y/N]</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+<div id="sourcelink">
+  <a href="https://github.com/psychopy/psychopy/blob/master/docs/source/builder/components/EnvGratingComponent.rst"
+     rel="nofollow">Source</a>
+</div>
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Envelope Grating &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../_static/js/jquery-fix.js"></script>
+    <script src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Noise Stim" href="../NoiseStim/" />
+    <link rel="prev" title="RadialStimComponent" href="../../builder/components/RadialStimComponent/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../../">
+        <img src="../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../../">
+        <img src="../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../../">Home</a></li>
+          <li><a href="../../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/EnvGratingComponent/">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../builder/components/RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Envelope Grating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NoiseStim/">Noise Stim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RadialStim/">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <section id="envelope-grating">
+<h1>Envelope Grating<a class="headerlink" href="#envelope-grating" title="Link to this heading">¶</a></h1>
+<p>To import EnvelopeGrating, you can either use:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">psychopy_visionscience.secondorder</span> <span class="pre">import</span> <span class="pre">EnvelopeGrating</span>
+<span class="pre">`</span></code>
+or, any time after <cite>psychopy.plugins.activatePlugins</cite> has been called:
+<code class="docutils literal notranslate"><span class="pre">`python</span>
+<span class="pre">from</span> <span class="pre">psychopy.visual</span> <span class="pre">import</span> <span class="pre">EnvelopeGrating</span>
+<span class="pre">`</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">psychopy_visionscience.secondorder.</span></span><span class="sig-name descname"><span class="pre">EnvelopeGrating</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">carrier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'noise'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envelope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">anchor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'center'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envsf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envori</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envphase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">texRes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dkl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1.0,</span> <span class="pre">1.0,</span> <span class="pre">1.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contrast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">moddepth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgbPedestal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">0.0,</span> <span class="pre">0.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blendmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'avg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autoLog</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autoDraw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maskParams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating" title="Link to this definition">¶</a></dt>
+<dd><p>Second-order envelope stimuli with 3 textures; a carrier, an envelope and a mask</p>
+<p><strong>Examples</strong></p>
+<dl class="simple">
+<dt>env1 = EnvelopeGrating(win,ori=0, carrier=’sin’, envelope=’sin’,</dt><dd><p>mask = ‘gauss’, sf=24, envsf=4, size=1, contrast=0.5,
+moddepth=1.0, envori=0, pos=[-.5,.5],interpolate=0)
+# gives a circular patch of high frequency carrier with a
+# low frequency envelope</p>
+</dd>
+<dt>env2 = EnvelopeGrating(win,ori=0, carrier=noise, envelope=’sin’,</dt><dd><p>mask = None, sf=1, envsf=4, size=1, contrast=0.5,
+moddepth=0.8, envori=0, pos=[-.5,-.5],interpolate=0)
+# If noise is some numpy array containing random values gives a
+# patch of noise with a low frequency sinewave envelope</p>
+</dd>
+<dt>env4 = EnvelopeGrating(win,ori=90, carrier=’sin’, envelope=’sin’,</dt><dd><p>mask = ‘gauss’, sf=24, envsf=4, size=1, contrast=0.5,
+moddepth=1.0, envori=0, pos=[.5,.5], beat=True, interpolate=0)
+# Setting beat will create a second order beat stimulus which
+# critically contains no net energy at the carrier frequency
+# even though it appears to be present. In this case carrier
+# and envelope are at 90 degree to each other</p>
+</dd>
+</dl>
+<p>With an EnvelopeStim the carrier and envelope can have different spatial
+frequencies, phases and orientations. Its position can be shifted as a whole.</p>
+<p>contrast controls the contrast of the carrier and moddepth the modulation
+depth of the envelope. contrast and moddepth must work together, for moddepth=1 the max carrier
+contrast is 0.5 otherwise the displayable range will be exceeded. If moddepth &lt; 1 higher contrasts can be accommodated.</p>
+<p>Opacity controls the transparency of the whole stimulus.</p>
+<p>Because orientation is implemented very differently for the carrier and
+envelope using this function without a broadly circular mask may produce unexpected results</p>
+<p><strong>Using EnvelopeStim with images from disk (jpg, tif, png, …)</strong></p>
+<p>Ideally texture images to be rendered should be square with ‘power-of-2’
+dimensions e.g. 16x16, 128x128. Any image that is not will be upscaled
+(with linear interpolation) to the nearest such texture by PsychoPy.
+The size of the stimulus should be specified in the normal way using
+the appropriate units (deg, pix, cm, …). Be sure to get the aspect
+ratio the same as the image (if you don’t want it stretched!).</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.RGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">RGB</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.RGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the foreground color of a stimulus in RGB, instead use <cite>obj._foreColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.anchor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">anchor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.anchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.autoDraw">
+<span class="sig-name descname"><span class="pre">autoDraw</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.autoDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Determines whether the stimulus should be automatically drawn
+on every frame flip.</p>
+<p>Value should be: <cite>True</cite> or <cite>False</cite>. You do NOT need to set this
+on every frame flip!</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.autoLog">
+<span class="sig-name descname"><span class="pre">autoLog</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.autoLog" title="Link to this definition">¶</a></dt>
+<dd><p>Whether every change in this stimulus should be auto logged.</p>
+<p>Value should be: <cite>True</cite> or <cite>False</cite>. Set to <cite>False</cite> if your stimulus is
+updating frequently (e.g. updating its position every frame) and you
+want to avoid swamping the log file with messages that aren’t likely to
+be useful.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.backColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backColor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.backColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting fillColor</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.backColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.backColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.backRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backRGB</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.backRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the fill color of a stimulus in RGB, instead use <cite>obj._fillColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.backgroundColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backgroundColor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.backgroundColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting fillColor</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.beat">
+<span class="sig-name descname"><span class="pre">beat</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.beat" title="Link to this definition">¶</a></dt>
+<dd><p>Beat (True) stimulus or full moduaiton (False)</p>
+<p>‘The differences is that the spatial frequency components of the carrier are absent in a beat
+(although the carrier will still be a visible component of the overall image)
+whereas they are present in a full modulation. Beats will always appear to have a 100% modulation
+depth and if sinusoidal the modulation will appear to be twice the requested spatial frequency.
+The modulation depth of fully modulated stimuli can be varied and they appear at their true frequency.
+Both beats and full modulations appear in the literature and have specific uses.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.blendmode">
+<span class="sig-name descname"><span class="pre">blendmode</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.blendmode" title="Link to this definition">¶</a></dt>
+<dd><p>The OpenGL mode in which the stimulus is draw</p>
+<p>Can the ‘avg’ or ‘add’. Average (avg) places the new stimulus over the
+old one with a transparency given by its opacity. Opaque stimuli will
+hide other stimuli transparent stimuli won’t. Add performs the
+arithmetic sum of the new stimulus and the ones already present.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.borderColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderColor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.borderColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.borderColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.borderColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.borderRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">borderRGB</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.borderRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the border color of a stimulus in RGB, instead use <cite>obj._borderColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.borderWidth">
+<span class="sig-name descname"><span class="pre">borderWidth</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.borderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.carrier">
+<span class="sig-name descname"><span class="pre">carrier</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.carrier" title="Link to this definition">¶</a></dt>
+<dd><p>Texture to use in the stimulus as a carrier, typically noise array.</p>
+<dl class="simple">
+<dt>This can be one of various options:</dt><dd><ul class="simple">
+<li><p>the name of an image file (most formats supported)</p></li>
+<li><p>a numpy array (1xN or NxN) ranging -1:1</p></li>
+</ul>
+</dd>
+</dl>
+<p>If specifying your own texture using an image or numpy array
+you should ensure that the image has square power-of-two
+dimesnions (e.g. 256 x 256). If not then PsychoPy will upsample
+your stimulus to the next larger power of two.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.clearTextures">
+<span class="sig-name descname"><span class="pre">clearTextures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.clearTextures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.clearTextures" title="Link to this definition">¶</a></dt>
+<dd><p>This will be used by the __del__ method of EnvelopeGrating</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.color">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">color</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.color" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>foreColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.colorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">colorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.colorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the color space currently being used</p>
+<p>Value should be: a string or None</p>
+<p>For strings and hex values this is not needed.
+If None the default colorSpace for the stimulus is
+used (defined during initialisation).</p>
+<p>Please note that changing colorSpace does not change stimulus
+parameters. Thus you usually want to specify colorSpace before
+setting the color. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A light green text</span>
+<span class="n">stim</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="s1">&#39;Color me!&#39;</span><span class="p">,</span>
+                       <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">colorSpace</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">)</span>
+
+<span class="c1"># An almost-black text</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">colorSpace</span> <span class="o">=</span> <span class="s1">&#39;rgb255&#39;</span>
+
+<span class="c1"># Make it light green again</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.contains" title="Link to this definition">¶</a></dt>
+<dd><p>Returns True if a point x,y is inside the stimulus’ border.</p>
+<dl class="simple">
+<dt>Can accept variety of input options:</dt><dd><ul class="simple">
+<li><p>two separate args, x and y</p></li>
+<li><p>one arg (list, tuple or array) containing two vals (x,y)</p></li>
+<li><dl class="simple">
+<dt>an object with a getPos() method that returns x,y, such</dt><dd><p>as a <code class="xref py py-class docutils literal notranslate"><span class="pre">Mouse</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>Returns <cite>True</cite> if the point is within the area defined either by its
+<cite>border</cite> attribute (if one defined), or its <cite>vertices</cite> attribute if
+there is no .border. This method handles
+complex shapes, including concavities and self-crossings.</p>
+<p>Note that, if your stimulus uses a mask (such as a Gaussian) then
+this is not accounted for by the <cite>contains</cite> method; the extent of the
+stimulus is determined purely by the size, position (pos), and
+orientation (ori) settings (and by the vertices for shape stimuli).</p>
+<p>See Coder demos: shapeContains.py
+See Coder demos: shapeContains.py</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.contrast">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">contrast</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.contrast" title="Link to this definition">¶</a></dt>
+<dd><p>A value that is simply multiplied by the color.</p>
+<dl class="simple">
+<dt>Value should be: a float between -1 (negative) and 1 (unchanged).</dt><dd><p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd>
+</dl>
+<p>Set the contrast of the stimulus, i.e. scales how far the stimulus
+deviates from the middle grey. You can also use the stimulus
+<cite>opacity</cite> to control contrast, but that cannot be negative.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">1.0</span>  <span class="c1"># unchanged contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">0.5</span>  <span class="c1"># decrease contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">0.0</span>  <span class="c1"># uniform, no contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>  <span class="c1"># slightly inverted</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>  <span class="c1"># totally inverted</span>
+</pre></div>
+</div>
+<p>Setting contrast outside range -1 to 1 is permitted, but may
+produce strange results if color values exceeds the monitor limits.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span>  <span class="mf">1.2</span>  <span class="c1"># increases contrast</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">contrast</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.2</span>  <span class="c1"># inverts with increased contrast</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.depth">
+<span class="sig-name descname"><span class="pre">depth</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.depth" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED, depth is now controlled simply by drawing order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.doDragging">
+<span class="sig-name descname"><span class="pre">doDragging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.doDragging" title="Link to this definition">¶</a></dt>
+<dd><p>If this stimulus is draggable, do the necessary actions on a frame
+flip to drag it.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.draggable">
+<span class="sig-name descname"><span class="pre">draggable</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.draggable" title="Link to this definition">¶</a></dt>
+<dd><p>Can this stimulus be dragged by a mouse click?</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">win</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.draw" title="Link to this definition">¶</a></dt>
+<dd><p>Draw the stimulus in its relevant window.</p>
+<p>You must call this method after every <cite>MyWin.flip()</cite> if you want the
+stimulus to appear on that frame and then update the screen again.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>win</strong> (<cite>~psychopy.visual.Window</cite> or <cite>None</cite>) – Window to draw the stimulus to. Context sharing must be enabled if
+any other window beside the one specified during creation of this
+stimulus is specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.envelope">
+<span class="sig-name descname"><span class="pre">envelope</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.envelope" title="Link to this definition">¶</a></dt>
+<dd><p>Texture to use on the stimulus as a envelope, typically a grating.</p>
+<dl class="simple">
+<dt>This can be one of various options:</dt><dd><ul class="simple">
+<li><p><strong>‘sin’</strong>,’sqr’, ‘saw’, ‘tri’, None (resets to default)</p></li>
+<li><p>the name of an image file (most formats supported)</p></li>
+<li><p>a numpy array (1xN or NxN) ranging -1:1</p></li>
+</ul>
+</dd>
+</dl>
+<p>If specifying your own texture using an image or numpy array
+you should ensure that the image has square power-of-two dimesnions
+(e.g. 256 x 256). If not then PsychoPy will upsample your stimulus
+to the next larger power of two.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.envori">
+<span class="sig-name descname"><span class="pre">envori</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.envori" title="Link to this definition">¶</a></dt>
+<dd><p>The orientation for the envelope texture (in degrees).</p>
+<p>Should be a single value (scalar). Operations are supported.
+Orientation convention is like a clock: 0 is vertical, and positive values rotate clockwise. Beyond 360 and below zero values wrap appropriately.
+Note ori is inhertied from gratingStim and controls only the orientation of the carrier</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.envphase">
+<span class="sig-name descname"><span class="pre">envphase</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.envphase" title="Link to this definition">¶</a></dt>
+<dd><p>Phase of the modulation in each dimension of the envelope texture.</p>
+<p>Should be an <span class="xref std std-ref">x,y-pair</span> or
+<span class="xref std std-ref">scalar</span></p>
+<p><strong>NB</strong> phase has modulus 1 (rather than 360 or 2*pi)
+This is a little unconventional but has the nice effect
+that setting phase=t*n drifts a stimulus at n Hz
+Note phase in inherited from GratingStim and controls the phase of the carrier</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.envsf">
+<span class="sig-name descname"><span class="pre">envsf</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.envsf" title="Link to this definition">¶</a></dt>
+<dd><p>Spatial frequency of the envelope texture</p>
+<p>Should be a <span class="xref std std-ref">x,y-pair</span> or
+<span class="xref std std-ref">scalar</span> or None.
+If <cite>units</cite> == ‘deg’ or ‘cm’ units are in cycles per deg or cm
+as appropriate.
+If <cite>units</cite> == ‘norm’ then sf units are in cycles per stimulus
+(and so envsf scales with stimulus size).
+If texture is an image loaded from a file then envsf=None defaults
+to 1/stimSize to give one cycle of the image.
+Note sf is inhertited from GratingStim and controls the spatial frequency of the carrier</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.fillColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillColor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.fillColor" title="Link to this definition">¶</a></dt>
+<dd><p>Set the fill color for the shape.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.fillColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.fillColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.fillRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fillRGB</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.fillRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the fill color of a stimulus in RGB, instead use <cite>obj._fillColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.flip">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flip</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.flip" title="Link to this definition">¶</a></dt>
+<dd><p>1x2 array for flipping vertices along each axis; set as True to flip or False to not flip. If set as a single value, will duplicate across both axes. Accessing the protected attribute (<cite>._flip</cite>) will give an array of 1s and -1s with which to multiply vertices.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.flipHoriz">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flipHoriz</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.flipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.flipVert">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flipVert</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.flipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.fontColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fontColor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.fontColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>foreColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.foreColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreColor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.foreColor" title="Link to this definition">¶</a></dt>
+<dd><p>Foreground color of the stimulus</p>
+<dl class="simple">
+<dt>Value should be one of:</dt><dd><ul class="simple">
+<li><p>string: to specify a <span class="xref std std-ref">colorNames</span>. Any of the standard
+html/X11 <cite>color names
+&lt;http://www.w3schools.com/html/html_colornames.asp&gt;</cite>
+can be used.</p></li>
+<li><p><span class="xref std std-ref">hexColors</span></p></li>
+<li><dl class="simple">
+<dt>numerically: (scalar or triplet) for DKL, RGB or</dt><dd><p>other <span class="xref std std-ref">colorspaces</span>. For
+these, <span class="xref std std-ref">operations</span> are supported.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<p>When color is specified using numbers, it is interpreted with
+respect to the stimulus’ current colorSpace. If color is given as a
+single value (scalar) then this will be applied to all 3 channels.</p>
+<p class="rubric">Examples</p>
+<p>For whatever stim you have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;white&#39;</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;RoyalBlue&#39;</span>  <span class="c1"># (the case is actually ignored)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#DDA0DD&#39;</span>  <span class="c1"># DDA0DD is hexadecimal for plum</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;rgb&#39;:</span>
+                <span class="c1"># a red color in rgb space</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;dkl&#39;:</span>
+                <span class="c1"># DKL space with elev=0, azimuth=45</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>  <span class="c1"># if stim.colorSpace=&#39;rgb255&#39;:</span>
+                <span class="c1"># a blue stimulus using rgb255 space</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="mi">255</span>  <span class="c1"># interpreted as (255, 255, 255)</span>
+                  <span class="c1"># which is white in rgb255.</span>
+</pre></div>
+</div>
+<p><span class="xref std std-ref">Operations</span> work as normal for all numeric
+colorSpaces (e.g. ‘rgb’, ‘hsv’ and ‘rgb255’) but not for strings, like
+named and hex. For example, assuming that colorSpace=’rgb’:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># increment all guns by 1 value</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># multiply the color by -1 (which in this</span>
+                    <span class="c1"># space inverts the contrast)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">*=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># decrease red, remove green, keep blue</span>
+</pre></div>
+</div>
+<p>You can use <cite>setColor</cite> if you want to set color and colorSpace in one
+line. These two are equivalent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">setColor</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="s1">&#39;rgb255&#39;</span><span class="p">)</span>
+<span class="c1"># ... is equivalent to</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">colorSpace</span> <span class="o">=</span> <span class="s1">&#39;rgb255&#39;</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.foreColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.foreColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.foreRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">foreRGB</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.foreRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the foreground color of a stimulus in RGB, instead use <cite>obj._foreColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getAnchor">
+<span class="sig-name descname"><span class="pre">getAnchor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getAnchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getAutoDraw">
+<span class="sig-name descname"><span class="pre">getAutoDraw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getAutoDraw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getAutoLog">
+<span class="sig-name descname"><span class="pre">getAutoLog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getAutoLog" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBackColor">
+<span class="sig-name descname"><span class="pre">getBackColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBackColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBackColorSpace">
+<span class="sig-name descname"><span class="pre">getBackColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBackColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBackRGB">
+<span class="sig-name descname"><span class="pre">getBackRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBackRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBackgroundColor">
+<span class="sig-name descname"><span class="pre">getBackgroundColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBackgroundColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBeat">
+<span class="sig-name descname"><span class="pre">getBeat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBeat" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBlendmode">
+<span class="sig-name descname"><span class="pre">getBlendmode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBlendmode" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBorderColor">
+<span class="sig-name descname"><span class="pre">getBorderColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBorderColorSpace">
+<span class="sig-name descname"><span class="pre">getBorderColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBorderRGB">
+<span class="sig-name descname"><span class="pre">getBorderRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getBorderWidth">
+<span class="sig-name descname"><span class="pre">getBorderWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getBorderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getCarrier">
+<span class="sig-name descname"><span class="pre">getCarrier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getCarrier" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getColor">
+<span class="sig-name descname"><span class="pre">getColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getColorSpace">
+<span class="sig-name descname"><span class="pre">getColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getContrast">
+<span class="sig-name descname"><span class="pre">getContrast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getContrast" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getDepth">
+<span class="sig-name descname"><span class="pre">getDepth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getDepth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getDraggable">
+<span class="sig-name descname"><span class="pre">getDraggable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getDraggable" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getEnvelope">
+<span class="sig-name descname"><span class="pre">getEnvelope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvelope" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getEnvori">
+<span class="sig-name descname"><span class="pre">getEnvori</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvori" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getEnvphase">
+<span class="sig-name descname"><span class="pre">getEnvphase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvphase" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getEnvsf">
+<span class="sig-name descname"><span class="pre">getEnvsf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getEnvsf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getFillColor">
+<span class="sig-name descname"><span class="pre">getFillColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getFillColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getFillColorSpace">
+<span class="sig-name descname"><span class="pre">getFillColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getFillColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getFillRGB">
+<span class="sig-name descname"><span class="pre">getFillRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getFillRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getFlip">
+<span class="sig-name descname"><span class="pre">getFlip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getFlip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getFlipHoriz">
+<span class="sig-name descname"><span class="pre">getFlipHoriz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getFlipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getFlipVert">
+<span class="sig-name descname"><span class="pre">getFlipVert</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getFlipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getFontColor">
+<span class="sig-name descname"><span class="pre">getFontColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getFontColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getForeColor">
+<span class="sig-name descname"><span class="pre">getForeColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getForeColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getForeColorSpace">
+<span class="sig-name descname"><span class="pre">getForeColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getForeColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getForeRGB">
+<span class="sig-name descname"><span class="pre">getForeRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getForeRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getHeight">
+<span class="sig-name descname"><span class="pre">getHeight</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getHeight" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getInterpolate">
+<span class="sig-name descname"><span class="pre">getInterpolate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getInterpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getLineColor">
+<span class="sig-name descname"><span class="pre">getLineColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getLineColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getLineColorSpace">
+<span class="sig-name descname"><span class="pre">getLineColorSpace</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getLineColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getLineRGB">
+<span class="sig-name descname"><span class="pre">getLineRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getLineRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getLineWidth">
+<span class="sig-name descname"><span class="pre">getLineWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getLineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getMask">
+<span class="sig-name descname"><span class="pre">getMask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getMask" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getMaskParams">
+<span class="sig-name descname"><span class="pre">getMaskParams</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getMaskParams" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getModdepth">
+<span class="sig-name descname"><span class="pre">getModdepth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getModdepth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getOpacity">
+<span class="sig-name descname"><span class="pre">getOpacity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getOpacity" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getOri">
+<span class="sig-name descname"><span class="pre">getOri</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getOri" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getPhase">
+<span class="sig-name descname"><span class="pre">getPhase</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getPhase" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getPos">
+<span class="sig-name descname"><span class="pre">getPos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getPos" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getPower">
+<span class="sig-name descname"><span class="pre">getPower</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getPower" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getRGB">
+<span class="sig-name descname"><span class="pre">getRGB</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getRGB" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getSf">
+<span class="sig-name descname"><span class="pre">getSf</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getSize">
+<span class="sig-name descname"><span class="pre">getSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getSize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getTex">
+<span class="sig-name descname"><span class="pre">getTex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getTex" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getTexRes">
+<span class="sig-name descname"><span class="pre">getTexRes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getTexRes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getUnits">
+<span class="sig-name descname"><span class="pre">getUnits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getUnits" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getVertices">
+<span class="sig-name descname"><span class="pre">getVertices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getVertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getVerticesPix">
+<span class="sig-name descname"><span class="pre">getVerticesPix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getVerticesPix" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getWidth">
+<span class="sig-name descname"><span class="pre">getWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.getWin">
+<span class="sig-name descname"><span class="pre">getWin</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.getWin" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.get_borderPix">
+<span class="sig-name descname"><span class="pre">get_borderPix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.get_borderPix" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.height">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.height" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.interpolate" title="Link to this definition">¶</a></dt>
+<dd><p>Whether to interpolate (linearly) the texture in the stimulus.</p>
+<p>If set to False then nearest neighbour will be used when needed,
+otherwise some form of interpolation will be used.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.isDragging">
+<span class="sig-name descname"><span class="pre">isDragging</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.isDragging" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.lineColor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineColor</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.lineColor" title="Link to this definition">¶</a></dt>
+<dd><p>Alternative way of setting <cite>borderColor</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.lineColorSpace">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineColorSpace</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.lineColorSpace" title="Link to this definition">¶</a></dt>
+<dd><p>Deprecated, please use colorSpace to set color space for the entire
+object</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.lineRGB">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lineRGB</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.lineRGB" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy property for setting the border color of a stimulus in RGB, instead use <cite>obj._borderColor.rgb</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DEPRECATED</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.lineWidth">
+<span class="sig-name descname"><span class="pre">lineWidth</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.lineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.mask">
+<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.mask" title="Link to this definition">¶</a></dt>
+<dd><p>The alpha mask (forming the shape of the image).</p>
+<dl class="simple">
+<dt>This can be one of various options:</dt><dd><ul class="simple">
+<li><p>‘circle’, ‘gauss’, ‘raisedCos’, ‘cross’</p></li>
+<li><p><strong>None</strong> (resets to default)</p></li>
+<li><p>the name of an image file (most formats supported)</p></li>
+<li><p>a numpy array (1xN or NxN) ranging -1:1</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.maskParams">
+<span class="sig-name descname"><span class="pre">maskParams</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.maskParams" title="Link to this definition">¶</a></dt>
+<dd><p>Various types of input. Default to <cite>None</cite>.</p>
+<p>This is used to pass additional parameters to the mask if those are
+needed.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For ‘gauss’ mask, pass dict {‘sd’: 5} to control</dt><dd><p>standard deviation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For the ‘raisedCos’ mask, pass a dict: {‘fringeWidth’:0.2},</dt><dd><p>where ‘fringeWidth’ is a parameter (float, 0-1), determining
+the proportion of the patch that will be blurred by the raised
+cosine edge.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.moddepth">
+<span class="sig-name descname"><span class="pre">moddepth</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.moddepth" title="Link to this definition">¶</a></dt>
+<dd><p>Modulation depth or ‘contrast’ for the envelope component (0.0 - 1.0)</p>
+<p>Sets the range of variation in carrier contrast.
+MD=(Cmax-Cmin)/(Cma+Cmin)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.name" title="Link to this definition">¶</a></dt>
+<dd><p>The name (<cite>str</cite>) of the object to be using during logged messages
+about this stim. If you have multiple stimuli in your experiment this
+really helps to make sense of log files!</p>
+<p>If name = None your stimulus will be called “unnamed &lt;type&gt;”, e.g.
+visual.TextStim(win) will be called “unnamed TextStim” in the logs.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.opacity">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">opacity</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.opacity" title="Link to this definition">¶</a></dt>
+<dd><p>Determines how visible the stimulus is relative to background.</p>
+<p>The value should be a single float ranging 1.0 (opaque) to 0.0
+(transparent). <span class="xref std std-ref">Operations</span> are supported.
+Precisely how this is used depends on the <span class="xref std std-ref">blendMode</span>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.ori">
+<span class="sig-name descname"><span class="pre">ori</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.ori" title="Link to this definition">¶</a></dt>
+<dd><p>The orientation of the stimulus (in degrees).</p>
+<p>Should be a single value (<span class="xref std std-ref">scalar</span>).
+<span class="xref std std-ref">Operations</span> are supported.</p>
+<p>Orientation convention is like a clock: 0 is vertical, and positive
+values rotate clockwise. Beyond 360 and below zero values wrap
+appropriately.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.overlaps">
+<span class="sig-name descname"><span class="pre">overlaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polygon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.overlaps" title="Link to this definition">¶</a></dt>
+<dd><p>Returns <cite>True</cite> if this stimulus intersects another one.</p>
+<p>If <cite>polygon</cite> is another stimulus instance, then the vertices
+and location of that stimulus will be used as the polygon.
+Overlap detection is typically very good, but it
+can fail with very pointy shapes in a crossed-swords configuration.</p>
+<p>Note that, if your stimulus uses a mask (such as a Gaussian blob)
+then this is not accounted for by the <cite>overlaps</cite> method; the extent
+of the stimulus is determined purely by the size, pos, and
+orientation settings (and by the vertices for shape stimuli).</p>
+<p>See coder demo, shapeContains.py</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.phase">
+<span class="sig-name descname"><span class="pre">phase</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.phase" title="Link to this definition">¶</a></dt>
+<dd><p>Phase of the stimulus in each dimension of the texture.</p>
+<p>Should be an <span class="xref std std-ref">x,y-pair</span> or <span class="xref std std-ref">scalar</span></p>
+<p><strong>NB</strong> phase has modulus 1 (rather than 360 or 2*pi) This is a little
+unconventional but has the nice effect that setting phase=t*n drifts a
+stimulus at <em>n</em> Hz.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.pos">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pos</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.pos" title="Link to this definition">¶</a></dt>
+<dd><p>The position of the center of the stimulus in the stimulus
+<span class="xref std std-ref">units</span></p>
+<p><cite>value</cite> should be an <span class="xref std std-ref">x,y-pair</span>.
+<span class="xref std std-ref">Operations</span> are also supported.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Set slightly to the right of center</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Increment pos rightwards and upwards.</span>
+    <span class="n">Is</span> <span class="n">now</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">pos</span> <span class="o">*=</span> <span class="mf">0.2</span>  <span class="c1"># Move stim towards the center.</span>
+    <span class="n">Is</span> <span class="n">now</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Tip: If you need the position of stim in pixels, you can obtain
+it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">psychopy.tools.monitorunittools</span> <span class="kn">import</span> <span class="n">posToPix</span>
+<span class="n">posPix</span> <span class="o">=</span> <span class="n">posToPix</span><span class="p">(</span><span class="n">stim</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.power">
+<span class="sig-name descname"><span class="pre">power</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.power" title="Link to this definition">¶</a></dt>
+<dd><p>Will raise the modulator to the given power
+using the equation S=C*(1+M)^power where C is the carrier and M
+is the modulator. Only works with AM envelopes (hence +1) in
+equation. Power is ignored if a beat is requested.
+This is used to obtain the square root of the modulator (power = 0.5)
+which is useful if combining two envelope gratings with different carriers
+and a 180 degree phase shift as the resulting combined signal will not
+have any reduction in local contrast at any point in the image.
+This is similar - but not identical to the method used by
+Landy and Oruc, Vis Res 2002.
+Note overall contrast (apparent carrier contrast) will be altered.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setAnchor">
+<span class="sig-name descname"><span class="pre">setAnchor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setAnchor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setAutoDraw">
+<span class="sig-name descname"><span class="pre">setAutoDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setAutoDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Sets autoDraw. Usually you can use ‘stim.attribute = value’
+syntax instead, but use this method to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setAutoLog">
+<span class="sig-name descname"><span class="pre">setAutoLog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setAutoLog" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBackColor">
+<span class="sig-name descname"><span class="pre">setBackColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBackColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBackColorSpace">
+<span class="sig-name descname"><span class="pre">setBackColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBackColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBackRGB">
+<span class="sig-name descname"><span class="pre">setBackRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBackRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for fill RGB, instead set <cite>obj._fillColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBackgroundColor">
+<span class="sig-name descname"><span class="pre">setBackgroundColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBackgroundColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBeat">
+<span class="sig-name descname"><span class="pre">setBeat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setBeat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBeat" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBlendmode">
+<span class="sig-name descname"><span class="pre">setBlendmode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBlendmode" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBorderColor">
+<span class="sig-name descname"><span class="pre">setBorderColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for <cite>fillColor</cite>, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBorderColorSpace">
+<span class="sig-name descname"><span class="pre">setBorderColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBorderRGB">
+<span class="sig-name descname"><span class="pre">setBorderRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for border RGB, instead set <cite>obj._borderColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setBorderWidth">
+<span class="sig-name descname"><span class="pre">setBorderWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newWidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setBorderWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setCarrier">
+<span class="sig-name descname"><span class="pre">setCarrier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setCarrier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setCarrier" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setColor">
+<span class="sig-name descname"><span class="pre">setColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setColorSpace">
+<span class="sig-name descname"><span class="pre">setColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setContrast">
+<span class="sig-name descname"><span class="pre">setContrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newContrast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setContrast" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setDKL">
+<span class="sig-name descname"><span class="pre">setDKL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setDKL" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED since v1.60.05: Please use the <cite>color</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setDepth">
+<span class="sig-name descname"><span class="pre">setDepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newDepth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setDepth" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setDraggable">
+<span class="sig-name descname"><span class="pre">setDraggable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setDraggable" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setEnvelope">
+<span class="sig-name descname"><span class="pre">setEnvelope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setEnvelope"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvelope" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setEnvori">
+<span class="sig-name descname"><span class="pre">setEnvori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setEnvori"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvori" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setEnvphase">
+<span class="sig-name descname"><span class="pre">setEnvphase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setEnvphase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvphase" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setEnvsf">
+<span class="sig-name descname"><span class="pre">setEnvsf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setEnvsf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvsf" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setFillColor">
+<span class="sig-name descname"><span class="pre">setFillColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setFillColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for fillColor, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setFillColorSpace">
+<span class="sig-name descname"><span class="pre">setFillColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setFillColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setFillRGB">
+<span class="sig-name descname"><span class="pre">setFillRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setFillRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for fill RGB, instead set <cite>obj._fillColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setFlip">
+<span class="sig-name descname"><span class="pre">setFlip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setFlip" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setFlipHoriz">
+<span class="sig-name descname"><span class="pre">setFlipHoriz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setFlipHoriz" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setFlipVert">
+<span class="sig-name descname"><span class="pre">setFlipVert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setFlipVert" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setFontColor">
+<span class="sig-name descname"><span class="pre">setFontColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setFontColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setForeColor">
+<span class="sig-name descname"><span class="pre">setForeColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setForeColor" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for foreColor, allows suppression of the log message,
+simultaneous colorSpace setting and calls update methods.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setForeColorSpace">
+<span class="sig-name descname"><span class="pre">setForeColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setForeColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setForeRGB">
+<span class="sig-name descname"><span class="pre">setForeRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setForeRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for foreground RGB, instead set <cite>obj._foreColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setHeight">
+<span class="sig-name descname"><span class="pre">setHeight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setHeight" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setInterpolate">
+<span class="sig-name descname"><span class="pre">setInterpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setInterpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setLMS">
+<span class="sig-name descname"><span class="pre">setLMS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setLMS" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED since v1.60.05: Please use the <cite>color</cite> attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setLineColor">
+<span class="sig-name descname"><span class="pre">setLineColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setLineColor" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setLineColorSpace">
+<span class="sig-name descname"><span class="pre">setLineColorSpace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setLineColorSpace" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setLineRGB">
+<span class="sig-name descname"><span class="pre">setLineRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setLineRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for border RGB, instead set <cite>obj._borderColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setLineWidth">
+<span class="sig-name descname"><span class="pre">setLineWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newWidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setLineWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setMask">
+<span class="sig-name descname"><span class="pre">setMask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setMask" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setMaskParams">
+<span class="sig-name descname"><span class="pre">setMaskParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setMaskParams" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setModdepth">
+<span class="sig-name descname"><span class="pre">setModdepth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setModdepth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setModdepth" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setName">
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setName" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setOpacity">
+<span class="sig-name descname"><span class="pre">setOpacity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newOpacity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setOpacity" title="Link to this definition">¶</a></dt>
+<dd><p>Hard setter for opacity, allows the suppression of log messages and calls the update method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setOri">
+<span class="sig-name descname"><span class="pre">setOri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newOri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setOri" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setPhase">
+<span class="sig-name descname"><span class="pre">setPhase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setPhase" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setPos">
+<span class="sig-name descname"><span class="pre">setPos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newPos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setPos" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setPower">
+<span class="sig-name descname"><span class="pre">setPower</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setPower"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setPower" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setRGB">
+<span class="sig-name descname"><span class="pre">setRGB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setRGB" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED: Legacy setter for foreground RGB, instead set <cite>obj._foreColor.rgb</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setSF">
+<span class="sig-name descname"><span class="pre">setSF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setSF" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setSf">
+<span class="sig-name descname"><span class="pre">setSf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setSf" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setSize">
+<span class="sig-name descname"><span class="pre">setSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setSize" title="Link to this definition">¶</a></dt>
+<dd><p>Usually you can use ‘stim.attribute = value’ syntax instead,
+but use this method if you need to suppress the log message</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setTex">
+<span class="sig-name descname"><span class="pre">setTex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setTex" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setTexRes">
+<span class="sig-name descname"><span class="pre">setTexRes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/psychopy_visionscience/secondorder/#EnvelopeGrating.setTexRes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setTexRes" title="Link to this definition">¶</a></dt>
+<dd><p>DEPRECATED. Use ‘stim.parameter = value’ syntax instead</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setUnits">
+<span class="sig-name descname"><span class="pre">setUnits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setUnits" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setVertices">
+<span class="sig-name descname"><span class="pre">setVertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setVertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setWidth">
+<span class="sig-name descname"><span class="pre">setWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setWidth" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.setWin">
+<span class="sig-name descname"><span class="pre">setWin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stealth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.setWin" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.sf">
+<span class="sig-name descname"><span class="pre">sf</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.sf" title="Link to this definition">¶</a></dt>
+<dd><p>Spatial frequency of the grating texture.</p>
+<p>Should be a <span class="xref std std-ref">x,y-pair</span> or <span class="xref std std-ref">scalar</span>
+or None. If <cite>units</cite> == ‘deg’ or ‘cm’ units are in cycles per deg or cm
+as appropriate. If <cite>units</cite> == ‘norm’ then sf units are in cycles per
+stimulus (and so SF scales with stimulus size). If texture is an image
+loaded from a file then sf=None defaults to 1/stimSize to give one cycle
+of the image.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.size" title="Link to this definition">¶</a></dt>
+<dd><p>The size (width, height) of the stimulus in the stimulus
+<span class="xref std std-ref">units</span></p>
+<p>Value should be <span class="xref std std-ref">x,y-pair</span>,
+<span class="xref std std-ref">scalar</span> (applies to both dimensions)
+or None (resets to default). <span class="xref std std-ref">Operations</span>
+are supported.</p>
+<p>Sizes can be negative (causing a mirror-image reversal) and can
+extend beyond the window.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mf">0.8</span>  <span class="c1"># Set size to (xsize, ysize) = (0.8, 0.8)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stim</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># Outputs array([0.8, 0.8])</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">size</span> <span class="o">+=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># make wider and flatter: (1.3, 0.3)</span>
+</pre></div>
+</div>
+<p>Tip: if you can see the actual pixel range this corresponds to by
+looking at <cite>stim._sizeRendered</cite></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.tex">
+<span class="sig-name descname"><span class="pre">tex</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.tex" title="Link to this definition">¶</a></dt>
+<dd><p>Texture to used on the stimulus as a grating (aka carrier).</p>
+<dl class="simple">
+<dt>This can be one of various options:</dt><dd><ul class="simple">
+<li><p><strong>‘sin’</strong>,’sqr’, ‘saw’, ‘tri’, None (resets to default)</p></li>
+<li><p>the name of an image file (most formats supported)</p></li>
+<li><p>a numpy array (1xN or NxN) ranging -1:1</p></li>
+</ul>
+</dd>
+</dl>
+<p>If specifying your own texture using an image or numpy array you should
+ensure that the image has square power-of-two dimensions (e.g. 256 x
+256). If not then PsychoPy will up-sample your stimulus to the next
+larger power of two.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.texRes">
+<span class="sig-name descname"><span class="pre">texRes</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.texRes" title="Link to this definition">¶</a></dt>
+<dd><p>Power-of-two int. Sets the resolution of the mask and texture.
+texRes is overridden if an array or image is provided as mask.</p>
+<p><span class="xref std std-ref">Operations</span> supported.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">units</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.units" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.updateColors">
+<span class="sig-name descname"><span class="pre">updateColors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.updateColors" title="Link to this definition">¶</a></dt>
+<dd><p>Placeholder method to update colours when set externally, for example updating the <cite>pallette</cite> attribute of
+a textbox</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.updateOpacity">
+<span class="sig-name descname"><span class="pre">updateOpacity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.updateOpacity" title="Link to this definition">¶</a></dt>
+<dd><p>Placeholder method to update colours when set externally, for example
+updating the <cite>pallette</cite> attribute of a textbox.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.vertices">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vertices</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.vertices" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.verticesPix">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">verticesPix</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.verticesPix" title="Link to this definition">¶</a></dt>
+<dd><p>This determines the coordinates of the vertices for the
+current stimulus in pixels, accounting for size, ori, pos and units</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.width">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.width" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="psychopy_visionscience.secondorder.EnvelopeGrating.win">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">win</span></span><a class="headerlink" href="#psychopy_visionscience.secondorder.EnvelopeGrating.win" title="Link to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">Window</span></code> object in which the
+stimulus will be rendered by default. (required)</p>
+<p>Example, drawing same stimulus in two different windows and display
+simultaneously. Assuming that you have two windows and a stimulus
+(win1, win2 and stim):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">win1</span>  <span class="c1"># stimulus will be drawn in win1</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># stimulus is now drawn to win1</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">win</span> <span class="o">=</span> <span class="n">win2</span>  <span class="c1"># stimulus will be drawn in win2</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># it is now drawn in win2</span>
+<span class="n">win1</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">waitBlanking</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># do not wait for next</span>
+             <span class="c1"># monitor update</span>
+<span class="n">win2</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>  <span class="c1"># wait for vertical blanking.</span>
+</pre></div>
+</div>
+<p>Note that this just changes <strong>default</strong> window for stimulus.</p>
+<p>You could also specify window-to-draw-to when drawing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win1</span><span class="p">)</span>
+<span class="n">stim</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+<div id="sourcelink">
+  <a href="https://github.com/psychopy/psychopy/blob/master/docs/source/coder/EnvelopeGrating.rst"
+     rel="nofollow">Source</a>
+</div>
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>

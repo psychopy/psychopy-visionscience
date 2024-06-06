@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>psychopy_visionscience.secondorder &#8212; PsychoPy Example Plugin 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=536c50fe" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/psychopy.css?v=b9f4e6dd" />
+    <script src="../../../_static/documentation_options.js?v=d20be8f5"></script>
+    <script src="../../../_static/doctools.js?v=b682be12"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script src="../../../_static/js/jquery-fix.js"></script>
+    <script src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4089651-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-4089651-2');
+    </script>
+
+    <!-- Matomo -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+      _paq.push(["setCookieDomain", "*.psychopy.org"]);
+      _paq.push(["setDomains", ["*.psychopy.org","*.discourse.psychopy.org"]]);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//analytics.opensciencetools.org/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '3']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="//analytics.opensciencetools.org/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Matomo Code -->
+
+
+  </head><body>
+
+<!-- The social media icon bar -->
+<div class="social-bar">
+  <a href="" class="github">
+    <i class="fab fa-github"></i></a>
+</div>
+
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand small-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Small.png" alt="PsychoPy Logo">
+      </a>
+      <a class="navbar-brand large-logo" href="../../../">
+        <img src="../../../_static/Psychopy Plugin Header Large.png" alt="PsychoPy Logo">
+      </a>
+      <!-- <span class="navbar-text navbar-version pull-right"><b></b></span> -->
+    </div>
+
+      <div class="collapse navbar-collapse nav-collapse w-100 pull-right">
+        <ul class="nav navbar-nav ml-auto">
+          <li><a href="../../../">Home</a></li>
+          <li><a href="../../../download/">Install</a></li>
+          
+          <li><a href="https://plugins.psychopy.org/directory.html" class="return-btn">plugins.psychopy.org</a></li>
+          
+            <!-- <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../">Documentation <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><p class="caption" role="heading"><span class="caption-text">Added content for Builder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/EnvGratingComponent/">EnvGratingComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/NoiseStimComponent/">NoiseStimComponent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../builder/components/RadialStimComponent/">RadialStimComponent</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Added content for Coder</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/EnvelopeGrating/">Envelope Grating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/NoiseStim/">Noise Stim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coder/RadialStim/">Radial Stim</a></li>
+</ul>
+</ul>
+</li> -->
+            
+          
+          <!--  -->
+          
+          
+        </ul>
+
+          <!-- 
+            
+<form class="navbar-form navbar-right" action="../../../search/" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+           -->
+
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 content">
+      
+  <h1>Source code for psychopy_visionscience.secondorder</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;Stimulus object for drawing arbitrary bitmap carriers with an arbitrary</span>
+<span class="sd">second order envelope carrier and envelope can vary independently for</span>
+<span class="sd">orientation, frequencyand phase. Also does beat stimuli. &quot;&quot;&quot;</span>
+
+<span class="c1"># Part of the PsychoPy library</span>
+<span class="c1"># Copyright (C) 2002-2018 Jonathan Peirce (C) 2019-2022 Open Science Tools Ltd..</span>
+<span class="c1"># Additional code provided by Andrew Schofield</span>
+<span class="c1"># Distributed under the terms of the GNU General Public License (GPL).</span>
+
+<span class="c1"># Requires shaders if you don&#39;t have them it will just throw and error.</span>
+<span class="c1"># Ensure setting pyglet.options[&#39;debug_gl&#39;] to False is done prior to any</span>
+<span class="c1"># other calls to pyglet or pyglet submodules, otherwise it may not get picked</span>
+<span class="c1"># up by the pyglet GL engine and have no effect.</span>
+<span class="c1"># Shaders will work but require OpenGL2.0 drivers AND PyOpenGL3.0+</span>
+<span class="kn">import</span> <span class="nn">pyglet</span>
+<span class="n">pyglet</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s1">&#39;debug_gl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="n">GL</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">gl</span>
+
+<span class="kn">import</span> <span class="nn">psychopy</span>  <span class="c1"># so we can get the __path__</span>
+<span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">logging</span>
+
+<span class="kn">from</span> <span class="nn">psychopy.tools.arraytools</span> <span class="kn">import</span> <span class="n">val2array</span>
+<span class="kn">from</span> <span class="nn">psychopy.tools.attributetools</span> <span class="kn">import</span> <span class="n">attributeSetter</span>
+<span class="kn">from</span> <span class="nn">psychopy.visual.grating</span> <span class="kn">import</span> <span class="n">GratingStim</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="kn">from</span> <span class="nn">psychopy.visual</span> <span class="kn">import</span> <span class="n">shaders</span> <span class="k">as</span> <span class="n">_shaders</span>
+
+<span class="c1"># we need a different shader program for this stimuli (3 textures)</span>
+<span class="n">carrierEnvelopeMaskFrag</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    uniform sampler2D carrier, envelope, mask;</span>
+<span class="s1">    uniform float moddepth, offset, ori, add;</span>
+
+<span class="s1">    void main() {</span>
+<span class="s1">        float mid=0.5;</span>
+<span class="s1">        vec4 carrierFrag = texture2D(carrier,gl_TexCoord[0].st);</span>
+<span class="s1">        vec4 maskFrag = texture2D(mask,gl_TexCoord[2].st);</span>
+<span class="s1">        vec2 tex = gl_TexCoord[1].st;</span>
+
+<span class="s1">        vec2 rotated = vec2(cos(ori) * (tex.x - mid ) + sin(ori) * (tex.y - mid) + mid , cos(ori) * (tex.y - mid) - sin(ori) * (tex.x - mid) + mid );</span>
+<span class="s1">        vec4 envFrag = texture2D( envelope,  rotated);</span>
+<span class="s1">        gl_FragColor.a = gl_Color.a*maskFrag.a;</span>
+<span class="s1">        gl_FragColor.rgb = ((moddepth*envFrag.rgb + offset)*carrierFrag.rgb*(gl_Color.rgb*2.0 - 1.0) + add)/2.0;</span>
+<span class="s1">    }</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+
+<span class="c1"># we need a different shader program for this (4 textures including the power term)</span>
+<span class="n">carrierEnvelopeMaskFragPow</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    uniform sampler2D carrier, envelope, mask, power;</span>
+<span class="s1">    uniform float moddepth, offset, ori, add;</span>
+
+<span class="s1">    void main() {</span>
+<span class="s1">        float mid=0.5;</span>
+<span class="s1">        vec4 carrierFrag = texture2D(carrier,gl_TexCoord[0].st);</span>
+<span class="s1">        vec4 maskFrag = texture2D(mask,gl_TexCoord[2].st);</span>
+<span class="s1">        vec4 powerFrag = texture2D(power,gl_TexCoord[2].st);</span>
+<span class="s1">        vec2 tex = gl_TexCoord[1].st;</span>
+
+<span class="s1">        vec2 rotated = vec2(cos(ori) * (tex.x - mid ) + sin(ori) * (tex.y - mid) + mid , cos(ori) * (tex.y - mid) - sin(ori) * (tex.x - mid) + mid );</span>
+<span class="s1">        vec4 envFrag = texture2D( envelope,  rotated);</span>
+<span class="s1">        gl_FragColor.a = gl_Color.a*maskFrag.a;</span>
+<span class="s1">        gl_FragColor.rgb = (pow((moddepth*envFrag.rgb + offset), powerFrag.rgb)*carrierFrag.rgb*(gl_Color.rgb*2.0 - 1.0) + add)/2.0;</span>
+<span class="s1">    }</span>
+<span class="s1">    &#39;&#39;&#39;</span>
+
+
+<div class="viewcode-block" id="EnvelopeGrating">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating">[docs]</a>
+<span class="k">class</span> <span class="nc">EnvelopeGrating</span><span class="p">(</span><span class="n">GratingStim</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Second-order envelope stimuli with 3 textures; a carrier, an envelope and a mask</span>
+
+<span class="sd">    **Examples**</span>
+
+<span class="sd">    </span>
+<span class="sd">    env1 = EnvelopeGrating(win,ori=0, carrier=&#39;sin&#39;, envelope=&#39;sin&#39;,</span>
+<span class="sd">            mask = &#39;gauss&#39;, sf=24, envsf=4, size=1, contrast=0.5,</span>
+<span class="sd">            moddepth=1.0, envori=0, pos=[-.5,.5],interpolate=0)</span>
+<span class="sd">            # gives a circular patch of high frequency carrier with a</span>
+<span class="sd">            # low frequency envelope</span>
+<span class="sd">    env2 = EnvelopeGrating(win,ori=0, carrier=noise, envelope=&#39;sin&#39;,</span>
+<span class="sd">            mask = None, sf=1, envsf=4, size=1, contrast=0.5,</span>
+<span class="sd">            moddepth=0.8, envori=0, pos=[-.5,-.5],interpolate=0)</span>
+<span class="sd">            # If noise is some numpy array containing random values gives a</span>
+<span class="sd">            # patch of noise with a low frequency sinewave envelope</span>
+<span class="sd">    env4 = EnvelopeGrating(win,ori=90, carrier=&#39;sin&#39;, envelope=&#39;sin&#39;,</span>
+<span class="sd">            mask = &#39;gauss&#39;, sf=24, envsf=4, size=1, contrast=0.5,</span>
+<span class="sd">            moddepth=1.0, envori=0, pos=[.5,.5], beat=True, interpolate=0)</span>
+<span class="sd">            # Setting beat will create a second order beat stimulus which</span>
+<span class="sd">            # critically contains no net energy at the carrier frequency</span>
+<span class="sd">            # even though it appears to be present. In this case carrier</span>
+<span class="sd">            # and envelope are at 90 degree to each other</span>
+<span class="sd">    </span>
+
+<span class="sd">    With an EnvelopeStim the carrier and envelope can have different spatial</span>
+<span class="sd">    frequencies, phases and orientations. Its position can be shifted as a whole.</span>
+
+<span class="sd">    contrast controls the contrast of the carrier and moddepth the modulation</span>
+<span class="sd">    depth of the envelope. contrast and moddepth must work together, for moddepth=1 the max carrier</span>
+<span class="sd">    contrast is 0.5 otherwise the displayable range will be exceeded. If moddepth &lt; 1 higher contrasts can be accommodated.</span>
+
+<span class="sd">    Opacity controls the transparency of the whole stimulus.</span>
+
+<span class="sd">    Because orientation is implemented very differently for the carrier and</span>
+<span class="sd">    envelope using this function without a broadly circular mask may produce unexpected results</span>
+
+<span class="sd">    **Using EnvelopeStim with images from disk (jpg, tif, png, ...)**</span>
+
+<span class="sd">    Ideally texture images to be rendered should be square with &#39;power-of-2&#39;</span>
+<span class="sd">    dimensions e.g. 16x16, 128x128. Any image that is not will be upscaled</span>
+<span class="sd">    (with linear interpolation) to the nearest such texture by PsychoPy.</span>
+<span class="sd">    The size of the stimulus should be specified in the normal way using</span>
+<span class="sd">    the appropriate units (deg, pix, cm, ...). Be sure to get the aspect</span>
+<span class="sd">    ratio the same as the image (if you don&#39;t want it stretched!).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">win</span><span class="p">,</span>
+                 <span class="n">carrier</span><span class="o">=</span><span class="s2">&quot;noise&quot;</span><span class="p">,</span>
+                 <span class="n">mask</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+                 <span class="n">envelope</span><span class="o">=</span><span class="s2">&quot;sin&quot;</span><span class="p">,</span>
+                 <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+                 <span class="n">units</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                 <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">sf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">envsf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">ori</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">envori</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">phase</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">envphase</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">beat</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">texRes</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span>
+                 <span class="n">rgb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dkl</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">lms</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                 <span class="n">colorSpace</span><span class="o">=</span><span class="s1">&#39;rgb&#39;</span><span class="p">,</span>
+                 <span class="n">contrast</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="c1"># see doc</span>
+                 <span class="n">moddepth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># modulation depth for envelope</span>
+                 <span class="n">power</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="c1"># power to raise modulator to.</span>
+                 <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                 <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                 <span class="n">rgbPedestal</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                 <span class="n">interpolate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">blendmode</span><span class="o">=</span><span class="s1">&#39;avg&#39;</span><span class="p">,</span>
+                 <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">autoLog</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">autoDraw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">maskParams</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>  <span class="c1"># Empty docstring. All doc is in attributes</span>
+        <span class="c1"># what local vars are defined (these are the init params) for use by</span>
+        <span class="c1"># __repr__</span>
+        <span class="k">assert</span> <span class="n">win</span><span class="o">.</span><span class="n">_haveShaders</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;Currently EnvelopeGratings needs &quot;</span>
+                                         <span class="s2">&quot;your graphics card to have shaders&quot;</span>
+                                         <span class="s2">&quot; and yours does not seem to.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_initParams</span> <span class="o">=</span> <span class="nb">dir</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">unecess</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;self&#39;</span><span class="p">,</span> <span class="s1">&#39;rgb&#39;</span><span class="p">,</span> <span class="s1">&#39;dkl&#39;</span><span class="p">,</span> <span class="s1">&#39;lms&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_initParams</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">unecess</span><span class="p">)</span>
+        <span class="c1"># initialise parent class</span>
+        <span class="n">GratingStim</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">win</span><span class="p">,</span>
+                             <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">sf</span><span class="o">=</span><span class="n">sf</span><span class="p">,</span>
+                             <span class="n">ori</span><span class="o">=</span><span class="n">ori</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="n">phase</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="n">anchor</span><span class="p">,</span>
+                             <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">colorSpace</span><span class="o">=</span><span class="n">colorSpace</span><span class="p">,</span>
+                             <span class="n">contrast</span><span class="o">=</span><span class="n">contrast</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span>
+                             <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="n">interpolate</span><span class="p">,</span>
+                             <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">autoLog</span><span class="o">=</span><span class="n">autoLog</span><span class="p">,</span> <span class="n">autoDraw</span><span class="o">=</span><span class="n">autoDraw</span><span class="p">,</span>
+                             <span class="n">maskParams</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># UGLY HACK: Some parameters depend on each other for processing.</span>
+        <span class="c1"># They are set &quot;superficially&quot; here.</span>
+        <span class="c1"># TO DO: postpone calls to _createTexture, setColor and</span>
+        <span class="c1"># _calcCyclesPerStim whin initiating stimulus</span>
+
+        <span class="c1">#AJS</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;carrier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">carrier</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;envelope&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">envelope</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;maskParams&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">maskParams</span>
+
+        <span class="c1"># initialise textures and masks for stimulus</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_carrierID</span> <span class="o">=</span> <span class="n">GL</span><span class="o">.</span><span class="n">GLuint</span><span class="p">()</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_carrierID</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_envelopeID</span> <span class="o">=</span> <span class="n">GL</span><span class="o">.</span><span class="n">GLuint</span><span class="p">()</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_envelopeID</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_powerID</span> <span class="o">=</span> <span class="n">GL</span><span class="o">.</span><span class="n">GLuint</span><span class="p">()</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glGenTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_powerID</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">interpolate</span> <span class="o">=</span> <span class="n">interpolate</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_texID</span>  <span class="c1"># created by GratingStim.__init__</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">texRes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">texRes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">envelope</span> <span class="o">=</span> <span class="n">envelope</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">carrier</span> <span class="o">=</span> <span class="n">carrier</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">envsf</span> <span class="o">=</span> <span class="n">val2array</span><span class="p">(</span><span class="n">envsf</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">envphase</span> <span class="o">=</span> <span class="n">val2array</span><span class="p">(</span><span class="n">envphase</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">envori</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">envori</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">moddepth</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">moddepth</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">power</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">beat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;True&#39;</span><span class="p">,</span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span><span class="s1">&#39;yes&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">beat</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">beat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;False&#39;</span><span class="p">,</span><span class="s1">&#39;false&#39;</span><span class="p">,</span><span class="s1">&#39;No&#39;</span><span class="p">,</span><span class="s1">&#39;no&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">beat</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">beat</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">beat</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">blendmode</span><span class="o">=</span><span class="n">blendmode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProgBeat</span> <span class="o">=</span> <span class="n">_shaders</span><span class="o">.</span><span class="n">compileProgram</span><span class="p">(</span>
+            <span class="n">_shaders</span><span class="o">.</span><span class="n">vertSimple</span><span class="p">,</span> <span class="n">carrierEnvelopeMaskFrag</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProgPow</span> <span class="o">=</span> <span class="n">_shaders</span><span class="o">.</span><span class="n">compileProgram</span><span class="p">(</span>
+            <span class="n">_shaders</span><span class="o">.</span><span class="n">vertSimple</span><span class="p">,</span> <span class="n">carrierEnvelopeMaskFragPow</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">local</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">texRes</span><span class="p">,</span> <span class="n">texRes</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">ubyte</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">local_p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">local</span><span class="o">.</span><span class="n">ctypes</span>
+        <span class="c1"># fix scaling to window coords</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_calcEnvCyclesPerStim</span><span class="p">()</span>
+        
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;tex&#39;</span><span class="p">]</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">envsf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Spatial frequency of the envelope texture</span>
+
+<span class="sd">        Should be a :ref:`x,y-pair &lt;attrib-xy&gt;` or</span>
+<span class="sd">        :ref:`scalar &lt;attrib-scalar&gt;` or None.</span>
+<span class="sd">        If `units` == &#39;deg&#39; or &#39;cm&#39; units are in cycles per deg or cm</span>
+<span class="sd">        as appropriate.</span>
+<span class="sd">        If `units` == &#39;norm&#39; then sf units are in cycles per stimulus</span>
+<span class="sd">        (and so envsf scales with stimulus size).</span>
+<span class="sd">        If texture is an image loaded from a file then envsf=None defaults</span>
+<span class="sd">        to 1/stimSize to give one cycle of the image.</span>
+<span class="sd">        Note sf is inhertited from GratingStim and controls the spatial frequency of the carrier</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Recode phase to numpy array</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># set the sf to default e.g. 1./size of the loaded image etc</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;pix&#39;</span><span class="p">,</span> <span class="s1">&#39;pixels&#39;</span><span class="p">]</span> <span class="ow">or</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_origSize</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="s1">&#39;cm&#39;</span><span class="p">]):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span>  <span class="c1"># default to one cycle</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">val2array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="c1"># Set value and update stuff</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;envsf&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_calcEnvCyclesPerStim</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">envphase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Phase of the modulation in each dimension of the envelope texture.</span>
+
+<span class="sd">        Should be an :ref:`x,y-pair &lt;attrib-xy&gt;` or</span>
+<span class="sd">        :ref:`scalar &lt;attrib-scalar&gt;`</span>
+
+<span class="sd">        **NB** phase has modulus 1 (rather than 360 or 2*pi)</span>
+<span class="sd">        This is a little unconventional but has the nice effect</span>
+<span class="sd">        that setting phase=t*n drifts a stimulus at n Hz</span>
+<span class="sd">        Note phase in inherited from GratingStim and controls the phase of the carrier</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Recode phase to numpy array</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">val2array</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;envphase&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">moddepth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Modulation depth or &#39;contrast&#39; for the envelope component (0.0 - 1.0)</span>
+
+<span class="sd">        Sets the range of variation in carrier contrast.</span>
+<span class="sd">        MD=(Cmax-Cmin)/(Cma+Cmin)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;moddepth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">envori</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The orientation for the envelope texture (in degrees).</span>
+
+<span class="sd">        Should be a single value (scalar). Operations are supported.</span>
+<span class="sd">        Orientation convention is like a clock: 0 is vertical, and positive values rotate clockwise. Beyond 360 and below zero values wrap appropriately.</span>
+<span class="sd">        Note ori is inhertied from gratingStim and controls only the orientation of the carrier</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;envori&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">beat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Beat (True) stimulus or full moduaiton (False)</span>
+
+<span class="sd">        &#39;The differences is that the spatial frequency components of the carrier are absent in a beat</span>
+<span class="sd">        (although the carrier will still be a visible component of the overall image)</span>
+<span class="sd">        whereas they are present in a full modulation. Beats will always appear to have a 100% modulation</span>
+<span class="sd">        depth and if sinusoidal the modulation will appear to be twice the requested spatial frequency.</span>
+<span class="sd">        The modulation depth of fully modulated stimuli can be varied and they appear at their true frequency.</span>
+<span class="sd">        Both beats and full modulations appear in the literature and have specific uses.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;True&#39;</span><span class="p">,</span><span class="s1">&#39;true&#39;</span><span class="p">,</span><span class="s1">&#39;Yes&#39;</span><span class="p">,</span><span class="s1">&#39;yes&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;y&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;beat&#39;</span><span class="p">]</span> <span class="o">=</span><span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;False&#39;</span><span class="p">,</span><span class="s1">&#39;false&#39;</span><span class="p">,</span><span class="s1">&#39;No&#39;</span><span class="p">,</span><span class="s1">&#39;no&#39;</span><span class="p">,</span><span class="s1">&#39;N&#39;</span><span class="p">,</span><span class="s1">&#39;n&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;beat&#39;</span><span class="p">]</span> <span class="o">=</span><span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;beat&#39;</span><span class="p">]</span> <span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">True</span>
+
+
+    <span class="c1">#@attributeSetter</span>
+    <span class="c1">#def blendmode(self, value):</span>
+    <span class="c1">#    &quot;&quot;&quot;The OpenGL mode in which the stimulus is draw</span>
+    <span class="c1">#</span>
+    <span class="c1">#    Can the &#39;avg&#39; or &#39;add&#39;. Average (avg) places the new stimulus over the old one</span>
+    <span class="c1">#    with a transparency given by its opacity. Opaque stimuli will hide other stimuli</span>
+    <span class="c1">#    transparent stimuli won&#39;t. Add performs the arithmetic sum of the new stimulus and the ones</span>
+    <span class="c1">#    already present.</span>
+    <span class="c1">#</span>
+    <span class="c1">#    &quot;&quot;&quot;</span>
+    <span class="c1">#    self.__dict__[&#39;blendmode&#39;] = value</span>
+    <span class="c1">#   self._needUpdate = True</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">carrier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Texture to use in the stimulus as a carrier, typically noise array.</span>
+
+<span class="sd">        This can be one of various options:</span>
+<span class="sd">            + the name of an image file (most formats supported)</span>
+<span class="sd">            + a numpy array (1xN or NxN) ranging -1:1</span>
+
+<span class="sd">        If specifying your own texture using an image or numpy array</span>
+<span class="sd">        you should ensure that the image has square power-of-two</span>
+<span class="sd">        dimesnions (e.g. 256 x 256). If not then PsychoPy will upsample</span>
+<span class="sd">        your stimulus to the next larger power of two.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_createTexture</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_carrierID</span><span class="p">,</span> <span class="n">pixFormat</span><span class="o">=</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_RGB</span><span class="p">,</span>
+                            <span class="n">stim</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="p">)</span>
+        <span class="c1"># if user requested size=None then update the size for new stim here</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_requestedSize&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_requestedSize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Reset size do default</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;carrier&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needTextureUpdate</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">envelope</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Texture to use on the stimulus as a envelope, typically a grating.</span>
+
+<span class="sd">        This can be one of various options:</span>
+<span class="sd">            + **&#39;sin&#39;**,&#39;sqr&#39;, &#39;saw&#39;, &#39;tri&#39;, None (resets to default)</span>
+<span class="sd">            + the name of an image file (most formats supported)</span>
+<span class="sd">            + a numpy array (1xN or NxN) ranging -1:1</span>
+
+<span class="sd">        If specifying your own texture using an image or numpy array</span>
+<span class="sd">        you should ensure that the image has square power-of-two dimesnions</span>
+<span class="sd">        (e.g. 256 x 256). If not then PsychoPy will upsample your stimulus</span>
+<span class="sd">        to the next larger power of two.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_createTexture</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_envelopeID</span><span class="p">,</span>
+                            <span class="n">pixFormat</span><span class="o">=</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_RGB</span><span class="p">,</span> <span class="n">stim</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                            <span class="n">res</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="p">)</span>
+
+        <span class="c1"># if user requested size=None then update the size for new stim here</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_requestedSize&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_requestedSize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Reset size do default</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;envelope&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needTextureUpdate</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Will raise the modulator to the given power </span>
+<span class="sd">           using the equation S=C*(1+M)^power where C is the carrier and M</span>
+<span class="sd">           is the modulator. Only works with AM envelopes (hence +1) in </span>
+<span class="sd">           equation. Power is ignored if a beat is requested.</span>
+<span class="sd">           This is used to obtain the square root of the modulator (power = 0.5)</span>
+<span class="sd">           which is useful if combining two envelope gratings with different carriers</span>
+<span class="sd">           and a 180 degree phase shift as the resulting combined signal will not </span>
+<span class="sd">           have any reduction in local contrast at any point in the image.</span>
+<span class="sd">           This is similar - but not identical to the method used by </span>
+<span class="sd">           Landy and Oruc, Vis Res 2002.</span>
+<span class="sd">           Note overall contrast (apparent carrier contrast) will be altered.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_createTexture</span><span class="p">(</span>
+            <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="p">))</span> <span class="o">*</span> <span class="n">value</span><span class="p">,</span>
+            <span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_powerID</span><span class="p">,</span>
+            <span class="n">pixFormat</span><span class="o">=</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_RGB</span><span class="p">,</span>
+            <span class="n">stim</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">res</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="p">)</span>
+
+        <span class="c1"># if user requested size=None then update the size for new stim here</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_requestedSize&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_requestedSize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Reset size do default</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needTextureUpdate</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@attributeSetter</span>
+    <span class="k">def</span> <span class="nf">texRes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Power-of-two int. Sets the resolution of the mask and texture.</span>
+<span class="sd">        texRes is overridden if an array or image is provided as mask.</span>
+
+<span class="sd">        :ref:`Operations &lt;attrib-operations&gt;` supported.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;texRes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+        <span class="c1"># ... now rebuild textures (call attributeSetters without logging).</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;carrier&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;carrier&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">carrier</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;envelope&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;envelope&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">envelope</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="c1">#if hasattr(self, &#39;power&#39;):</span>
+        <span class="c1">#    self._set(&#39;power&#39;, self.power, log=False)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;mask&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;mask&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EnvelopeGrating.setTexRes">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setTexRes">[docs]</a>
+    <span class="k">def</span> <span class="nf">setTexRes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;texRes&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvelopeGrating.setEnvori">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvori">[docs]</a>
+    <span class="k">def</span> <span class="nf">setEnvori</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;envori&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvelopeGrating.setEnvsf">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvsf">[docs]</a>
+    <span class="k">def</span> <span class="nf">setEnvsf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;envsf&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvelopeGrating.setEnvphase">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvphase">[docs]</a>
+    <span class="k">def</span> <span class="nf">setEnvphase</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;envphase&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvelopeGrating.setModdepth">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setModdepth">[docs]</a>
+    <span class="k">def</span> <span class="nf">setModdepth</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;moddepth&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+        
+<div class="viewcode-block" id="EnvelopeGrating.setPower">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setPower">[docs]</a>
+    <span class="k">def</span> <span class="nf">setPower</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">texRes</span><span class="p">)</span><span class="o">*</span><span class="n">value</span> </div>
+
+
+<div class="viewcode-block" id="EnvelopeGrating.setBeat">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setBeat">[docs]</a>
+    <span class="k">def</span> <span class="nf">setBeat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="s1">&#39;beat&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="EnvelopeGrating.setCarrier">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setCarrier">[docs]</a>
+    <span class="k">def</span> <span class="nf">setCarrier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">carrier</span> <span class="o">=</span> <span class="n">value</span></div>
+
+
+<div class="viewcode-block" id="EnvelopeGrating.setEnvelope">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.setEnvelope">[docs]</a>
+    <span class="k">def</span> <span class="nf">setEnvelope</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">envelope</span> <span class="o">=</span> <span class="n">value</span></div>
+
+
+    <span class="c1">#def setBlendmode(self, value, log=None):</span>
+    <span class="c1">#    &quot;&quot;&quot;DEPRECATED. Use &#39;stim.parameter = value&#39; syntax instead</span>
+    <span class="c1">#    &quot;&quot;&quot;</span>
+    <span class="c1">#    self._set(&#39;blendmode&#39;, value, log=log)</span>
+
+    <span class="c1">#def draw(self, win=None):</span>
+    <span class="c1">#    &quot;&quot;&quot;Draw the stimulus in its relevant window. You must call</span>
+    <span class="c1">#    this method after every MyWin.flip() if you want the</span>
+    <span class="c1">#    stimulus to appear on that frame and then update the screen</span>
+    <span class="c1">#    again.</span>
+    <span class="c1">#    &quot;&quot;&quot;</span>
+    <span class="c1">#    if win is None:</span>
+    <span class="c1">#        win = self.win</span>
+
+    <span class="c1">#    saveBlendMode=win.blendMode</span>
+    <span class="c1">#    win.blendMode=self.blendmode</span>
+     <span class="c1">#   self._selectWindow(win)</span>
+    <span class="c1">#</span>
+    <span class="c1">#    super(EnvelopeGrating, self).draw(win)</span>
+
+    <span class="c1">#    win.blendMode=saveBlendMode</span>
+
+    <span class="k">def</span> <span class="nf">_updateListShaders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        The user shouldn&#39;t need this method since it gets called</span>
+<span class="sd">        after every call to .set() Basically it updates the OpenGL</span>
+<span class="sd">        representation of your stimulus if some parameter of the</span>
+<span class="sd">        stimulus changes. Call it if you change a property manually</span>
+<span class="sd">        rather than using the .set() command</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># make some corrections for the envelope:: This could be done whenever</span>
+        <span class="c1"># the envelope variables are set using some internal variables,</span>
+        <span class="c1"># putting it here is safer but sometimes slower</span>
+
+        <span class="c1"># correct envelope orientation to adjust for link with carrier</span>
+        <span class="c1"># orientation, to make it clockwise handed and convert to radians</span>
+        <span class="n">envrad</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ori</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">envori</span><span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">180.0</span>
+
+        <span class="c1"># adjust envelope phases so that any envelope drift points</span>
+        <span class="c1"># in the same direction as the envelope.</span>
+        <span class="n">rph1</span> <span class="o">=</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">envrad</span><span class="p">)</span> <span class="o">*</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">envphase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">envrad</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">envphase</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">rph2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">envrad</span><span class="p">)</span> <span class="o">*</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">envphase</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">envrad</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">envphase</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># we need a corrective offset when the blendmode is set to average</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">blendmode</span><span class="o">==</span><span class="s1">&#39;avg&#39;</span><span class="p">:</span>
+            <span class="n">addvalue</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">addvalue</span> <span class="o">=</span> <span class="mf">0.0</span>
+            
+        <span class="c1"># setup the shaderprogram</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">beat</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProgBeat</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProgPow</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_needUpdate</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glNewList</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_listID</span><span class="p">,</span> <span class="n">GL</span><span class="o">.</span><span class="n">GL_COMPILE</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">)</span>
+
+        <span class="c1"># set the carrier to be texture unit 0</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;carrier&quot;</span><span class="p">),</span>
+                       <span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># set the envelope to be texture unit 1</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;envelope&quot;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;mask&quot;</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># mask is texture unit 2</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1i</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;power&quot;</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># power is texture unit 3</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;moddepth&quot;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">moddepth</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;ori&quot;</span><span class="p">),</span> <span class="n">envrad</span><span class="p">)</span>
+        <span class="c1"># CM envelopes use (modedepth*envelope+1.0)*carrier. If beat is True</span>
+        <span class="c1"># this becomes (moddepth*envelope)*carrier thus maing a second order</span>
+        <span class="c1"># &#39;beat&#39; pattern.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">beat</span><span class="p">:</span>
+            <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;offset&quot;</span><span class="p">),</span><span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;offset&quot;</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUniform1f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">glGetUniformLocation</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_shaderProg</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;add&quot;</span><span class="p">),</span> <span class="n">addvalue</span><span class="p">)</span>
+
+        <span class="c1"># mask</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE2</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maskID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>  <span class="c1"># implicitly disables 1D</span>
+        <span class="c1"># envelope</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_envelopeID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="c1">#power</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE3</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_powerID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="c1"># carrier</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_carrierID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+
+        <span class="n">Lcar</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_cycles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">Rcar</span> <span class="o">=</span> <span class="p">(</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_cycles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">Tcar</span> <span class="o">=</span> <span class="p">(</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_cycles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">Bcar</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_cycles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">phase</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.5</span>
+
+        <span class="n">Lenv</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_envcycles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">rph1</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">Renv</span> <span class="o">=</span> <span class="p">(</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_envcycles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">rph1</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">Tenv</span> <span class="o">=</span> <span class="p">(</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">_envcycles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">rph2</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">Benv</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">_envcycles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">rph2</span> <span class="o">+</span> <span class="mf">0.5</span>
+        <span class="n">Lmask</span> <span class="o">=</span> <span class="n">Bmask</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">Tmask</span> <span class="o">=</span> <span class="n">Rmask</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># mask</span>
+
+        <span class="c1"># access just once because it&#39;s slower than basic property</span>
+        <span class="n">vertsPix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">verticesPix</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBegin</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_QUADS</span><span class="p">)</span>                  <span class="c1"># draw a 4 sided polygon</span>
+        <span class="c1"># right bottom</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">,</span> <span class="n">Rcar</span><span class="p">,</span> <span class="n">Bcar</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">,</span> <span class="n">Renv</span><span class="p">,</span> <span class="n">Benv</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE2</span><span class="p">,</span> <span class="n">Rmask</span><span class="p">,</span> <span class="n">Bmask</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="n">vertsPix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">vertsPix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="c1"># left bottom</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">,</span> <span class="n">Lcar</span><span class="p">,</span> <span class="n">Bcar</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">,</span> <span class="n">Lenv</span><span class="p">,</span> <span class="n">Benv</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE2</span><span class="p">,</span> <span class="n">Lmask</span><span class="p">,</span> <span class="n">Bmask</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="n">vertsPix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">vertsPix</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="c1"># left top</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">,</span> <span class="n">Lcar</span><span class="p">,</span> <span class="n">Tcar</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">,</span> <span class="n">Lenv</span><span class="p">,</span> <span class="n">Tenv</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE2</span><span class="p">,</span> <span class="n">Lmask</span><span class="p">,</span> <span class="n">Tmask</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="n">vertsPix</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">vertsPix</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="c1"># right top</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">,</span> <span class="n">Rcar</span><span class="p">,</span> <span class="n">Tcar</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">,</span> <span class="n">Renv</span><span class="p">,</span> <span class="n">Tenv</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glMultiTexCoord2f</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE2</span><span class="p">,</span> <span class="n">Rmask</span><span class="p">,</span> <span class="n">Tmask</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glVertex2f</span><span class="p">(</span><span class="n">vertsPix</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">vertsPix</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEnd</span><span class="p">()</span>
+
+        <span class="c1"># unbind the textures</span>
+        <span class="c1">#power</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE3</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="c1"># mask</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE2</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="c1"># envelope</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE1</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+        <span class="c1"># main carrier</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glActiveTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glBindTexture</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDisable</span><span class="p">(</span><span class="n">GL</span><span class="o">.</span><span class="n">GL_TEXTURE_2D</span><span class="p">)</span>
+
+        <span class="n">GL</span><span class="o">.</span><span class="n">glUseProgram</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">GL</span><span class="o">.</span><span class="n">glEndList</span><span class="p">()</span>
+
+<div class="viewcode-block" id="EnvelopeGrating.clearTextures">
+<a class="viewcode-back" href="../../../coder/EnvelopeGrating/#psychopy_visionscience.secondorder.EnvelopeGrating.clearTextures">[docs]</a>
+    <span class="k">def</span> <span class="nf">clearTextures</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;This will be used by the __del__ method of EnvelopeGrating</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDeleteTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_carrierID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDeleteTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_envelopeID</span><span class="p">)</span>
+        <span class="n">GL</span><span class="o">.</span><span class="n">glDeleteTextures</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_maskID</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">_calcEnvCyclesPerStim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The user should never need to call this function directly as it is</span>
+<span class="sd">        called whenever there is a need to recalcuate the spatial</span>
+<span class="sd">        frequency of the envelope.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">units</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;norm&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">):</span>
+            <span class="c1"># self._cycles = self.sf  # this is the only form of sf that is</span>
+            <span class="c1"># not size dependent</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_envcycles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">envsf</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># self._cycles = self.sf * self.size</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_envcycles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">envsf</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+      <br/><a href="#" class="pull-right">Back to top</a>
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="pull-right">
+      
+        
+      <br/>
+
+          &copy; 2002-2018 <a href="https://www.peirce.org.uk/">Jonathan Peirce</a><br/>
+          &copy; 2019 <a href="https://opensciencetools.org/">Open Science Tools Ltd.</a><br/><br/>
+        PsychoPy<sup>®</sup> and Pavlovia<sup>®</sup> are registered trademarks of Open Science Tools Ltd.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br/><br/>
+    </span>
+
+    <a href="http://www.nottingham.ac.uk/"><img src="../../../_static/Nottingham Supported.png", alt="Uni of Nottingham" width=250></a>
+  </div>
+
+</footer>
+  </body>
+</html>
