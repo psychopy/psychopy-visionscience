@@ -552,7 +552,7 @@ class NoiseStim(GratingStim):
         """
         _sf=numpy.max(self._sf)
         _mysize=numpy.max(self._mysize)
-# self._sf and self._mysize can be a tuple which cuases iisues
+# self._sf and self._mysize can be a tuple which causes issues
 # but we can only filer sqaure images anyway so taking max here is OK becuase
 # the two elements in the tuple must be the same at this point
         if _sf > _mysize / 2:
@@ -575,7 +575,7 @@ class NoiseStim(GratingStim):
         """
         _sf=numpy.max(self._sf)
         _mysize=numpy.max(self._mysize)
-# self._sf and self._mysize can be a tuple which cuases iisues
+# self._sf and self._mysize can be a tuple which causes issues
 # but we can only filer sqaure images anyway so taking max here is OK becuase
 # the two elements in the tuple must be the same at this point
         
