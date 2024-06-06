@@ -550,17 +550,22 @@ class NoiseStim(GratingStim):
         """ Helper function to apply isotropic filter in 
             frequensy domain.
         """
-        if self._sf > self._mysize / 2:
+        _sf=numpy.max(self._sf)
+        _mysize=numpy.max(self._mysize)
+# self._sf and self._mysize can be a tuple which cuases iisues
+# but we can only filer sqaure images anyway so taking max here is OK becuase
+# the two elements in the tuple must be the same at this point
+        if _sf > _mysize / 2:
             msg = ('Base frequency for isotropic '
                   'noise is  too high (exceeds Nyquist limit).')
             raise Warning(msg)
-        localf = self._sf / self._mysize
+        localf = _sf / _mysize
         linbw = 2 ** self.noiseBW
         lowf = 2.0 * localf / (linbw+1.0)
         highf = linbw * lowf
         FWF = highf - lowf
         sigmaF = FWF / (2*numpy.sqrt(2*numpy.log(2)))
-        pin = filters.makeRadialMatrix(matrixSize=self._mysize, center=(0,0), radius=2)
+        pin = filters.makeRadialMatrix(matrixSize=_mysize, center=(0,0), radius=2)
         filter = filters.makeGauss(pin, mean=localf, sd=sigmaF)
         return FT*filter
         
@@ -568,11 +573,18 @@ class NoiseStim(GratingStim):
         """ Helper function to apply Gabor filter in 
             frequensy domain.
         """
-        if self._sf > self._mysize / 2:
+        _sf=numpy.max(self._sf)
+        _mysize=numpy.max(self._mysize)
+# self._sf and self._mysize can be a tuple which cuases iisues
+# but we can only filer sqaure images anyway so taking max here is OK becuase
+# the two elements in the tuple must be the same at this point
+        
+        if _sf > _mysize / 2:   
+    
             msg = ('Base frequency for Gabor '
                   'noise is  too high (exceeds Nyquist limit).')
             raise Warning(msg)
-        localf = self._sf / self._mysize
+        localf = _sf / _mysize
         linbw = 2 ** self.noiseBW
         lowf = 2.0 * localf / (linbw + 1.0)
         highf = linbw * lowf
@@ -580,9 +592,9 @@ class NoiseStim(GratingStim):
         sigmaF = FWF/(2*numpy.sqrt(2*numpy.log(2)))
         FWO = 2.0*localf*numpy.tan(numpy.pi*self.noiseBWO/360.0)
         sigmaO = FWO/(2*numpy.sqrt(2*numpy.log(2)))
-        yy, xx = numpy.mgrid[0:self._mysize, 0:self._mysize]
-        xx = (0.5 - 1.0 / self._mysize * xx)
-        yy = (0.5 - 1.0 / self._mysize * yy)
+        yy, xx = numpy.mgrid[0:_mysize, 0:_mysize]
+        xx = (0.5 - 1.0 / _mysize * xx)
+        yy = (0.5 - 1.0 / _mysize * yy)
         filter=filters.make2DGauss(xx,yy,mean=(localf,0), sd=(sigmaF,sigmaO))
         filter=filter+filters.make2DGauss(xx,yy, mean=(-localf,0), sd=(sigmaF,sigmaO))
         filter = numpy.array(
