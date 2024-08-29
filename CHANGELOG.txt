@@ -1,7 +1,12 @@
+0.0.7
+=====
+
+Fixes an error allowing Binary, Uniform and Normal noise samples to be further processed by a filter operation.
+
 0.0.4
 =====
 
-First version using automated build/publish pipeline
+Packaging improvements - now using automated build/publish pipeline
 
 0.0.3
 =====
