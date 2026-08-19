@@ -18,6 +18,7 @@ class RadialStimComponent(BaseVisualComponent):
     categories = ['Stimuli']
     targets = ['PsychoPy']
     iconFile = Path(__file__).parent / 'radial.png'
+    iconSVG = Path(__file__).parent / 'RadialStimComponent.svg'
     tooltip = _translate('Radial: present radial stimuli, prebuilt or from a '
                          'file')
 

@@ -16,6 +16,7 @@ class NoiseStimComponent(BaseVisualComponent):
     categories = ['Stimuli']
     targets = ['PsychoPy']
     iconFile = Path(__file__).parent / 'noise.png'
+    iconSVG = Path(__file__).parent / 'NoiseStimComponent.svg'
     tooltip = _translate('Noise stimuli: generates a range of different types of random visual patterns')
 
     def __init__(self, exp, parentName, name='noise', noiseImage='None',
