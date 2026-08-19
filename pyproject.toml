@@ -46,7 +46,7 @@ tests = [
 where = ["", "psychopy_visionscience",]
 
 [tool.setuptools.package-data]
-"*" = ["*.png",]
+"*" = ["*.png","*.svg"]
 
 [project.entry-points."psychopy.experiment.components"]
 NoiseStimComponent = "psychopy_visionscience:NoiseStimComponent"
