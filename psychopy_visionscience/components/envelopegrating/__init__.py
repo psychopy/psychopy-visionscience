@@ -15,6 +15,7 @@ class EnvGratingComponent(BaseVisualComponent):
     categories = ['Stimuli']
     targets = ['PsychoPy']
     iconFile = Path(__file__).parent / 'envelopegrating.png'
+    iconSVG = Path(__file__).parent / 'EnvGratingComponent.svg'
     tooltip = _translate('Envelope Grating: present cyclic textures including 2nd order envelope stimuli, '
                          'prebuilt or from a file')
 
