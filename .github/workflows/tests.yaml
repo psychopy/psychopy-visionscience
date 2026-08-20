@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [macos-latest-intel, windows-latest, ubuntu-latest]
         python-version: ['3.10', '3.12', '3.14']
 
     steps:
