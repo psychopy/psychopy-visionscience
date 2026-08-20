@@ -15,17 +15,3 @@ try:
     __version__ = importlib.metadata.version("psychopy-visionscience")
 except importlib.metadata.PackageNotFoundError:
     __version__ = "0.dev"
-
-# NOTE: Be sure to register entry points in the `pyproject.toml` file.
-
-# ------------------------------------------------------------------------------
-# Library Classes
-#
-from .noise import NoiseStim
-from .secondorder import EnvelopeGrating
-from .radial import RadialStim
-
-# ------------------------------------------------------------------------------
-# Components
-#
-from .components import NoiseStimComponent, EnvGratingComponent, RadialStimComponent

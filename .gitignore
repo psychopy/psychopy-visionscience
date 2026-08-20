@@ -134,3 +134,6 @@ dmypy.json
 # Icon source files
 *.ai
 *.afdesign
+
+# scratch file
+scratch.*
