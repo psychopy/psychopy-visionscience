@@ -49,9 +49,9 @@ where = ["", "psychopy_visionscience",]
 "*" = ["*.png","*.svg"]
 
 [project.entry-points."psychopy.experiment.components"]
-NoiseStimComponent = "psychopy_visionscience:NoiseStimComponent"
-EnvGratingComponent = "psychopy_visionscience:EnvGratingComponent"
-RadialStimComponent = "psychopy_visionscience:RadialStimComponent"
+NoiseStimComponent = "psychopy_visionscience.components.noise:NoiseStimComponent"
+EnvGratingComponent = "psychopy_visionscience.components.envelopegrating:EnvGratingComponent"
+RadialStimComponent = "psychopy_visionscience.components.radial:RadialStimComponent"
 
 [project.entry-points."psychopy.visual"]
 NoiseStim = "psychopy_visionscience.noise:NoiseStim"
